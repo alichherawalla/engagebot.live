@@ -7,26 +7,26 @@ export default function AnimatedHeroDemo() {
 
   const demoSteps = [
     {
-      title: "Learn Voice",
-      description: "AI learns style",
+      title: "Content Analysis",
+      description: "Train communication model",
       icon: Brain,
       color: "from-purple-500 to-blue-600"
     },
     {
-      title: "Find Posts",
-      description: "Find opportunities",
+      title: "Thread Discovery",
+      description: "Identify relevant discussions",
       icon: Target,
       color: "from-emerald-500 to-teal-600"
     },
     {
-      title: "Make Replies", 
-      description: "Create responses",
+      title: "Response Generation", 
+      description: "Draft professional replies",
       icon: MessageSquare,
       color: "from-blue-500 to-indigo-600"
     },
     {
-      title: "Grow Fans",
-      description: "Build followers",
+      title: "Performance Tracking",
+      description: "Monitor engagement metrics",
       icon: TrendingUp,
       color: "from-green-500 to-emerald-600"
     }
@@ -107,14 +107,14 @@ export default function AnimatedHeroDemo() {
                         <Brain className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-white font-semibold">Voice Analysis</h3>
-                        <p className="text-white/60 text-sm">Processing content</p>
+                        <h3 className="text-white font-semibold">Content Analysis</h3>
+                        <p className="text-white/60 text-sm">Training in progress</p>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="flex justify-between text-sm">
-                        <span className="text-white/80">Documents</span>
-                        <span className="text-green-400">✓ 12 processed</span>
+                        <span className="text-white/80">Documents analyzed</span>
+                        <span className="text-green-400">12 complete</span>
                       </div>
                       <div className="w-full bg-white/20 rounded-full h-2">
                         <motion.div 
@@ -124,7 +124,7 @@ export default function AnimatedHeroDemo() {
                           transition={{ duration: 2 }}
                         />
                       </div>
-                      <p className="text-white/90 text-sm">Voice model: 95% accuracy</p>
+                      <p className="text-white/90 text-sm">Model confidence: 95%</p>
                     </div>
                   </>
                 )}
@@ -136,24 +136,24 @@ export default function AnimatedHeroDemo() {
                         <Target className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-white font-semibold">Discovery Engine</h3>
-                        <p className="text-white/60 text-sm">Scanning Twitter</p>
+                        <h3 className="text-white font-semibold">Thread Discovery</h3>
+                        <p className="text-white/60 text-sm">Monitoring platform</p>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="flex justify-between text-sm">
-                        <span className="text-white/80">Opportunities</span>
-                        <span className="text-emerald-400">148 found</span>
+                        <span className="text-white/80">Threads identified</span>
+                        <span className="text-emerald-400">24 today</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-white/80">Match Score</span>
-                        <span className="text-emerald-400">94% avg</span>
+                        <span className="text-white/80">Relevance score</span>
+                        <span className="text-emerald-400">8.2/10</span>
                       </div>
                       <div className="bg-white/10 rounded-lg p-3">
-                        <p className="text-white/90 text-sm">"Need help with SaaS growth..."</p>
+                        <p className="text-white/90 text-sm">"Looking for SaaS growth strategies..."</p>
                         <div className="flex items-center mt-2">
                           <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></div>
-                          <span className="text-white/60 text-xs">High-value match</span>
+                          <span className="text-white/60 text-xs">Within expertise area</span>
                         </div>
                       </div>
                     </div>
@@ -167,26 +167,26 @@ export default function AnimatedHeroDemo() {
                         <MessageSquare className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-white font-semibold">AI Response</h3>
-                        <p className="text-white/60 text-sm">Generating reply</p>
+                        <h3 className="text-white font-semibold">Response Draft</h3>
+                        <p className="text-white/60 text-sm">Ready for review</p>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="bg-white/10 rounded-lg p-3">
-                        <p className="text-white/90 text-sm">"Consider product-led growth with content marketing..."</p>
+                        <p className="text-white/90 text-sm">"Product-led growth combined with strategic content marketing typically yields..."</p>
                       </div>
                       <div className="grid grid-cols-3 gap-2 text-center">
                         <div>
                           <p className="text-blue-400 font-semibold">96%</p>
-                          <p className="text-white/60 text-xs">Voice</p>
+                          <p className="text-white/60 text-xs">Style</p>
                         </div>
                         <div>
                           <p className="text-blue-400 font-semibold">94%</p>
-                          <p className="text-white/60 text-xs">Expert</p>
+                          <p className="text-white/60 text-xs">Domain</p>
                         </div>
                         <div>
                           <p className="text-blue-400 font-semibold">92%</p>
-                          <p className="text-white/60 text-xs">Impact</p>
+                          <p className="text-white/60 text-xs">Quality</p>
                         </div>
                       </div>
                     </div>
@@ -200,22 +200,22 @@ export default function AnimatedHeroDemo() {
                         <TrendingUp className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-white font-semibold">Growth Analytics</h3>
-                        <p className="text-white/60 text-sm">30-day performance</p>
+                        <h3 className="text-white font-semibold">Performance Report</h3>
+                        <p className="text-white/60 text-sm">30-day summary</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="bg-white/10 rounded-lg p-3 text-center">
                         <p className="text-green-400 font-bold text-lg">+347</p>
-                        <p className="text-white/60 text-xs">Followers</p>
+                        <p className="text-white/60 text-xs">Connections</p>
                       </div>
                       <div className="bg-white/10 rounded-lg p-3 text-center">
                         <p className="text-green-400 font-bold text-lg">8.4%</p>
-                        <p className="text-white/60 text-xs">Rate</p>
+                        <p className="text-white/60 text-xs">Engagement</p>
                       </div>
                       <div className="bg-white/10 rounded-lg p-3 text-center">
                         <p className="text-green-400 font-bold text-lg">+12</p>
-                        <p className="text-white/60 text-xs">Leads</p>
+                        <p className="text-white/60 text-xs">Inquiries</p>
                       </div>
                       <div className="bg-white/10 rounded-lg p-3 text-center">
                         <p className="text-green-400 font-bold text-lg">+28</p>
