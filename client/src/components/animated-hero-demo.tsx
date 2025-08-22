@@ -88,56 +88,143 @@ export default function AnimatedHeroDemo() {
           </AnimatePresence>
         </div>
 
-        {/* Right Side - Unique Content */}
+        {/* Right Side - Professional Dashboard */}
         <div className="flex-1 p-6 lg:p-12 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.2 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="w-full max-w-sm"
             >
-              {currentStep === 0 && (
-                <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <Brain className="h-12 w-12 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Training AI</h3>
-                  <p className="text-blue-200">Upload docs & tweets</p>
-                </>
-              )}
-              
-              {currentStep === 1 && (
-                <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <Target className="h-12 w-12 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Finding Posts</h3>
-                  <p className="text-blue-200">Scan for opportunities</p>
-                </>
-              )}
-              
-              {currentStep === 2 && (
-                <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <MessageSquare className="h-12 w-12 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Writing Reply</h3>
-                  <p className="text-blue-200">Expert response ready</p>
-                </>
-              )}
-              
-              {currentStep === 3 && (
-                <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <TrendingUp className="h-12 w-12 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Growing Fast</h3>
-                  <p className="text-blue-200">+347 new followers</p>
-                </>
-              )}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl">
+                {currentStep === 0 && (
+                  <>
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                        <Brain className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-semibold">Voice Analysis</h3>
+                        <p className="text-white/60 text-sm">Processing content</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-white/80">Documents</span>
+                        <span className="text-green-400">✓ 12 processed</span>
+                      </div>
+                      <div className="w-full bg-white/20 rounded-full h-2">
+                        <motion.div 
+                          className="bg-gradient-to-r from-purple-400 to-blue-400 h-2 rounded-full"
+                          initial={{ width: "0%" }}
+                          animate={{ width: "100%" }}
+                          transition={{ duration: 2 }}
+                        />
+                      </div>
+                      <p className="text-white/90 text-sm">Voice model: 95% accuracy</p>
+                    </div>
+                  </>
+                )}
+                
+                {currentStep === 1 && (
+                  <>
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center mr-3">
+                        <Target className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-semibold">Discovery Engine</h3>
+                        <p className="text-white/60 text-sm">Scanning Twitter</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-white/80">Opportunities</span>
+                        <span className="text-emerald-400">148 found</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-white/80">Match Score</span>
+                        <span className="text-emerald-400">94% avg</span>
+                      </div>
+                      <div className="bg-white/10 rounded-lg p-3">
+                        <p className="text-white/90 text-sm">"Need help with SaaS growth..."</p>
+                        <div className="flex items-center mt-2">
+                          <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></div>
+                          <span className="text-white/60 text-xs">High-value match</span>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+                
+                {currentStep === 2 && (
+                  <>
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                        <MessageSquare className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-semibold">AI Response</h3>
+                        <p className="text-white/60 text-sm">Generating reply</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="bg-white/10 rounded-lg p-3">
+                        <p className="text-white/90 text-sm">"Consider product-led growth with content marketing..."</p>
+                      </div>
+                      <div className="grid grid-cols-3 gap-2 text-center">
+                        <div>
+                          <p className="text-blue-400 font-semibold">96%</p>
+                          <p className="text-white/60 text-xs">Voice</p>
+                        </div>
+                        <div>
+                          <p className="text-blue-400 font-semibold">94%</p>
+                          <p className="text-white/60 text-xs">Expert</p>
+                        </div>
+                        <div>
+                          <p className="text-blue-400 font-semibold">92%</p>
+                          <p className="text-white/60 text-xs">Impact</p>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+                
+                {currentStep === 3 && (
+                  <>
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
+                        <TrendingUp className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-semibold">Growth Analytics</h3>
+                        <p className="text-white/60 text-sm">30-day performance</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-white/10 rounded-lg p-3 text-center">
+                        <p className="text-green-400 font-bold text-lg">+347</p>
+                        <p className="text-white/60 text-xs">Followers</p>
+                      </div>
+                      <div className="bg-white/10 rounded-lg p-3 text-center">
+                        <p className="text-green-400 font-bold text-lg">8.4%</p>
+                        <p className="text-white/60 text-xs">Rate</p>
+                      </div>
+                      <div className="bg-white/10 rounded-lg p-3 text-center">
+                        <p className="text-green-400 font-bold text-lg">+12</p>
+                        <p className="text-white/60 text-xs">Leads</p>
+                      </div>
+                      <div className="bg-white/10 rounded-lg p-3 text-center">
+                        <p className="text-green-400 font-bold text-lg">+28</p>
+                        <p className="text-white/60 text-xs">Mentions</p>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
