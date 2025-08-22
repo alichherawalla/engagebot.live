@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Brain, MessageSquare, Target, TrendingUp } from "lucide-react";
+import { Brain, MessageSquare, Target, BarChart3 } from "lucide-react";
 
 export default function AnimatedHeroDemo() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -25,9 +25,9 @@ export default function AnimatedHeroDemo() {
       color: "from-blue-500 to-indigo-600"
     },
     {
-      title: "Performance Tracking",
-      description: "Monitor engagement metrics",
-      icon: TrendingUp,
+      title: "Growth Analytics",
+      description: "Track audience expansion",
+      icon: BarChart3,
       color: "from-green-500 to-emerald-600"
     }
   ];
