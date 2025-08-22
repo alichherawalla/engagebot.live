@@ -44,7 +44,7 @@ export default function AnimatedHeroDemo() {
   const Icon = currentDemo.icon;
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[420px] lg:h-[480px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-2xl">
+    <div className="relative w-full max-w-full h-[400px] sm:h-[420px] lg:h-[480px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-2xl">
       {/* Animated Background */}
       <div className={`absolute inset-0 bg-gradient-to-br ${currentDemo.color} opacity-20 transition-all duration-1000`} />
       
@@ -63,25 +63,25 @@ export default function AnimatedHeroDemo() {
       {/* Main Content */}
       <div className="flex flex-col lg:flex-row h-full">
         {/* Left Side - Description */}
-        <div className="flex-1 px-4 py-8 sm:p-6 lg:p-8 flex flex-col justify-center">
+        <div className="flex-1 px-3 py-8 sm:p-6 lg:p-8 flex flex-col justify-center min-w-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 50 }}
+              exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.6 }}
-              className="text-white"
+              className="text-white w-full"
             >
-              <div className="flex items-center mb-4">
-                <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${currentDemo.color} mr-3 sm:mr-4`}>
+              <div className="flex items-center mb-4 w-full">
+                <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${currentDemo.color} mr-2 sm:mr-3 flex-shrink-0`}>
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold">{currentDemo.title}</h3>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold truncate">{currentDemo.title}</h3>
                 </div>
               </div>
-              <p className="text-blue-100 text-sm sm:text-lg leading-relaxed">
+              <p className="text-blue-100 text-sm sm:text-base lg:text-lg leading-relaxed">
                 {currentDemo.description}
               </p>
             </motion.div>
@@ -89,15 +89,15 @@ export default function AnimatedHeroDemo() {
         </div>
 
         {/* Right Side - Simple Visual */}
-        <div className="flex-1 px-4 py-4 pb-12 sm:p-6 sm:pb-12 lg:p-12 flex items-center justify-center">
+        <div className="flex-1 px-3 py-4 pb-12 sm:p-6 sm:pb-12 lg:p-12 flex items-center justify-center min-w-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.2 }}
+              exit={{ opacity: 0, scale: 1.1 }}
               transition={{ duration: 0.6 }}
-              className="text-center"
+              className="text-center w-full max-w-xs mx-auto"
             >
               {currentStep === 0 && (
                 <>
