@@ -36,8 +36,25 @@ export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({
 
 export const updateBlogPostSchema = insertBlogPostSchema.partial();
 
+export const trialRequests = pgTable("trial_requests", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  email: text("email").notNull(),
+  name: text("name").notNull(),
+  company: text("company"),
+  twitterHandle: text("twitter_handle"),
+  message: text("message"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertTrialRequestSchema = createInsertSchema(trialRequests).omit({
+  id: true,
+  createdAt: true,
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type BlogPost = typeof blogPosts.$inferSelect;
 export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
 export type UpdateBlogPost = z.infer<typeof updateBlogPostSchema>;
+export type TrialRequest = typeof trialRequests.$inferSelect;
+export type InsertTrialRequest = z.infer<typeof insertTrialRequestSchema>;

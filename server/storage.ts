@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type BlogPost, type InsertBlogPost, type UpdateBlogPost } from "@shared/schema";
+import { type User, type InsertUser, type BlogPost, type InsertBlogPost, type UpdateBlogPost, type TrialRequest, type InsertTrialRequest } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -14,15 +14,21 @@ export interface IStorage {
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
   updateBlogPost(id: string, post: UpdateBlogPost): Promise<BlogPost | undefined>;
   deleteBlogPost(id: string): Promise<boolean>;
+  
+  // Trial request methods
+  createTrialRequest(request: InsertTrialRequest): Promise<TrialRequest>;
+  getAllTrialRequests(): Promise<TrialRequest[]>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private blogPosts: Map<string, BlogPost>;
+  private trialRequests: Map<string, TrialRequest>;
 
   constructor() {
     this.users = new Map();
     this.blogPosts = new Map();
+    this.trialRequests = new Map();
     
     // Initialize with some sample blog posts
     this.initializeBlogPosts();
@@ -334,6 +340,24 @@ Based on meaningful metrics:
 
   async deleteBlogPost(id: string): Promise<boolean> {
     return this.blogPosts.delete(id);
+  }
+
+  async createTrialRequest(insertRequest: InsertTrialRequest): Promise<TrialRequest> {
+    const id = randomUUID();
+    const now = new Date();
+    const request: TrialRequest = {
+      ...insertRequest,
+      id,
+      createdAt: now,
+    };
+    this.trialRequests.set(id, request);
+    return request;
+  }
+
+  async getAllTrialRequests(): Promise<TrialRequest[]> {
+    return Array.from(this.trialRequests.values()).sort(
+      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
   }
 }
 

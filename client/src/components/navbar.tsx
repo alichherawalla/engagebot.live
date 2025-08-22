@@ -2,10 +2,12 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import TrialRequestModal from "@/components/trial-request-modal";
 
 export default function Navbar() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
 
   const isActive = (path: string) => {
     if (path === "/" && location === "/") return true;
@@ -79,6 +81,7 @@ export default function Navbar() {
               Sign In
             </a>
             <Button
+              onClick={() => setIsTrialModalOpen(true)}
               className="bg-brand-blue hover:bg-brand-blue-light text-white font-medium"
               data-testid="nav-cta"
             >
@@ -143,6 +146,11 @@ export default function Navbar() {
           </div>
         )}
       </div>
+      
+      <TrialRequestModal 
+        isOpen={isTrialModalOpen} 
+        onClose={() => setIsTrialModalOpen(false)} 
+      />
     </nav>
   );
 }

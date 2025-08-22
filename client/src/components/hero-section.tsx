@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Play } from "lucide-react";
 import { motion } from "framer-motion";
+import TrialRequestModal from "@/components/trial-request-modal";
 
 export default function HeroSection() {
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+
   return (
     <section className="gradient-hero py-20 lg:py-32" data-testid="hero-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,6 +45,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
+                onClick={() => setIsTrialModalOpen(true)}
                 className="bg-brand-green hover:bg-brand-green-light text-white px-8 py-4 text-lg font-semibold shadow-lg"
                 data-testid="hero-cta-primary"
               >
@@ -77,6 +82,11 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
+      
+      <TrialRequestModal 
+        isOpen={isTrialModalOpen} 
+        onClose={() => setIsTrialModalOpen(false)} 
+      />
     </section>
   );
 }

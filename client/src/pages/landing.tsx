@@ -9,11 +9,15 @@ import PricingSection from "@/components/pricing-section";
 import BlogSection from "@/components/blog-section";
 import FAQSection from "@/components/faq-section";
 import Footer from "@/components/footer";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Play, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import TrialRequestModal from "@/components/trial-request-modal";
 
 export default function Landing() {
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-50">
       <SEOHead
@@ -56,6 +60,7 @@ export default function Landing() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button
                 size="lg"
+                onClick={() => setIsTrialModalOpen(true)}
                 className="bg-brand-green hover:bg-brand-green-light text-white px-8 py-4 text-lg font-semibold shadow-lg"
                 data-testid="final-cta-primary"
               >
@@ -91,6 +96,11 @@ export default function Landing() {
       </section>
       
       <Footer />
+      
+      <TrialRequestModal 
+        isOpen={isTrialModalOpen} 
+        onClose={() => setIsTrialModalOpen(false)} 
+      />
     </div>
   );
 }

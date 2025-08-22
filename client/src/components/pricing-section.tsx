@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import TrialRequestModal from "@/components/trial-request-modal";
 
 export default function PricingSection() {
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  
   const plans = [
     {
       name: "Starter",
@@ -115,6 +119,14 @@ export default function PricingSection() {
               </ul>
               
               <Button
+                onClick={() => {
+                  if (plan.cta === "Contact Sales") {
+                    // For enterprise, could open a different modal or redirect
+                    window.location.href = "mailto:sales@engagebot.com";
+                  } else {
+                    setIsTrialModalOpen(true);
+                  }
+                }}
                 className={`w-full py-3 font-semibold transition-colors ${
                   plan.popular
                     ? "bg-brand-green hover:bg-brand-green-light text-white"
@@ -140,6 +152,11 @@ export default function PricingSection() {
           </p>
         </motion.div>
       </div>
+      
+      <TrialRequestModal 
+        isOpen={isTrialModalOpen} 
+        onClose={() => setIsTrialModalOpen(false)} 
+      />
     </section>
   );
 }
