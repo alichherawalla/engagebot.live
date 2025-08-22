@@ -12,7 +12,7 @@ export default function FeaturesSection() {
         "Automatic content extraction and indexing",
         "Contextual knowledge retrieval"
       ],
-      color: "brand-blue"
+      colorClass: "bg-blue-600"
     },
     {
       icon: Mic,
@@ -23,7 +23,7 @@ export default function FeaturesSection() {
         "Tone and style consistency",
         "95% brand voice accuracy"
       ],
-      color: "brand-green"
+      colorClass: "bg-emerald-600"
     },
     {
       icon: SearchCheck,
@@ -34,7 +34,7 @@ export default function FeaturesSection() {
         "Optimal follower range targeting",
         "Real-time conversation discovery"
       ],
-      color: "brand-purple"
+      colorClass: "bg-purple-600"
     }
   ];
 
@@ -67,7 +67,7 @@ export default function FeaturesSection() {
               viewport={{ once: true }}
               data-testid={`feature-card-${index}`}
             >
-              <div className={`w-16 h-16 bg-${feature.color} rounded-xl flex items-center justify-center mb-6`}>
+              <div className={`w-16 h-16 ${feature.colorClass} rounded-xl flex items-center justify-center mb-6`}>
                 <feature.icon className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4" data-testid={`feature-title-${index}`}>
