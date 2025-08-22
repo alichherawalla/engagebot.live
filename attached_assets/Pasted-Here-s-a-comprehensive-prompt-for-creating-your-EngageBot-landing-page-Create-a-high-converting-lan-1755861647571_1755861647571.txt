@@ -1,0 +1,31 @@
+Here's a comprehensive prompt for creating your EngageBot landing page:
+Create a high-converting landing page for EngageBot - an AI-powered Twitter engagement automation platform.
+Product: EngageBot transforms Twitter engagement from manual, time-consuming work into intelligent automation. It uses AI (Claude 4.0) to discover relevant conversations, generate authentic responses based on your knowledge base and brand voice, and build meaningful professional relationships at scale.
+Target Audience: Tech entrepreneurs, startup founders, SaaS builders, content creators, and digital marketers who want to scale their Twitter presence without losing authenticity.
+Core Value Proposition: "Turn Your Expertise Into Automated Twitter Engagement" - Help busy professionals engage authentically on Twitter by leveraging their existing knowledge and maintaining their brand voice through AI automation.
+Key Features to Highlight:
+* AI-powered knowledge base that ingests PDFs, documents, and URLs to create contextual responses
+* Brand voice intelligence that learns your communication style and tone
+* Smart conversation discovery that finds relevant engagement opportunities (targets 200-2000 follower accounts)
+* Intelligent comment generation that references your expertise in every response
+* Content calendar with AI-generated tweets based on trending topics and your knowledge
+* Real-time analytics tracking engagement performance and relationship building
+Landing Page Structure:
+1. Hero Section: Compelling headline with primary value prop, key benefits list, strong CTA button, and hero image/video demo
+2. Problem Section: Address pain points - time consumption, inconsistent voice, missed opportunities, generic responses
+3. Solution: Show how EngageBot works in 4-5 simple steps with visual walkthrough
+4. Features Deep Dive: Detailed sections on knowledge base, brand voice, discovery engine, and analytics
+5. Social Proof: Customer testimonials, usage metrics, success stories from entrepreneurs
+6. Pricing: Clear 3-tier structure (Starter $49, Professional $149, Enterprise $399) with feature comparison
+7. FAQ: Address common concerns about authenticity, AI detection, content filtering, security
+8. Final CTA: Strong call-to-action with risk reversal and urgency
+Tone & Style: Professional yet approachable, expertise-driven, solution-focused. Emphasize authentic engagement over robotic automation. Use metrics and specific benefits rather than generic claims.
+Key Messages:
+* "Authentic engagement at scale"
+* "Your expertise, AI-powered"
+* "Build relationships, not just followers"
+* "Save 15+ hours weekly while growing your network"
+* "95% brand voice consistency across all responses"
+Design Guidelines: Modern, clean interface with tech-forward aesthetic. Use deep blue primary color (trust/intelligence), emerald green secondary (growth/AI), purple accents (premium/innovation). Mobile-first responsive design with smooth animations and clear CTAs.
+Conversion Elements: Multiple CTA buttons, exit-intent popups, social proof integration, trust badges, "14-day free trial" with no credit card required, limited beta access messaging for urgency.
+Create a landing page that converts visitors into trial users by clearly communicating how EngageBot solves the time/authenticity dilemma of Twitter engagement for busy professionals.
