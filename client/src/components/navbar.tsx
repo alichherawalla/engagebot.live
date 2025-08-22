@@ -38,7 +38,7 @@ export default function Navbar() {
               <img 
                 src={logoPath} 
                 alt="EngageBot Logo" 
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
             <div className="hidden md:block ml-10">
