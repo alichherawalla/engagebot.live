@@ -1,13 +1,67 @@
 import { Link } from "wouter";
 import { Mail, ArrowRight, Zap } from "lucide-react";
+import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { useToast } from "@/hooks/use-toast";
 import logoPath from "@assets/engagebot-logo-circular.png";
+import type { InsertTrialRequest } from "@shared/schema";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const newsletterSubscription = useMutation({
+    mutationFn: async (email: string) => {
+      const response = await fetch("/api/trial-requests", {
+        method: "POST",
+        body: JSON.stringify({
+          name: "Newsletter Subscriber",
+          email: email,
+          company: null,
+          twitterHandle: null,
+          message: "Subscribed to newsletter"
+        } as InsertTrialRequest),
+        headers: { "Content-Type": "application/json" },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to subscribe to newsletter");
+      }
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Successfully Subscribed!",
+        description: "You'll receive the latest insights on AI-powered Twitter automation.",
+      });
+      setEmail("");
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "Failed to subscribe to newsletter. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) {
+      toast({
+        title: "Error",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+    newsletterSubscription.mutate(email.trim());
   };
 
   return (
@@ -23,21 +77,29 @@ export default function Footer() {
             <p className="text-slate-400 mb-6">
               Get the latest insights on AI-powered Twitter automation and expert engagement strategies delivered to your inbox.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <div className="flex-1 relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-slate-400" />
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
+                  required
                   className="w-full pl-10 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent"
                   data-testid="newsletter-email"
                 />
               </div>
-              <button className="px-6 py-3 bg-brand-purple hover:bg-brand-purple-dark text-white font-semibold rounded-lg transition-colors flex items-center justify-center" data-testid="newsletter-subscribe">
-                Subscribe
+              <button 
+                type="submit"
+                disabled={newsletterSubscription.isPending}
+                className="px-6 py-3 bg-brand-purple hover:bg-brand-purple-dark disabled:opacity-50 text-white font-semibold rounded-lg transition-colors flex items-center justify-center" 
+                data-testid="newsletter-subscribe"
+              >
+                {newsletterSubscription.isPending ? "Subscribing..." : "Subscribe"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -135,17 +197,6 @@ export default function Footer() {
               <p data-testid="footer-copyright">
                 &copy; 2025 EngageBot. All rights reserved.
               </p>
-              <div className="flex items-center space-x-6 text-sm">
-                <Link href="#" className="hover:text-white transition-colors" data-testid="footer-privacy">
-                  Privacy Policy
-                </Link>
-                <Link href="#" className="hover:text-white transition-colors" data-testid="footer-terms">
-                  Terms of Service
-                </Link>
-                <Link href="#" className="hover:text-white transition-colors" data-testid="footer-contact">
-                  Contact
-                </Link>
-              </div>
             </div>
             <div className="flex items-center space-x-2 text-slate-400 text-sm">
               <span>Powered by AI</span>

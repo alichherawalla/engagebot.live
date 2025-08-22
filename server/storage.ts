@@ -353,6 +353,8 @@ Based on meaningful metrics:
       id,
       createdAt: now,
       updatedAt: now,
+      imageUrl: insertPost.imageUrl || null,
+      published: insertPost.published || null
     };
     this.blogPosts.set(id, post);
     return post;
@@ -384,6 +386,9 @@ Based on meaningful metrics:
       ...insertRequest,
       id,
       createdAt: now,
+      company: insertRequest.company || null,
+      twitterHandle: insertRequest.twitterHandle || null,
+      message: insertRequest.message || null
     };
     this.trialRequests.set(id, request);
     return request;
@@ -391,7 +396,7 @@ Based on meaningful metrics:
 
   async getAllTrialRequests(): Promise<TrialRequest[]> {
     return Array.from(this.trialRequests.values()).sort(
-      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      (a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime()
     );
   }
 }
@@ -454,7 +459,7 @@ export class DatabaseStorage implements IStorage {
         ilike(blogPosts.title, `%${query}%`),
         ilike(blogPosts.excerpt, `%${query}%`),
         ilike(blogPosts.content, `%${query}%`)
-      ));
+      )!);
     }
 
     const whereCondition = conditions.length > 1 ? and(...conditions) : conditions[0];
@@ -462,7 +467,7 @@ export class DatabaseStorage implements IStorage {
     const posts = await db
       .select()
       .from(blogPosts)
-      .where(whereCondition)
+      .where(whereCondition!)
       .orderBy(desc(blogPosts.createdAt));
 
     return posts.map(post => ({

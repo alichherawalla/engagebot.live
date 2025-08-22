@@ -18,8 +18,8 @@ export async function generateMetaTags(url: string, storage: IStorage): Promise<
     description: "Transform Twitter engagement with AI automation. EngageBot uses Claude 4.0 to discover conversations, generate authentic responses, and build meaningful relationships at scale.",
     ogTitle: "EngageBot - AI-Powered Twitter Engagement Automation",
     ogDescription: "Transform Twitter engagement with AI automation. EngageBot uses Claude 4.0 to discover conversations, generate authentic responses, and build meaningful relationships at scale.",
-    ogImage: "https://engagebot.replit.app/favicon.png",
-    ogUrl: "https://engagebot.replit.app",
+    ogImage: "https://engagebot.live/favicon.png",
+    ogUrl: "https://engagebot.live",
     twitterCard: "summary_large_image",
     keywords: "Twitter automation, AI engagement, social media automation, Twitter bot, engagement automation, social media marketing"
   };
@@ -37,8 +37,8 @@ export async function generateMetaTags(url: string, storage: IStorage): Promise<
             description: post.excerpt || post.content.substring(0, 160).replace(/#/g, '').trim() + "...",
             ogTitle: post.title,
             ogDescription: post.excerpt || post.content.substring(0, 160).replace(/#/g, '').trim() + "...",
-            ogImage: post.imageUrl ? `https://engagebot.replit.app${post.imageUrl.replace('@assets/', '/assets/')}` : defaultMeta.ogImage,
-            ogUrl: `https://engagebot.replit.app/blog/${slug}`,
+            ogImage: post.imageUrl ? `https://engagebot.live${post.imageUrl}` : defaultMeta.ogImage,
+            ogUrl: `https://engagebot.live/blog/${slug}`,
             twitterCard: "summary_large_image",
             keywords: getKeywordsFromContent(post.title, post.content, post.category)
           };
@@ -55,7 +55,7 @@ export async function generateMetaTags(url: string, storage: IStorage): Promise<
       ogTitle: "Twitter Automation Blog | EngageBot Insights & Strategies", 
       ogDescription: "Discover advanced Twitter automation strategies, AI engagement techniques, and social media growth tactics. Expert insights for scaling your Twitter presence with EngageBot.",
       ogImage: defaultMeta.ogImage,
-      ogUrl: "https://engagebot.replit.app/blog",
+      ogUrl: "https://engagebot.live/blog",
       twitterCard: "summary_large_image",
       keywords: "Twitter automation blog, social media strategies, AI engagement, Twitter growth, automation techniques, social media marketing"
     };
@@ -69,7 +69,7 @@ export async function generateMetaTags(url: string, storage: IStorage): Promise<
       ogTitle: "EngageBot Pricing - AI Twitter Automation Plans",
       ogDescription: "Choose the perfect EngageBot plan for your Twitter automation needs. Flexible pricing for individuals, teams, and enterprises. Start your free trial today.",
       ogImage: defaultMeta.ogImage,
-      ogUrl: "https://engagebot.replit.app/pricing",
+      ogUrl: "https://engagebot.live/pricing",
       twitterCard: "summary_large_image", 
       keywords: "EngageBot pricing, Twitter automation pricing, social media automation cost, AI engagement plans"
     };
