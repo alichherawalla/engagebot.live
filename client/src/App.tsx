@@ -9,6 +9,10 @@ import Blog from "@/pages/blog";
 import BlogPost from "@/pages/blog-post";
 import Admin from "@/pages/admin";
 import TrialRequests from "@/pages/trial-requests";
+import VsBuffer from "@/pages/vs-buffer";
+import VsPlannable from "@/pages/vs-plannable";
+import VsSproutSocial from "@/pages/vs-sproutsocial";
+import VsHypefury from "@/pages/vs-hypefury";
 
 function Router() {
   return (
@@ -16,6 +20,10 @@ function Router() {
       <Route path="/" component={Landing} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/vs-buffer" component={VsBuffer} />
+      <Route path="/vs-plannable" component={VsPlannable} />
+      <Route path="/vs-sproutsocial" component={VsSproutSocial} />
+      <Route path="/vs-hypefury" component={VsHypefury} />
       <Route path="/admin" component={Admin} />
       <Route path="/trial-requests" component={TrialRequests} />
       <Route component={NotFound} />
