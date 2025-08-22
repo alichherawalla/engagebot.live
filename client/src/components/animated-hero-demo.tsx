@@ -181,7 +181,7 @@ export default function AnimatedHeroDemo() {
                 </div>
 
                 {/* Content */}
-                <div className="p-2 sm:p-3 lg:p-4 pb-16 sm:pb-20 max-h-[280px] sm:max-h-[320px] lg:max-h-[380px] overflow-y-auto">
+                <div className="p-2 sm:p-3 lg:p-4 max-h-[200px] sm:max-h-[250px] lg:max-h-[300px] overflow-y-auto">
                   {currentStep === 0 && (
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
@@ -235,17 +235,17 @@ export default function AnimatedHeroDemo() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: i * 0.3 }}
-                          className="bg-gradient-to-r from-slate-50 to-emerald-50 border border-emerald-200 rounded-xl p-4 space-y-3 hover:shadow-md transition-shadow"
+                          className="bg-gradient-to-r from-slate-50 to-emerald-50 border border-emerald-200 rounded-lg p-2 sm:p-3 space-y-2 hover:shadow-md transition-shadow"
                         >
                           <div className="flex items-start justify-between">
                             <div className="flex items-center space-x-2">
-                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                                 <span className="text-white text-xs font-bold">
                                   {conv.user.charAt(0).toUpperCase()}
                                 </span>
                               </div>
                               <div>
-                                <span className="font-semibold text-sm text-slate-800">@{conv.user}</span>
+                                <span className="font-semibold text-xs sm:text-sm text-slate-800">@{conv.user}</span>
                                 <div className="text-xs text-slate-500">{conv.audience}</div>
                               </div>
                             </div>
@@ -259,8 +259,8 @@ export default function AnimatedHeroDemo() {
                               </div>
                             </div>
                           </div>
-                          <div className="bg-white rounded-lg p-3 border-l-4 border-emerald-400">
-                            <p className="text-sm text-slate-700 leading-relaxed">{conv.snippet}</p>
+                          <div className="bg-white rounded-lg p-2 sm:p-3 border-l-4 border-emerald-400">
+                            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{conv.snippet}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -286,27 +286,27 @@ export default function AnimatedHeroDemo() {
                         <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Live</span>
                       </div>
                       
-                      <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-4 rounded-xl border border-slate-200">
-                        <div className="flex items-center space-x-2 mb-3">
-                          <div className="w-6 h-6 bg-slate-400 rounded-full flex items-center justify-center">
+                      <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-2 sm:p-3 rounded-lg border border-slate-200">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <div className="w-5 h-5 sm:w-6 sm:h-6 bg-slate-400 rounded-full flex items-center justify-center">
                             <span className="text-white text-xs">S</span>
                           </div>
                           <span className="text-xs font-medium text-slate-600">@StartupFounder2024</span>
                         </div>
-                        <p className="text-sm text-slate-700 leading-relaxed bg-white p-3 rounded-lg border-l-4 border-slate-300">
+                        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed bg-white p-2 rounded-lg border-l-4 border-slate-300">
                           {currentDemo.mockup.originalPost}
                         </p>
                       </div>
                       
                       <div className="relative">
                         <div className="absolute left-4 top-0 w-0.5 h-4 bg-gradient-to-b from-slate-300 to-blue-500"></div>
-                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-200 ml-8">
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 sm:p-3 rounded-lg border border-blue-200 ml-4 sm:ml-8">
                           <div className="flex items-center justify-between mb-3">
                             <div className="flex items-center space-x-2">
-                              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                                 <span className="text-white text-xs font-bold">You</span>
                               </div>
-                              <span className="text-xs font-medium text-blue-700">AI-Generated Response</span>
+                              <span className="text-xs font-medium text-blue-700">AI Response</span>
                             </div>
                             <div className="flex items-center space-x-1">
                               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -314,31 +314,31 @@ export default function AnimatedHeroDemo() {
                             </div>
                           </div>
                           <motion.div 
-                            className="bg-white p-3 rounded-lg border-l-4 border-blue-500"
+                            className="bg-white p-2 rounded-lg border-l-4 border-blue-500"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.5 }}
                           >
-                            <p className="text-sm text-slate-800 leading-relaxed">
+                            <p className="text-xs sm:text-sm text-slate-800 leading-relaxed line-clamp-4">
                               {currentDemo.mockup.aiResponse}
                             </p>
                           </motion.div>
                         </div>
                       </div>
                       
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="grid grid-cols-3 gap-1 sm:gap-2">
                         {Object.entries(currentDemo.mockup.metrics || {}).map(([key, value]) => (
                           <motion.div 
                             key={key} 
-                            className="bg-gradient-to-br from-green-50 to-emerald-50 p-3 rounded-lg border border-green-200 text-center"
+                            className="bg-gradient-to-br from-green-50 to-emerald-50 p-1 sm:p-2 rounded border border-green-200 text-center"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.7 }}
                           >
-                            <div className="text-xs text-slate-600 font-medium capitalize mb-1">
-                              {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
+                            <div className="text-xs text-slate-600 font-medium capitalize">
+                              {key.replace(/([A-Z])/g, ' $1').toLowerCase().substring(0, 8)}
                             </div>
-                            <div className="text-lg font-bold text-green-600">{value}%</div>
+                            <div className="text-sm sm:text-lg font-bold text-green-600">{value}%</div>
                           </motion.div>
                         ))}
                       </div>
