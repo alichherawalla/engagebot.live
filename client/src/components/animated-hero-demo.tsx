@@ -7,26 +7,26 @@ export default function AnimatedHeroDemo() {
 
   const demoSteps = [
     {
-      title: "AI Learns Your Voice",
-      description: "Upload expertise, AI learns your style",
+      title: "Learn Voice",
+      description: "AI learns style",
       icon: Brain,
       color: "from-purple-500 to-blue-600"
     },
     {
-      title: "Finds Conversations",
-      description: "Discovers relevant engagement opportunities",
+      title: "Find Posts",
+      description: "Find opportunities",
       icon: Target,
       color: "from-emerald-500 to-teal-600"
     },
     {
-      title: "Generates Responses", 
-      description: "Creates authentic expert replies",
+      title: "Make Replies", 
+      description: "Create responses",
       icon: MessageSquare,
       color: "from-blue-500 to-indigo-600"
     },
     {
-      title: "Drives Growth",
-      description: "Quality engagement builds real followers",
+      title: "Grow Fans",
+      description: "Build followers",
       icon: TrendingUp,
       color: "from-green-500 to-emerald-600"
     }
