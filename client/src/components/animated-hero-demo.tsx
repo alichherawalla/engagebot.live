@@ -44,7 +44,7 @@ export default function AnimatedHeroDemo() {
   const Icon = currentDemo.icon;
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-2xl">
+    <div className="relative w-full h-[500px] sm:h-[450px] lg:h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-2xl">
       {/* Animated Background */}
       <div className={`absolute inset-0 bg-gradient-to-br ${currentDemo.color} opacity-20 transition-all duration-1000`} />
       
@@ -63,7 +63,7 @@ export default function AnimatedHeroDemo() {
       {/* Main Content */}
       <div className="flex flex-col lg:flex-row h-full">
         {/* Left Side - Description */}
-        <div className="flex-1 p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
+        <div className="flex-none lg:flex-1 px-4 pt-12 pb-2 sm:p-6 lg:p-8 flex flex-col justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -74,14 +74,14 @@ export default function AnimatedHeroDemo() {
               className="text-white"
             >
               <div className="flex items-center mb-4">
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${currentDemo.color} mr-4`}>
-                  <Icon className="h-6 w-6 text-white" />
+                <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${currentDemo.color} mr-3 sm:mr-4`}>
+                  <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">{currentDemo.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold">{currentDemo.title}</h3>
                 </div>
               </div>
-              <p className="text-blue-100 text-lg leading-relaxed">
+              <p className="text-blue-100 text-sm sm:text-lg leading-relaxed">
                 {currentDemo.description}
               </p>
             </motion.div>
@@ -89,7 +89,7 @@ export default function AnimatedHeroDemo() {
         </div>
 
         {/* Right Side - Simple Visual */}
-        <div className="flex-1 p-6 lg:p-12 flex items-center justify-center">
+        <div className="flex-none lg:flex-1 px-4 pb-16 pt-2 sm:p-6 lg:p-12 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -101,41 +101,41 @@ export default function AnimatedHeroDemo() {
             >
               {currentStep === 0 && (
                 <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <Zap className="h-12 w-12 text-white" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mx-auto mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Zap className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Instant Optimization</h3>
-                  <p className="text-blue-200">Transforms your content strategy in real-time</p>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">Instant Optimization</h3>
+                  <p className="text-blue-200 text-sm sm:text-base">Transforms your content strategy in real-time</p>
                 </>
               )}
               
               {currentStep === 1 && (
                 <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-violet-500 to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <Users className="h-12 w-12 text-white" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mx-auto mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Users className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Audience Expansion</h3>
-                  <p className="text-blue-200">Connects you with qualified prospects automatically</p>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">Audience Expansion</h3>
+                  <p className="text-blue-200 text-sm sm:text-base">Connects you with qualified prospects automatically</p>
                 </>
               )}
               
               {currentStep === 2 && (
                 <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-rose-500 to-pink-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <BarChart className="h-12 w-12 text-white" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mx-auto mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-2xl">
+                    <BarChart className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Conversion Analytics</h3>
-                  <p className="text-blue-200">Tracks response effectiveness and lead quality</p>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">Conversion Analytics</h3>
+                  <p className="text-blue-200 text-sm sm:text-base">Tracks response effectiveness and lead quality</p>
                 </>
               )}
               
               {currentStep === 3 && (
                 <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <Rocket className="h-12 w-12 text-white" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mx-auto mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Rocket className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Revenue Acceleration</h3>
-                  <p className="text-blue-200">Scales your business through automated engagement</p>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">Revenue Acceleration</h3>
+                  <p className="text-blue-200 text-sm sm:text-base">Scales your business through automated engagement</p>
                 </>
               )}
             </motion.div>
@@ -144,8 +144,8 @@ export default function AnimatedHeroDemo() {
       </div>
 
       {/* Bottom Tagline */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-        <div className="text-white/80 text-sm text-center">
+      <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2">
+        <div className="text-white/80 text-xs sm:text-sm text-center px-4">
           <span className="font-medium">Real engagement.</span> Real growth. Real results.
         </div>
       </div>
