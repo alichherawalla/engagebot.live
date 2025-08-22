@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Brain, MessageSquare, Target, BarChart3 } from "lucide-react";
+import { Brain, MessageSquare, Target, TrendingUp } from "lucide-react";
 
 export default function AnimatedHeroDemo() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -8,26 +8,26 @@ export default function AnimatedHeroDemo() {
   const demoSteps = [
     {
       title: "Content Analysis",
-      description: "Train communication model",
+      description: "AI learns your unique voice and communication style",
       icon: Brain,
       color: "from-purple-500 to-blue-600"
     },
     {
-      title: "Thread Discovery",
-      description: "Identify relevant discussions",
+      title: "Smart Discovery",
+      description: "Identifies high-value conversations in your industry",
       icon: Target,
       color: "from-emerald-500 to-teal-600"
     },
     {
-      title: "Response Generation", 
-      description: "Draft professional replies",
+      title: "Professional Responses", 
+      description: "Generates authentic, engaging replies that convert",
       icon: MessageSquare,
       color: "from-blue-500 to-indigo-600"
     },
     {
-      title: "Growth Analytics",
-      description: "Track audience expansion",
-      icon: BarChart3,
+      title: "Performance Tracking",
+      description: "Delivers measurable growth and ROI insights",
+      icon: TrendingUp,
       color: "from-green-500 to-emerald-600"
     }
   ];
@@ -105,7 +105,7 @@ export default function AnimatedHeroDemo() {
                     <Brain className="h-12 w-12 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">Content Analysis</h3>
-                  <p className="text-blue-200">System learns writing patterns</p>
+                  <p className="text-blue-200">AI learns your unique voice and communication style</p>
                 </>
               )}
               
@@ -114,8 +114,8 @@ export default function AnimatedHeroDemo() {
                   <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl">
                     <Target className="h-12 w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Thread Discovery</h3>
-                  <p className="text-blue-200">Identifies relevant discussions</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Smart Discovery</h3>
+                  <p className="text-blue-200">Identifies high-value conversations in your industry</p>
                 </>
               )}
               
@@ -124,8 +124,8 @@ export default function AnimatedHeroDemo() {
                   <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center shadow-2xl">
                     <MessageSquare className="h-12 w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Response Generation</h3>
-                  <p className="text-blue-200">Drafts professional replies</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Professional Responses</h3>
+                  <p className="text-blue-200">Generates authentic, engaging replies that convert</p>
                 </>
               )}
               
@@ -135,7 +135,7 @@ export default function AnimatedHeroDemo() {
                     <TrendingUp className="h-12 w-12 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">Performance Tracking</h3>
-                  <p className="text-blue-200">Monitors platform metrics</p>
+                  <p className="text-blue-200">Delivers measurable growth and ROI insights</p>
                 </>
               )}
             </motion.div>
