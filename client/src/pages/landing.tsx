@@ -68,15 +68,6 @@ export default function Landing() {
               >
                 Get Early Access
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-brand-blue px-8 py-4 text-lg font-semibold"
-                data-testid="final-cta-secondary"
-              >
-                <Play className="h-5 w-5 mr-2" />
-                Schedule Demo
-              </Button>
             </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-blue-200 text-sm">

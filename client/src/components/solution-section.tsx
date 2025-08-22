@@ -6,25 +6,25 @@ export default function SolutionSection() {
       number: "1",
       title: "Upload Your Knowledge Base",
       description: "Import PDFs, documents, and URLs containing your expertise. EngageBot learns your knowledge to create contextual responses.",
-      color: "brand-blue"
+      colorClass: "bg-brand-blue"
     },
     {
       number: "2",
       title: "Train Your Brand Voice",
       description: "AI analyzes your communication style and tone from existing content to maintain authentic engagement.",
-      color: "brand-green"
+      colorClass: "bg-brand-green"
     },
     {
       number: "3",
       title: "Discover Relevant Conversations",
       description: "Smart discovery engine finds engagement opportunities in conversations where your expertise adds value.",
-      color: "brand-purple"
+      colorClass: "bg-purple-600"
     },
     {
       number: "4",
       title: "Generate Authentic Responses",
       description: "Claude 4.0 creates personalized, expert-level responses that sound like you while building meaningful relationships.",
-      color: "brand-blue-light"
+      colorClass: "bg-blue-500"
     }
   ];
 
@@ -72,7 +72,7 @@ export default function SolutionSection() {
                 viewport={{ once: true }}
                 data-testid={`solution-step-${index}`}
               >
-                <div className={`w-12 h-12 bg-${step.color} rounded-full flex items-center justify-center flex-shrink-0`}>
+                <div className={`w-12 h-12 ${step.colorClass} rounded-full flex items-center justify-center flex-shrink-0`}>
                   <span className="text-white font-bold text-lg">{step.number}</span>
                 </div>
                 <div>

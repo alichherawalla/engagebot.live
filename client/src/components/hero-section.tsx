@@ -43,7 +43,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex justify-center sm:justify-start">
               <Button
                 size="lg"
                 onClick={() => setIsTrialModalOpen(true)}
@@ -51,15 +51,6 @@ export default function HeroSection() {
                 data-testid="hero-cta-primary"
               >
                 Get Early Access
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-brand-blue px-8 py-4 text-lg font-semibold"
-                data-testid="hero-cta-secondary"
-              >
-                <Play className="h-5 w-5 mr-2" />
-                Watch Demo
               </Button>
             </div>
             
