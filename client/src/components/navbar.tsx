@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import TrialRequestModal from "@/components/trial-request-modal";
-import logoPath from "@assets/engagebot-logo.png";
+import logoPath from "@assets/engagebot-logo-circular.png";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -38,7 +38,7 @@ export default function Navbar() {
               <img 
                 src={logoPath} 
                 alt="EngageBot Logo" 
-                className="h-12 w-auto"
+                className="h-12 w-12 rounded-full object-cover"
               />
             </Link>
             <div className="hidden md:block ml-10">

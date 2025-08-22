@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import type { BlogPost } from "@shared/schema";
-import logoPath from "@assets/engagebot-logo.png";
+import logoPath from "@assets/engagebot-logo-circular.png";
 
 export default function BlogSection() {
   const { data: posts, isLoading } = useQuery<BlogPost[]>({
@@ -29,7 +29,7 @@ export default function BlogSection() {
             <img 
               src={logoPath} 
               alt="EngageBot Logo" 
-              className="h-10 w-auto"
+              className="h-10 w-10 rounded-full object-cover"
             />
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
               Blog

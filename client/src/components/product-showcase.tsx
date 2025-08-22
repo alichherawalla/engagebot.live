@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/engagebot-logo.png";
+import logoPath from "@assets/engagebot-logo-circular.png";
 
 export default function ProductShowcase() {
   const [activeTab, setActiveTab] = useState(0);
@@ -143,7 +143,7 @@ export default function ProductShowcase() {
             <img 
               src={logoPath} 
               alt="EngageBot Logo" 
-              className="h-12 w-auto"
+              className="h-12 w-12 rounded-full object-cover"
             />
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
               in Action
