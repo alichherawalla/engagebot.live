@@ -88,143 +88,56 @@ export default function AnimatedHeroDemo() {
           </AnimatePresence>
         </div>
 
-        {/* Right Side - Professional Dashboard */}
+        {/* Right Side - Simple Visual */}
         <div className="flex-1 p-6 lg:p-12 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="w-full max-w-sm"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.2 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl">
-                {currentStep === 0 && (
-                  <>
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
-                        <Brain className="h-5 w-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-semibold">Content Analysis</h3>
-                        <p className="text-white/60 text-sm">Training in progress</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-white/80">Documents analyzed</span>
-                        <span className="text-green-400">12 complete</span>
-                      </div>
-                      <div className="w-full bg-white/20 rounded-full h-2">
-                        <motion.div 
-                          className="bg-gradient-to-r from-purple-400 to-blue-400 h-2 rounded-full"
-                          initial={{ width: "0%" }}
-                          animate={{ width: "100%" }}
-                          transition={{ duration: 2 }}
-                        />
-                      </div>
-                      <p className="text-white/90 text-sm">Model confidence: 95%</p>
-                    </div>
-                  </>
-                )}
-                
-                {currentStep === 1 && (
-                  <>
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center mr-3">
-                        <Target className="h-5 w-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-semibold">Thread Discovery</h3>
-                        <p className="text-white/60 text-sm">Monitoring platform</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-white/80">Threads identified</span>
-                        <span className="text-emerald-400">24 today</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-white/80">Relevance score</span>
-                        <span className="text-emerald-400">8.2/10</span>
-                      </div>
-                      <div className="bg-white/10 rounded-lg p-3">
-                        <p className="text-white/90 text-sm">"Looking for SaaS growth strategies..."</p>
-                        <div className="flex items-center mt-2">
-                          <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></div>
-                          <span className="text-white/60 text-xs">Within expertise area</span>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
-                
-                {currentStep === 2 && (
-                  <>
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
-                        <MessageSquare className="h-5 w-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-semibold">Response Draft</h3>
-                        <p className="text-white/60 text-sm">Ready for review</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-white/10 rounded-lg p-3">
-                        <p className="text-white/90 text-sm">"Product-led growth combined with strategic content marketing typically yields..."</p>
-                      </div>
-                      <div className="grid grid-cols-3 gap-2 text-center">
-                        <div>
-                          <p className="text-blue-400 font-semibold">96%</p>
-                          <p className="text-white/60 text-xs">Style</p>
-                        </div>
-                        <div>
-                          <p className="text-blue-400 font-semibold">94%</p>
-                          <p className="text-white/60 text-xs">Domain</p>
-                        </div>
-                        <div>
-                          <p className="text-blue-400 font-semibold">92%</p>
-                          <p className="text-white/60 text-xs">Quality</p>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
-                
-                {currentStep === 3 && (
-                  <>
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
-                        <TrendingUp className="h-5 w-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-semibold">Performance Report</h3>
-                        <p className="text-white/60 text-sm">30-day summary</p>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-white/10 rounded-lg p-3 text-center">
-                        <p className="text-green-400 font-bold text-lg">+347</p>
-                        <p className="text-white/60 text-xs">Connections</p>
-                      </div>
-                      <div className="bg-white/10 rounded-lg p-3 text-center">
-                        <p className="text-green-400 font-bold text-lg">8.4%</p>
-                        <p className="text-white/60 text-xs">Engagement</p>
-                      </div>
-                      <div className="bg-white/10 rounded-lg p-3 text-center">
-                        <p className="text-green-400 font-bold text-lg">+12</p>
-                        <p className="text-white/60 text-xs">Inquiries</p>
-                      </div>
-                      <div className="bg-white/10 rounded-lg p-3 text-center">
-                        <p className="text-green-400 font-bold text-lg">+28</p>
-                        <p className="text-white/60 text-xs">Mentions</p>
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
+              {currentStep === 0 && (
+                <>
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Brain className="h-12 w-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Content Analysis</h3>
+                  <p className="text-blue-200">System learns writing patterns</p>
+                </>
+              )}
+              
+              {currentStep === 1 && (
+                <>
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Target className="h-12 w-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Thread Discovery</h3>
+                  <p className="text-blue-200">Identifies relevant discussions</p>
+                </>
+              )}
+              
+              {currentStep === 2 && (
+                <>
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <MessageSquare className="h-12 w-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Response Generation</h3>
+                  <p className="text-blue-200">Drafts professional replies</p>
+                </>
+              )}
+              
+              {currentStep === 3 && (
+                <>
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <TrendingUp className="h-12 w-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Performance Tracking</h3>
+                  <p className="text-blue-200">Monitors platform metrics</p>
+                </>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
