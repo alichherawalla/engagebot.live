@@ -216,7 +216,7 @@ export default function AnimatedHeroDemo() {
                   )}
 
                   {currentStep === 1 && (
-                    <div className="space-y-4">
+                    <div className="space-y-4 pr-2 sm:pr-4">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center space-x-2">
                           <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -279,7 +279,7 @@ export default function AnimatedHeroDemo() {
                   )}
 
                   {currentStep === 2 && (
-                    <div className="space-y-4">
+                    <div className="space-y-4 pr-2 sm:pr-4">
                       <div className="flex items-center space-x-2 mb-3">
                         <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                         <span className="text-sm font-semibold text-slate-700">AI Response Generator</span>
