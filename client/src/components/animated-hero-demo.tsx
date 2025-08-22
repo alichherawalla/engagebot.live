@@ -9,50 +9,38 @@ export default function AnimatedHeroDemo() {
     {
       id: "voice-training",
       title: "AI Learns Your Voice",
-      subtitle: "Upload your expertise content",
-      description: "EngageBot analyzes your writing style, expertise, and brand voice",
+      subtitle: "Upload your expertise",
+      description: "Analyzes your writing style and expertise to maintain authenticity",
       icon: Brain,
       mockup: {
-        title: "Voice Training Complete",
+        title: "Voice Training",
         progress: 100,
         insights: [
-          "Professional, data-driven tone detected",
-          "SaaS & growth expertise identified", 
-          "Conversational style preferences learned"
-        ],
-        stats: {
-          documents: 12,
-          voiceScore: 95
-        }
+          "Professional tone detected",
+          "SaaS expertise identified", 
+          "Voice preferences learned"
+        ]
       },
       color: "from-purple-500 to-blue-600"
     },
     {
       id: "conversation-discovery", 
-      title: "Discovers Relevant Conversations",
-      subtitle: "AI finds high-value engagement opportunities",
-      description: "Smart algorithms identify conversations where your expertise adds real value",
+      title: "Finds Conversations",
+      subtitle: "Discovers opportunities",
+      description: "Identifies relevant conversations where your expertise adds value",
       icon: Target,
       mockup: {
-        title: "Fresh Opportunities Found",
+        title: "Opportunities",
         conversations: [
           {
-            user: "StartupFounder2024",
-            snippet: "Struggling with customer acquisition for our B2B SaaS...",
-            relevance: 94,
-            audience: "2.3K followers"
+            user: "StartupFounder",
+            snippet: "Need help with customer acquisition...",
+            score: 94
           },
           {
-            user: "GrowthHacker_Pro", 
-            snippet: "What metrics should early-stage startups focus on?",
-            relevance: 89,
-            audience: "8.1K followers"
-          },
-          {
-            user: "TechEntrepreneur",
-            snippet: "Looking for proven frameworks to scale our team...",
-            relevance: 87,
-            audience: "5.7K followers"
+            user: "GrowthHacker", 
+            snippet: "What metrics should startups track?",
+            score: 89
           }
         ]
       },
@@ -60,38 +48,36 @@ export default function AnimatedHeroDemo() {
     },
     {
       id: "ai-responses",
-      title: "Generates Perfect Responses", 
-      subtitle: "AI crafts authentic, expert responses",
-      description: "Every response showcases your expertise while maintaining your authentic voice",
+      title: "Generates Responses", 
+      subtitle: "Creates expert replies",
+      description: "Crafts authentic responses that showcase your expertise",
       icon: MessageSquare,
       mockup: {
-        title: "AI Response Generator",
-        originalPost: "Struggling with customer acquisition for our B2B SaaS startup. Any proven frameworks?",
-        aiResponse: "Consider implementing a product-led growth strategy combined with content marketing. Start with these 3 steps:\n\n1. Identify your ideal customer profile (ICP)\n2. Create educational content that solves their pain points\n3. Build in-product virality loops\n\nI've seen startups increase CAC efficiency by 40% using this approach. Happy to share specific tactics if helpful!",
+        title: "AI Response",
+        originalPost: "Need help with customer acquisition...",
+        aiResponse: "Consider product-led growth with content marketing. Start with:\n\n1. Define your ICP\n2. Create educational content\n3. Build virality loops\n\nSeen 40% CAC improvement with this approach.",
         metrics: {
-          brandAlignment: 96,
-          expertiseScore: 94,
-          engagementPredict: 92
+          voice: 96,
+          expertise: 94,
+          engagement: 92
         }
       },
       color: "from-blue-500 to-indigo-600"
     },
     {
       id: "growth-results",
-      title: "Builds Your Brand Authority",
-      subtitle: "Engagement drives real follower growth", 
-      description: "Quality engagement with relevant audience builds genuine followers and business opportunities",
+      title: "Drives Growth",
+      subtitle: "Real results", 
+      description: "Quality engagement builds followers and business opportunities",
       icon: TrendingUp,
       mockup: {
-        title: "Growth Analytics",
-        timeframe: "Last 30 Days",
+        title: "30-Day Results",
         metrics: [
-          { label: "Quality Followers", value: "+347", change: "+23%" },
-          { label: "Engagement Rate", value: "8.4%", change: "+156%" },
-          { label: "Business Inquiries", value: "12", change: "+400%" },
-          { label: "Brand Mentions", value: "28", change: "+180%" }
-        ],
-        insight: "Your expertise-driven engagement is building real business relationships"
+          { label: "Followers", value: "+347" },
+          { label: "Engagement", value: "8.4%" },
+          { label: "Inquiries", value: "+12" },
+          { label: "Mentions", value: "+28" }
+        ]
       },
       color: "from-green-500 to-emerald-600"
     }
@@ -216,129 +202,92 @@ export default function AnimatedHeroDemo() {
                   )}
 
                   {currentStep === 1 && (
-                    <div className="space-y-4 pr-2 sm:pr-4">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                          <span className="text-sm font-semibold text-slate-700">
-                            {currentDemo.mockup.conversations?.length} Live Opportunities
-                          </span>
-                        </div>
-                        <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full font-medium">
-                          Real-time
+                    <div className="space-y-3">
+                      <div className="text-center mb-3">
+                        <span className="text-sm font-semibold text-slate-700">
+                          {currentDemo.mockup.conversations?.length} Live Opportunities
                         </span>
                       </div>
                       
-                      {currentDemo.mockup.conversations?.slice(0, 2).map((conv, i) => (
+                      {currentDemo.mockup.conversations?.map((conv, i) => (
                         <motion.div
                           key={i}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: i * 0.3 }}
-                          className="bg-gradient-to-r from-slate-50 to-emerald-50 border border-emerald-200 rounded-lg p-2 sm:p-3 space-y-2 hover:shadow-md transition-shadow"
+                          className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-2"
                         >
-                          <div className="flex items-start justify-between">
+                          <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-2">
-                              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                              <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
                                 <span className="text-white text-xs font-bold">
-                                  {conv.user.charAt(0).toUpperCase()}
+                                  {conv.user.charAt(0)}
                                 </span>
                               </div>
-                              <div>
-                                <span className="font-semibold text-xs sm:text-sm text-slate-800">@{conv.user}</span>
-                                <div className="text-xs text-slate-500">{conv.audience}</div>
-                              </div>
+                              <span className="font-medium text-sm text-slate-800">@{conv.user}</span>
                             </div>
-                            <div className="flex flex-col items-end space-y-1">
-                              <span className="text-xs bg-gradient-to-r from-green-500 to-emerald-600 text-white px-2 py-1 rounded-full font-medium">
-                                {conv.relevance}% match
-                              </span>
-                              <div className="flex items-center space-x-1">
-                                <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                                <span className="text-xs text-slate-500">Hot</span>
-                              </div>
-                            </div>
+                            <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">
+                              {conv.score}% match
+                            </span>
                           </div>
-                          <div className="bg-white rounded-lg p-2 sm:p-3 border-l-4 border-emerald-400">
-                            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{conv.snippet}</p>
+                          <div className="bg-white rounded p-2 border-l-4 border-emerald-400">
+                            <p className="text-sm text-slate-700">{conv.snippet}</p>
                           </div>
                         </motion.div>
                       ))}
-                      
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.8 }}
-                        className="text-center"
-                      >
-                        <span className="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
-                          +{(currentDemo.mockup.conversations?.length || 3) - 2} more opportunities
-                        </span>
-                      </motion.div>
                     </div>
                   )}
 
                   {currentStep === 2 && (
-                    <div className="space-y-4 pr-2 sm:pr-4">
-                      <div className="flex items-center space-x-2 mb-3">
-                        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm font-semibold text-slate-700">AI Response Generator</span>
-                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Live</span>
+                    <div className="space-y-3">
+                      <div className="text-center mb-3">
+                        <span className="text-sm font-semibold text-slate-700">AI Response</span>
                       </div>
                       
-                      <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-2 sm:p-3 rounded-lg border border-slate-200">
+                      <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
                         <div className="flex items-center space-x-2 mb-2">
-                          <div className="w-5 h-5 sm:w-6 sm:h-6 bg-slate-400 rounded-full flex items-center justify-center">
-                            <span className="text-white text-xs">S</span>
+                          <div className="w-5 h-5 bg-slate-400 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs">Q</span>
                           </div>
-                          <span className="text-xs font-medium text-slate-600">@StartupFounder2024</span>
+                          <span className="text-xs font-medium text-slate-600">Question</span>
                         </div>
-                        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed bg-white p-2 rounded-lg border-l-4 border-slate-300">
+                        <p className="text-sm text-slate-700 bg-white p-2 rounded border-l-4 border-slate-300">
                           {currentDemo.mockup.originalPost}
                         </p>
                       </div>
                       
-                      <div className="relative">
-                        <div className="absolute left-4 top-0 w-0.5 h-4 bg-gradient-to-b from-slate-300 to-blue-500"></div>
-                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 sm:p-3 rounded-lg border border-blue-200 ml-4 sm:ml-8">
-                          <div className="flex items-center justify-between mb-3">
-                            <div className="flex items-center space-x-2">
-                              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                                <span className="text-white text-xs font-bold">You</span>
-                              </div>
-                              <span className="text-xs font-medium text-blue-700">AI Response</span>
-                            </div>
-                            <div className="flex items-center space-x-1">
-                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                              <span className="text-xs text-green-600 font-medium">Optimized</span>
-                            </div>
+                      <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">You</span>
                           </div>
-                          <motion.div 
-                            className="bg-white p-2 rounded-lg border-l-4 border-blue-500"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.5 }}
-                          >
-                            <p className="text-xs sm:text-sm text-slate-800 leading-relaxed line-clamp-4">
-                              {currentDemo.mockup.aiResponse}
-                            </p>
-                          </motion.div>
+                          <span className="text-xs font-medium text-blue-700">Your AI Response</span>
                         </div>
+                        <motion.div 
+                          className="bg-white p-2 rounded border-l-4 border-blue-500"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.5 }}
+                        >
+                          <p className="text-sm text-slate-800">
+                            {currentDemo.mockup.aiResponse}
+                          </p>
+                        </motion.div>
                       </div>
                       
-                      <div className="grid grid-cols-3 gap-1 sm:gap-2">
+                      <div className="grid grid-cols-3 gap-2">
                         {Object.entries(currentDemo.mockup.metrics || {}).map(([key, value]) => (
                           <motion.div 
                             key={key} 
-                            className="bg-gradient-to-br from-green-50 to-emerald-50 p-1 sm:p-2 rounded border border-green-200 text-center"
+                            className="bg-green-50 p-2 rounded border border-green-200 text-center"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.7 }}
                           >
                             <div className="text-xs text-slate-600 font-medium capitalize">
-                              {key.replace(/([A-Z])/g, ' $1').toLowerCase().substring(0, 8)}
+                              {key}
                             </div>
-                            <div className="text-sm sm:text-lg font-bold text-green-600">{value}%</div>
+                            <div className="text-lg font-bold text-green-600">{value}%</div>
                           </motion.div>
                         ))}
                       </div>
@@ -347,26 +296,22 @@ export default function AnimatedHeroDemo() {
 
                   {currentStep === 3 && (
                     <div className="space-y-4">
-                      <div className="text-center mb-4">
-                        <div className="text-lg font-bold text-slate-900">
-                          {currentDemo.mockup.timeframe}
-                        </div>
-                        <div className="text-sm text-slate-600">
-                          {currentDemo.mockup.insight}
+                      <div className="text-center mb-3">
+                        <div className="text-sm font-bold text-slate-900">
+                          {currentDemo.mockup.title}
                         </div>
                       </div>
-                      <div className="grid grid-cols-2 gap-3">
-                        {(currentDemo.mockup.metrics as any[])?.map((metric: any, i: number) => (
+                      <div className="grid grid-cols-2 gap-2">
+                        {currentDemo.mockup.metrics?.map((metric: any, i: number) => (
                           <motion.div
                             key={i}
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-gradient-to-br from-green-50 to-emerald-50 p-3 rounded-lg border border-green-200"
+                            className="bg-green-50 p-3 rounded-lg border border-green-200 text-center"
                           >
                             <div className="text-xs text-slate-600">{metric.label}</div>
                             <div className="font-bold text-lg text-slate-900">{metric.value}</div>
-                            <div className="text-xs text-green-600 font-medium">{metric.change}</div>
                           </motion.div>
                         ))}
                       </div>
