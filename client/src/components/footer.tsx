@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Twitter, Linkedin, Github } from "lucide-react";
-import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755862414193.png";
+import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755863825599.png";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white py-16" data-testid="footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div data-testid="footer-brand">
             <img 
               src={logoPath} 
@@ -58,76 +58,9 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-api">
-                  API
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-integrations">
-                  Integrations
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <div data-testid="footer-resources">
-            <h4 className="font-semibold text-white mb-4">Resources</h4>
-            <ul className="space-y-2 text-slate-400">
-              <li>
                 <Link href="/blog" className="hover:text-white transition-colors" data-testid="footer-blog">
                   Blog
                 </Link>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-docs">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-help">
-                  Help Center
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-case-studies">
-                  Case Studies
-                </a>
-              </li>
-              <li>
-                <Link href="/admin" className="hover:text-white transition-colors" data-testid="footer-admin">
-                  Blog CMS
-                </Link>
-              </li>
-              <li>
-                <Link href="/trial-requests" className="hover:text-white transition-colors" data-testid="footer-trial-requests">
-                  Trial Requests
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          <div data-testid="footer-company">
-            <h4 className="font-semibold text-white mb-4">Company</h4>
-            <ul className="space-y-2 text-slate-400">
-              <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-about">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-careers">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-privacy">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors" data-testid="footer-terms">
-                  Terms
-                </a>
               </li>
             </ul>
           </div>

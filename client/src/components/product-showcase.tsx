@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755862414193.png";
+import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755863825599.png";
 
 export default function ProductShowcase() {
   const [activeTab, setActiveTab] = useState(0);
@@ -406,7 +406,7 @@ export default function ProductShowcase() {
             Ready to experience the full power of AI-driven Twitter engagement?
           </p>
           <Button className="bg-brand-green hover:bg-brand-green-light text-white px-8 py-3 text-lg font-semibold">
-            Start Your Free Trial
+            Get Early Access
           </Button>
         </motion.div>
       </div>
