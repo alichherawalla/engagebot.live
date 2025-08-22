@@ -6,6 +6,7 @@ import SolutionSection from "@/components/solution-section";
 import FeaturesSection from "@/components/features-section";
 import SocialProofSection from "@/components/social-proof-section";
 import PricingSection from "@/components/pricing-section";
+import ProductShowcase from "@/components/product-showcase";
 import BlogSection from "@/components/blog-section";
 import FAQSection from "@/components/faq-section";
 import Footer from "@/components/footer";
@@ -35,6 +36,7 @@ export default function Landing() {
       <ProblemSection />
       <SolutionSection />
       <FeaturesSection />
+      <ProductShowcase />
       <SocialProofSection />
       <PricingSection />
       <BlogSection />
