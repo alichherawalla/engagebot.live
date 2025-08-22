@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755862414193.png";
 
 export default function ProductShowcase() {
   const [activeTab, setActiveTab] = useState(0);
@@ -135,9 +136,19 @@ export default function ProductShowcase() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6" data-testid="showcase-title">
-            See <span className="text-brand-blue">EngageBot</span> in Action
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900" data-testid="showcase-title">
+              See
+            </h2>
+            <img 
+              src={logoPath} 
+              alt="EngageBot Logo" 
+              className="h-12 w-auto"
+            />
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+              in Action
+            </h2>
+          </div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto" data-testid="showcase-description">
             Explore the powerful dashboard and features that successful entrepreneurs use to scale their Twitter presence.
           </p>

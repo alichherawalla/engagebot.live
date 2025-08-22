@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import type { BlogPost } from "@shared/schema";
+import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755862414193.png";
 
 export default function BlogSection() {
   const { data: posts, isLoading } = useQuery<BlogPost[]>({
@@ -21,9 +22,19 @@ export default function BlogSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6" data-testid="blog-title">
-            Latest from the <span className="text-brand-purple">EngageBot</span> Blog
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900" data-testid="blog-title">
+              Latest from the
+            </h2>
+            <img 
+              src={logoPath} 
+              alt="EngageBot Logo" 
+              className="h-10 w-auto"
+            />
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+              Blog
+            </h2>
+          </div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto" data-testid="blog-description">
             Tips, strategies, and insights for mastering Twitter engagement and AI automation.
           </p>
@@ -78,11 +89,11 @@ export default function BlogSection() {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-500" data-testid={`blog-post-date-${index}`}>
-                      {new Date(post.createdAt).toLocaleDateString('en-US', {
+                      {post.createdAt ? new Date(post.createdAt).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric'
-                      })}
+                      }) : 'No date'}
                     </span>
                     <Link
                       href={`/blog/${post.slug}`}

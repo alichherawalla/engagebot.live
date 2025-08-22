@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Twitter, Linkedin, Github } from "lucide-react";
+import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755862414193.png";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -14,7 +15,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div data-testid="footer-brand">
-            <h3 className="text-2xl font-bold text-white mb-4">EngageBot</h3>
+            <img 
+              src={logoPath} 
+              alt="EngageBot Logo" 
+              className="h-10 w-auto mb-4"
+            />
             <p className="text-slate-400 mb-4">
               Transform your expertise into automated Twitter engagement with AI-powered authenticity.
             </p>

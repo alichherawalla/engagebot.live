@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import TrialRequestModal from "@/components/trial-request-modal";
+import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755862414193.png";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -34,7 +35,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0" data-testid="logo-link">
-              <h1 className="text-2xl font-bold text-brand-blue">EngageBot</h1>
+              <img 
+                src={logoPath} 
+                alt="EngageBot Logo" 
+                className="h-8 w-auto"
+              />
             </Link>
             <div className="hidden md:block ml-10">
               <div className="flex items-baseline space-x-8">
