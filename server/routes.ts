@@ -15,6 +15,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.get("/api/blog/posts/search", async (req, res) => {
+    try {
+      const { q: query, category } = req.query;
+      const posts = await storage.searchBlogPosts(
+        query ? String(query) : undefined,
+        category ? String(category) : undefined
+      );
+      res.json(posts);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to search blog posts" });
+    }
+  });
+
+  app.get("/api/blog/categories", async (req, res) => {
+    try {
+      const categories = await storage.getBlogPostCategories();
+      res.json(categories);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch blog categories" });
+    }
+  });
+
   app.get("/api/blog/posts/all", async (req, res) => {
     try {
       const posts = await storage.getAllBlogPosts();

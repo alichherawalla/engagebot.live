@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { marked } from "marked";
 import SEOHead from "@/components/seo-head";
 import Navbar from "@/components/navbar";
@@ -114,8 +115,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="p-8 md:p-12">
                 <div className="flex items-center space-x-4 text-sm text-slate-500 mb-6">
                   <div className="flex items-center" data-testid="blog-post-category">
-                    <Tag className="h-4 w-4 mr-1" />
-                    <span className="text-brand-blue font-medium">{post.category}</span>
+                    <Tag className="h-4 w-4 mr-2" />
+                    <Badge 
+                      variant="secondary" 
+                      className="bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20 text-sm px-3 py-1 font-medium"
+                    >
+                      {post.category}
+                    </Badge>
                   </div>
                   <div className="flex items-center" data-testid="blog-post-date">
                     <Calendar className="h-4 w-4 mr-1" />
@@ -171,9 +177,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                       />
                     )}
                     <div className="p-4">
-                      <span className="text-xs text-brand-blue font-medium" data-testid={`related-post-category-${index}`}>
+                      <Badge 
+                        variant="secondary" 
+                        className="bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20 text-xs px-2 py-1 font-medium mb-2"
+                        data-testid={`related-post-category-${index}`}
+                      >
                         {relatedPost.category}
-                      </span>
+                      </Badge>
                       <h3 className="font-semibold text-slate-900 mt-1 mb-2 line-clamp-2" data-testid={`related-post-title-${index}`}>
                         {relatedPost.title}
                       </h3>

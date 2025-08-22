@@ -1,17 +1,59 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { useState, useEffect, useMemo } from "react";
 import SEOHead from "@/components/seo-head";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { Search, Filter, X } from "lucide-react";
 import type { BlogPost } from "@shared/schema";
 
 export default function Blog() {
-  const { data: posts, isLoading, error } = useQuery<BlogPost[]>({
-    queryKey: ['/api/blog/posts'],
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
+
+  // Debounce search query
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedQuery(searchQuery);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
+  // Fetch categories
+  const { data: categories } = useQuery<string[]>({
+    queryKey: ['/api/blog/categories'],
   });
+
+  // Fetch posts based on search and filter
+  const { data: posts, isLoading, error } = useQuery<BlogPost[]>({
+    queryKey: ['/api/blog/posts/search', debouncedQuery, selectedCategory === "all" ? undefined : selectedCategory],
+    queryFn: async () => {
+      const params = new URLSearchParams();
+      if (debouncedQuery) params.append('q', debouncedQuery);
+      if (selectedCategory !== "all") params.append('category', selectedCategory);
+      
+      const response = await fetch(`/api/blog/posts/search?${params}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch posts');
+      }
+      return response.json();
+    },
+    enabled: true,
+  });
+
+  const handleClearFilters = () => {
+    setSearchQuery("");
+    setSelectedCategory("all");
+  };
+
+  const hasActiveFilters = searchQuery || selectedCategory !== "all";
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -35,9 +77,62 @@ export default function Blog() {
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6" data-testid="blog-page-title">
               EngageBot <span className="text-brand-purple">Blog</span>
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto" data-testid="blog-page-description">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8" data-testid="blog-page-description">
               Expert insights, strategies, and tips for mastering Twitter engagement with AI automation.
             </p>
+
+            {/* Search and Filter Section */}
+            <motion.div
+              className="max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
+                  <Input
+                    type="text"
+                    placeholder="Search blog posts..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10 h-12 bg-white border-slate-200 focus:border-brand-blue focus:ring-brand-blue"
+                    data-testid="blog-search-input"
+                  />
+                </div>
+                <div className="relative sm:min-w-[200px]">
+                  <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none z-10" />
+                  <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                    <SelectTrigger className="pl-10 h-12 bg-white border-slate-200 focus:border-brand-blue focus:ring-brand-blue" data-testid="blog-category-filter">
+                      <SelectValue placeholder="Filter by category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All Categories</SelectItem>
+                      {categories?.map((category) => (
+                        <SelectItem key={category} value={category}>
+                          {category}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              {hasActiveFilters && (
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={handleClearFilters}
+                    className="text-slate-600 hover:text-slate-900"
+                    data-testid="blog-clear-filters"
+                  >
+                    <X className="h-4 w-4 mr-1" />
+                    Clear Filters
+                  </Button>
+                </div>
+              )}
+            </motion.div>
           </motion.div>
 
           {isLoading ? (
@@ -82,10 +177,14 @@ export default function Blog() {
                     />
                   )}
                   <div className="p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-brand-blue font-medium" data-testid={`blog-post-card-category-${index}`}>
+                    <div className="flex items-center justify-between mb-3">
+                      <Badge 
+                        variant="secondary" 
+                        className="bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20 text-xs px-3 py-1 font-medium"
+                        data-testid={`blog-post-card-category-${index}`}
+                      >
                         {post.category}
-                      </span>
+                      </Badge>
                       <span className="text-sm text-slate-500" data-testid={`blog-post-card-date-${index}`}>
                         {post.createdAt ? new Date(post.createdAt).toLocaleDateString('en-US', {
                           year: 'numeric',
@@ -118,8 +217,27 @@ export default function Blog() {
             </div>
           ) : (
             <div className="text-center py-12" data-testid="blog-empty">
-              <p className="text-slate-600 mb-4">No blog posts available at the moment.</p>
-              <p className="text-slate-500">Check back soon for the latest insights on Twitter automation!</p>
+              {hasActiveFilters ? (
+                <>
+                  <p className="text-slate-600 mb-4">
+                    No blog posts found matching your search{selectedCategory !== "all" && ` in "${selectedCategory}"`}.
+                  </p>
+                  <p className="text-slate-500 mb-4">Try adjusting your search terms or filters.</p>
+                  <Button
+                    variant="outline"
+                    onClick={handleClearFilters}
+                    data-testid="blog-empty-clear-filters"
+                  >
+                    <X className="h-4 w-4 mr-2" />
+                    Clear All Filters
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <p className="text-slate-600 mb-4">No blog posts available at the moment.</p>
+                  <p className="text-slate-500">Check back soon for the latest insights on Twitter automation!</p>
+                </>
+              )}
             </div>
           )}
         </div>

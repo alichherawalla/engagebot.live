@@ -1,7 +1,7 @@
 import { type User, type InsertUser, type BlogPost, type InsertBlogPost, type UpdateBlogPost, type TrialRequest, type InsertTrialRequest, users, blogPosts, trialRequests } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, ilike, or, and } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -11,6 +11,8 @@ export interface IStorage {
   // Blog post methods
   getAllBlogPosts(): Promise<BlogPost[]>;
   getPublishedBlogPosts(): Promise<BlogPost[]>;
+  searchBlogPosts(query?: string, category?: string): Promise<BlogPost[]>;
+  getBlogPostCategories(): Promise<string[]>;
   getBlogPost(id: string): Promise<BlogPost | undefined>;
   getBlogPostBySlug(slug: string): Promise<BlogPost | undefined>;
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
@@ -295,14 +297,44 @@ Based on meaningful metrics:
 
   async getAllBlogPosts(): Promise<BlogPost[]> {
     return Array.from(this.blogPosts.values()).sort(
-      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      (a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime()
     );
   }
 
   async getPublishedBlogPosts(): Promise<BlogPost[]> {
     return Array.from(this.blogPosts.values())
       .filter(post => post.published)
-      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      .sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
+  }
+
+  async searchBlogPosts(query?: string, category?: string): Promise<BlogPost[]> {
+    let posts = Array.from(this.blogPosts.values()).filter(post => post.published);
+
+    if (category) {
+      posts = posts.filter(post => post.category.toLowerCase() === category.toLowerCase());
+    }
+
+    if (query) {
+      const searchTerm = query.toLowerCase();
+      posts = posts.filter(post => 
+        post.title.toLowerCase().includes(searchTerm) ||
+        post.excerpt.toLowerCase().includes(searchTerm) ||
+        post.content.toLowerCase().includes(searchTerm) ||
+        post.category.toLowerCase().includes(searchTerm)
+      );
+    }
+
+    return posts.sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
+  }
+
+  async getBlogPostCategories(): Promise<string[]> {
+    const categories = new Set<string>();
+    Array.from(this.blogPosts.values()).forEach(post => {
+      if (post.published) {
+        categories.add(post.category);
+      }
+    });
+    return Array.from(categories).sort();
   }
 
   async getBlogPost(id: string): Promise<BlogPost | undefined> {
@@ -391,7 +423,7 @@ export class DatabaseStorage implements IStorage {
       createdAt: post.createdAt || new Date(),
       updatedAt: post.updatedAt || new Date(),
       published: post.published || false,
-      imageUrl: post.imageUrl || undefined
+      imageUrl: post.imageUrl || null
     }));
   }
 
@@ -406,8 +438,50 @@ export class DatabaseStorage implements IStorage {
       createdAt: post.createdAt || new Date(),
       updatedAt: post.updatedAt || new Date(),
       published: post.published || false,
-      imageUrl: post.imageUrl || undefined
+      imageUrl: post.imageUrl || null
     }));
+  }
+
+  async searchBlogPosts(query?: string, category?: string): Promise<BlogPost[]> {
+    const conditions = [eq(blogPosts.published, true)];
+
+    if (category) {
+      conditions.push(eq(blogPosts.category, category));
+    }
+
+    if (query) {
+      conditions.push(or(
+        ilike(blogPosts.title, `%${query}%`),
+        ilike(blogPosts.excerpt, `%${query}%`),
+        ilike(blogPosts.content, `%${query}%`)
+      ));
+    }
+
+    const whereCondition = conditions.length > 1 ? and(...conditions) : conditions[0];
+
+    const posts = await db
+      .select()
+      .from(blogPosts)
+      .where(whereCondition)
+      .orderBy(desc(blogPosts.createdAt));
+
+    return posts.map(post => ({
+      ...post,
+      createdAt: post.createdAt || new Date(),
+      updatedAt: post.updatedAt || new Date(),
+      published: post.published || false,
+      imageUrl: post.imageUrl || null
+    }));
+  }
+
+  async getBlogPostCategories(): Promise<string[]> {
+    const result = await db
+      .selectDistinct({ category: blogPosts.category })
+      .from(blogPosts)
+      .where(eq(blogPosts.published, true))
+      .orderBy(blogPosts.category);
+    
+    return result.map(row => row.category);
   }
 
   async getBlogPost(id: string): Promise<BlogPost | undefined> {
@@ -418,7 +492,7 @@ export class DatabaseStorage implements IStorage {
       createdAt: post.createdAt || new Date(),
       updatedAt: post.updatedAt || new Date(),
       published: post.published || false,
-      imageUrl: post.imageUrl || undefined
+      imageUrl: post.imageUrl || null
     };
   }
 
@@ -430,7 +504,7 @@ export class DatabaseStorage implements IStorage {
       createdAt: post.createdAt || new Date(),
       updatedAt: post.updatedAt || new Date(),
       published: post.published || false,
-      imageUrl: post.imageUrl || undefined
+      imageUrl: post.imageUrl || null
     };
   }
 
@@ -448,7 +522,7 @@ export class DatabaseStorage implements IStorage {
       createdAt: post.createdAt || new Date(),
       updatedAt: post.updatedAt || new Date(),
       published: post.published || false,
-      imageUrl: post.imageUrl || undefined
+      imageUrl: post.imageUrl || null
     };
   }
 
@@ -468,7 +542,7 @@ export class DatabaseStorage implements IStorage {
       createdAt: post.createdAt || new Date(),
       updatedAt: post.updatedAt || new Date(),
       published: post.published || false,
-      imageUrl: post.imageUrl || undefined
+      imageUrl: post.imageUrl || null
     };
   }
 
@@ -490,9 +564,9 @@ export class DatabaseStorage implements IStorage {
     return {
       ...request,
       createdAt: request.createdAt || new Date(),
-      company: request.company || undefined,
-      twitterHandle: request.twitterHandle || undefined,
-      message: request.message || undefined
+      company: request.company || null,
+      twitterHandle: request.twitterHandle || null,
+      message: request.message || null
     };
   }
 
@@ -501,9 +575,9 @@ export class DatabaseStorage implements IStorage {
     return requests.map(request => ({
       ...request,
       createdAt: request.createdAt || new Date(),
-      company: request.company || undefined,
-      twitterHandle: request.twitterHandle || undefined,
-      message: request.message || undefined
+      company: request.company || null,
+      twitterHandle: request.twitterHandle || null,
+      message: request.message || null
     }));
   }
 }
