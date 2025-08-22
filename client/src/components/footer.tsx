@@ -68,13 +68,8 @@ export default function Footer() {
         
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center" data-testid="footer-bottom">
           <p className="text-slate-400" data-testid="footer-copyright">
-            &copy; 2023 EngageBot. All rights reserved.
+            &copy; 2025 EngageBot. All rights reserved.
           </p>
-          <div className="flex items-center space-x-6 mt-4 md:mt-0">
-            <span className="text-slate-400 text-sm" data-testid="footer-powered">
-              Powered by Claude 4.0
-            </span>
-          </div>
         </div>
       </div>
     </footer>
