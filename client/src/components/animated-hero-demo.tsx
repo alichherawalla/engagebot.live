@@ -88,7 +88,7 @@ export default function AnimatedHeroDemo() {
           </AnimatePresence>
         </div>
 
-        {/* Right Side - Simple Visual */}
+        {/* Right Side - Unique Content */}
         <div className="flex-1 p-6 lg:p-12 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
@@ -99,15 +99,45 @@ export default function AnimatedHeroDemo() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <div className={`w-24 h-24 mx-auto mb-6 bg-gradient-to-br ${currentDemo.color} rounded-3xl flex items-center justify-center shadow-2xl`}>
-                <Icon className="h-12 w-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2">
-                {currentDemo.title}
-              </h3>
-              <p className="text-blue-200">
-                {currentDemo.description}
-              </p>
+              {currentStep === 0 && (
+                <>
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Brain className="h-12 w-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Training AI</h3>
+                  <p className="text-blue-200">Upload docs & tweets</p>
+                </>
+              )}
+              
+              {currentStep === 1 && (
+                <>
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Target className="h-12 w-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Finding Posts</h3>
+                  <p className="text-blue-200">Scan for opportunities</p>
+                </>
+              )}
+              
+              {currentStep === 2 && (
+                <>
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <MessageSquare className="h-12 w-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Writing Reply</h3>
+                  <p className="text-blue-200">Expert response ready</p>
+                </>
+              )}
+              
+              {currentStep === 3 && (
+                <>
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <TrendingUp className="h-12 w-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Growing Fast</h3>
+                  <p className="text-blue-200">+347 new followers</p>
+                </>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
