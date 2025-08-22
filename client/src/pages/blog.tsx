@@ -87,11 +87,11 @@ export default function Blog() {
                         {post.category}
                       </span>
                       <span className="text-sm text-slate-500" data-testid={`blog-post-card-date-${index}`}>
-                        {new Date(post.createdAt).toLocaleDateString('en-US', {
+                        {post.createdAt ? new Date(post.createdAt).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'short',
                           day: 'numeric'
-                        })}
+                        }) : 'No date'}
                       </span>
                     </div>
                     <h2 className="text-lg font-semibold text-slate-900 mb-3 line-clamp-2" data-testid={`blog-post-card-title-${index}`}>

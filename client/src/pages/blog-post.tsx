@@ -120,11 +120,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   <div className="flex items-center" data-testid="blog-post-date">
                     <Calendar className="h-4 w-4 mr-1" />
                     <span>
-                      {new Date(post.createdAt).toLocaleDateString('en-US', {
+                      {post.createdAt ? new Date(post.createdAt).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
-                      })}
+                      }) : 'No date'}
                     </span>
                   </div>
                   <div className="flex items-center" data-testid="blog-post-author">
