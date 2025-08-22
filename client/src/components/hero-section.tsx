@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Play } from "lucide-react";
 import { motion } from "framer-motion";
 import TrialRequestModal from "@/components/trial-request-modal";
+import AnimatedHeroDemo from "@/components/animated-hero-demo";
 
 export default function HeroSection() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
@@ -73,12 +74,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <img
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="AI-powered automation technology dashboard"
-              className="rounded-2xl shadow-2xl w-full h-auto"
-              data-testid="hero-image"
-            />
+            <AnimatedHeroDemo />
           </motion.div>
         </div>
       </div>
