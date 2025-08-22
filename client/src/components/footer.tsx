@@ -98,6 +98,11 @@ export default function Footer() {
                   Blog CMS
                 </Link>
               </li>
+              <li>
+                <Link href="/trial-requests" className="hover:text-white transition-colors" data-testid="footer-trial-requests">
+                  Trial Requests
+                </Link>
+              </li>
             </ul>
           </div>
           

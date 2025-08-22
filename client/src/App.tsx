@@ -8,6 +8,7 @@ import Landing from "@/pages/landing";
 import Blog from "@/pages/blog";
 import BlogPost from "@/pages/blog-post";
 import Admin from "@/pages/admin";
+import TrialRequests from "@/pages/trial-requests";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/admin" component={Admin} />
+      <Route path="/trial-requests" component={TrialRequests} />
       <Route component={NotFound} />
     </Switch>
   );

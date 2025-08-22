@@ -1,5 +1,7 @@
-import { type User, type InsertUser, type BlogPost, type InsertBlogPost, type UpdateBlogPost, type TrialRequest, type InsertTrialRequest } from "@shared/schema";
+import { type User, type InsertUser, type BlogPost, type InsertBlogPost, type UpdateBlogPost, type TrialRequest, type InsertTrialRequest, users, blogPosts, trialRequests } from "@shared/schema";
 import { randomUUID } from "crypto";
+import { db } from "./db";
+import { eq, desc } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -20,6 +22,7 @@ export interface IStorage {
   getAllTrialRequests(): Promise<TrialRequest[]>;
 }
 
+// Fallback in-memory storage implementation
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private blogPosts: Map<string, BlogPost>;
@@ -361,4 +364,148 @@ Based on meaningful metrics:
   }
 }
 
-export const storage = new MemStorage();
+// Database storage implementation
+export class DatabaseStorage implements IStorage {
+  async getUser(id: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  async getAllBlogPosts(): Promise<BlogPost[]> {
+    const posts = await db.select().from(blogPosts).orderBy(desc(blogPosts.createdAt));
+    return posts.map(post => ({
+      ...post,
+      createdAt: post.createdAt || new Date(),
+      updatedAt: post.updatedAt || new Date(),
+      published: post.published || false,
+      imageUrl: post.imageUrl || undefined
+    }));
+  }
+
+  async getPublishedBlogPosts(): Promise<BlogPost[]> {
+    const posts = await db
+      .select()
+      .from(blogPosts)
+      .where(eq(blogPosts.published, true))
+      .orderBy(desc(blogPosts.createdAt));
+    return posts.map(post => ({
+      ...post,
+      createdAt: post.createdAt || new Date(),
+      updatedAt: post.updatedAt || new Date(),
+      published: post.published || false,
+      imageUrl: post.imageUrl || undefined
+    }));
+  }
+
+  async getBlogPost(id: string): Promise<BlogPost | undefined> {
+    const [post] = await db.select().from(blogPosts).where(eq(blogPosts.id, id));
+    if (!post) return undefined;
+    return {
+      ...post,
+      createdAt: post.createdAt || new Date(),
+      updatedAt: post.updatedAt || new Date(),
+      published: post.published || false,
+      imageUrl: post.imageUrl || undefined
+    };
+  }
+
+  async getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
+    const [post] = await db.select().from(blogPosts).where(eq(blogPosts.slug, slug));
+    if (!post) return undefined;
+    return {
+      ...post,
+      createdAt: post.createdAt || new Date(),
+      updatedAt: post.updatedAt || new Date(),
+      published: post.published || false,
+      imageUrl: post.imageUrl || undefined
+    };
+  }
+
+  async createBlogPost(insertPost: InsertBlogPost): Promise<BlogPost> {
+    const [post] = await db
+      .insert(blogPosts)
+      .values({
+        ...insertPost,
+        imageUrl: insertPost.imageUrl || null,
+        published: insertPost.published || false
+      })
+      .returning();
+    return {
+      ...post,
+      createdAt: post.createdAt || new Date(),
+      updatedAt: post.updatedAt || new Date(),
+      published: post.published || false,
+      imageUrl: post.imageUrl || undefined
+    };
+  }
+
+  async updateBlogPost(id: string, updatePost: UpdateBlogPost): Promise<BlogPost | undefined> {
+    const [post] = await db
+      .update(blogPosts)
+      .set({ 
+        ...updatePost, 
+        updatedAt: new Date(),
+        imageUrl: updatePost.imageUrl !== undefined ? updatePost.imageUrl || null : undefined
+      })
+      .where(eq(blogPosts.id, id))
+      .returning();
+    if (!post) return undefined;
+    return {
+      ...post,
+      createdAt: post.createdAt || new Date(),
+      updatedAt: post.updatedAt || new Date(),
+      published: post.published || false,
+      imageUrl: post.imageUrl || undefined
+    };
+  }
+
+  async deleteBlogPost(id: string): Promise<boolean> {
+    const result = await db.delete(blogPosts).where(eq(blogPosts.id, id));
+    return (result.rowCount || 0) > 0;
+  }
+
+  async createTrialRequest(insertRequest: InsertTrialRequest): Promise<TrialRequest> {
+    const [request] = await db
+      .insert(trialRequests)
+      .values({
+        ...insertRequest,
+        company: insertRequest.company || null,
+        twitterHandle: insertRequest.twitterHandle || null,
+        message: insertRequest.message || null
+      })
+      .returning();
+    return {
+      ...request,
+      createdAt: request.createdAt || new Date(),
+      company: request.company || undefined,
+      twitterHandle: request.twitterHandle || undefined,
+      message: request.message || undefined
+    };
+  }
+
+  async getAllTrialRequests(): Promise<TrialRequest[]> {
+    const requests = await db.select().from(trialRequests).orderBy(desc(trialRequests.createdAt));
+    return requests.map(request => ({
+      ...request,
+      createdAt: request.createdAt || new Date(),
+      company: request.company || undefined,
+      twitterHandle: request.twitterHandle || undefined,
+      message: request.message || undefined
+    }));
+  }
+}
+
+export const storage = new DatabaseStorage();
