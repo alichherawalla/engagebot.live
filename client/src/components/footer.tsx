@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Twitter, Linkedin, Github } from "lucide-react";
-import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755863825599.png";
+import logoPath from "@assets/engagebot-logo.png";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {

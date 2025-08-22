@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import type { BlogPost } from "@shared/schema";
-import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755863825599.png";
+import logoPath from "@assets/engagebot-logo.png";
 
 export default function BlogSection() {
   const { data: posts, isLoading } = useQuery<BlogPost[]>({

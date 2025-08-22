@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import TrialRequestModal from "@/components/trial-request-modal";
-import logoPath from "@assets/ChatGPT Image Aug 22, 2025, 05_03_22 PM_1755863825599.png";
+import logoPath from "@assets/engagebot-logo.png";
 
 export default function Navbar() {
   const [location] = useLocation();
