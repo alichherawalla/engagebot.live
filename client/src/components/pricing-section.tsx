@@ -19,7 +19,7 @@ export default function PricingSection() {
         "Basic analytics",
         "Email support"
       ],
-      cta: "Start Free Trial",
+      cta: "Get Early Access",
       popular: false
     },
     {
@@ -34,7 +34,7 @@ export default function PricingSection() {
         "Advanced analytics & insights",
         "Priority support"
       ],
-      cta: "Start Free Trial",
+      cta: "Get Early Access",
       popular: true
     },
     {
@@ -68,7 +68,7 @@ export default function PricingSection() {
             Simple, <span className="text-brand-green">Transparent</span> Pricing
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto" data-testid="pricing-description">
-            Choose the plan that fits your engagement needs. Start with our 14-day free trial.
+            Choose the plan that fits your engagement needs. Get early access today.
           </p>
         </motion.div>
 
@@ -148,7 +148,7 @@ export default function PricingSection() {
           viewport={{ once: true }}
         >
           <p className="text-slate-600" data-testid="pricing-disclaimer">
-            All plans include a 14-day free trial. No credit card required.
+            All plans include early access. No credit card required.
           </p>
         </motion.div>
       </div>

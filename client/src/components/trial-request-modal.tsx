@@ -47,7 +47,7 @@ export default function TrialRequestModal({ isOpen, onClose }: TrialRequestModal
       setIsSubmitted(true);
       toast({
         title: "Trial Request Sent!",
-        description: "We'll get back to you within 24 hours to set up your free trial.",
+        description: "We'll get back to you within 24 hours to set up your early access.",
       });
     },
     onError: () => {
@@ -77,7 +77,7 @@ export default function TrialRequestModal({ isOpen, onClose }: TrialRequestModal
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold text-slate-900" data-testid="modal-title">
-              {isSubmitted ? "Request Sent!" : "Start Your Free Trial"}
+              {isSubmitted ? "Request Sent!" : "Get Early Access"}
             </h2>
             <Button
               variant="ghost"
@@ -98,7 +98,7 @@ export default function TrialRequestModal({ isOpen, onClose }: TrialRequestModal
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">Thank you!</h3>
               <p className="text-slate-600 mb-6">
-                We've received your trial request. Our team will contact you within 24 hours to set up your free 14-day trial.
+                We've received your early access request. Our team will contact you within 24 hours to set up your access.
               </p>
               <Button onClick={handleClose} className="bg-brand-green hover:bg-brand-green-light text-white">
                 Got it

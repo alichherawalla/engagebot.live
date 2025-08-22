@@ -56,7 +56,7 @@ export default function Landing() {
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto" data-testid="final-cta-description">
               Join successful entrepreneurs who've saved 15+ hours weekly while building authentic relationships on Twitter. 
-              Start your free trial today—no credit card required.
+              Get early access today—no credit card required.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -66,7 +66,7 @@ export default function Landing() {
                 className="bg-brand-green hover:bg-brand-green-light text-white px-8 py-4 text-lg font-semibold shadow-lg"
                 data-testid="final-cta-primary"
               >
-                Start 14-Day Free Trial
+                Get Early Access
               </Button>
               <Button
                 size="lg"
@@ -82,7 +82,7 @@ export default function Landing() {
             <div className="flex items-center justify-center space-x-8 text-blue-200 text-sm">
               <div className="flex items-center space-x-2" data-testid="final-cta-benefit-1">
                 <CheckCircle className="h-4 w-4" />
-                <span>14-day free trial</span>
+                <span>Early access</span>
               </div>
               <div className="flex items-center space-x-2" data-testid="final-cta-benefit-2">
                 <CheckCircle className="h-4 w-4" />

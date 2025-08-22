@@ -90,7 +90,7 @@ export default function Navbar() {
               className="bg-brand-blue hover:bg-brand-blue-light text-white font-medium"
               data-testid="nav-cta"
             >
-              Start Free Trial
+              Get Early Access
             </Button>
             
             {/* Mobile menu button */}

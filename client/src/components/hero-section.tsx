@@ -49,7 +49,7 @@ export default function HeroSection() {
                 className="bg-brand-green hover:bg-brand-green-light text-white px-8 py-4 text-lg font-semibold shadow-lg"
                 data-testid="hero-cta-primary"
               >
-                Start 14-Day Free Trial
+                Get Early Access
               </Button>
               <Button
                 size="lg"
