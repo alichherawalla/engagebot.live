@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Brain, MessageSquare, Target, TrendingUp } from "lucide-react";
+import { Brain, MessageSquare, Target, TrendingUp, Zap, Users, BarChart, Rocket } from "lucide-react";
 
 export default function AnimatedHeroDemo() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -101,41 +101,41 @@ export default function AnimatedHeroDemo() {
             >
               {currentStep === 0 && (
                 <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <Brain className="h-12 w-12 text-white" />
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Zap className="h-12 w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Content Analysis</h3>
-                  <p className="text-blue-200">AI learns your unique voice and communication style</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Instant Optimization</h3>
+                  <p className="text-blue-200">Transforms your content strategy in real-time</p>
                 </>
               )}
               
               {currentStep === 1 && (
                 <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <Target className="h-12 w-12 text-white" />
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-violet-500 to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Users className="h-12 w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Smart Discovery</h3>
-                  <p className="text-blue-200">Identifies high-value conversations in your industry</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Audience Expansion</h3>
+                  <p className="text-blue-200">Connects you with qualified prospects automatically</p>
                 </>
               )}
               
               {currentStep === 2 && (
                 <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <MessageSquare className="h-12 w-12 text-white" />
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-rose-500 to-pink-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <BarChart className="h-12 w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Professional Responses</h3>
-                  <p className="text-blue-200">Generates authentic, engaging replies that convert</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Conversion Analytics</h3>
+                  <p className="text-blue-200">Tracks response effectiveness and lead quality</p>
                 </>
               )}
               
               {currentStep === 3 && (
                 <>
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <TrendingUp className="h-12 w-12 text-white" />
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                    <Rocket className="h-12 w-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Performance Tracking</h3>
-                  <p className="text-blue-200">Delivers measurable growth and ROI insights</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Revenue Acceleration</h3>
+                  <p className="text-blue-200">Scales your business through automated engagement</p>
                 </>
               )}
             </motion.div>
