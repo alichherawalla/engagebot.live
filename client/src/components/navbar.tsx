@@ -78,13 +78,6 @@ export default function Navbar() {
           </div>
           
           <div className="flex items-center space-x-4">
-            <a
-              href="#"
-              className="text-slate-600 hover:text-brand-blue transition-colors hidden sm:block"
-              data-testid="nav-signin"
-            >
-              Sign In
-            </a>
             <Button
               onClick={() => setIsTrialModalOpen(true)}
               className="bg-brand-blue hover:bg-brand-blue-light text-white font-medium"
@@ -140,13 +133,6 @@ export default function Navbar() {
               >
                 FAQ
               </button>
-              <a
-                href="#"
-                className="text-slate-600 hover:text-brand-blue transition-colors"
-                data-testid="mobile-nav-signin"
-              >
-                Sign In
-              </a>
             </div>
           </div>
         )}
