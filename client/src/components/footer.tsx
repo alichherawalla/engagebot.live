@@ -88,6 +88,11 @@ export default function Footer() {
                   Case Studies
                 </a>
               </li>
+              <li>
+                <Link href="/admin" className="hover:text-white transition-colors" data-testid="footer-admin">
+                  Blog CMS
+                </Link>
+              </li>
             </ul>
           </div>
           
