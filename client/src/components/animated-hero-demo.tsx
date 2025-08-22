@@ -7,7 +7,7 @@ import {
   TrendingUp,
   Zap,
   Users,
-  BarChart,
+  BarChart3,
   Rocket,
 } from "lucide-react";
 
@@ -145,7 +145,7 @@ export default function AnimatedHeroDemo() {
               {currentStep === 2 && (
                 <>
                   <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mx-auto mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-2xl">
-                    <BarChart className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-white" />
+                    <BarChart3 className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-white" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">
                     Conversion Analytics
