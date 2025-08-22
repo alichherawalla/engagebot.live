@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
+import { marked } from "marked";
 import SEOHead from "@/components/seo-head";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -137,8 +138,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 </h1>
 
                 <div 
-                  className="prose prose-lg max-w-none text-slate-700 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br>') }}
+                  className="prose prose-lg max-w-none text-slate-700 leading-relaxed prose-headings:text-slate-900 prose-a:text-brand-blue prose-strong:text-slate-900"
+                  dangerouslySetInnerHTML={{ __html: marked(post.content) }}
                   data-testid="blog-post-content"
                 />
               </div>
