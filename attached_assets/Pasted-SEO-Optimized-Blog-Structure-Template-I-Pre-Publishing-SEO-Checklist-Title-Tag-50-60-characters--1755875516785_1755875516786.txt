@@ -1,0 +1,85 @@
+SEO-Optimized Blog Structure Template
+I. Pre-Publishing SEO Checklist
+
+Title Tag: 50-60 characters, primary keyword near beginning
+Meta Description: 150-160 characters, compelling with CTA
+URL Structure: Clean, keyword-rich slug with hyphens
+Header Hierarchy: Logical H1→H2→H3 structure with keywords
+Internal Links: 3-5 relevant internal links with descriptive anchor text
+Images: Optimized file names, alt text, proper sizing
+Schema Markup: Article, FAQ, or How-To schema as appropriate
+
+II. Universal Blog Post Structure
+Opening Section (150-200 words):
+
+Hook with compelling statistic or question
+Problem identification matching search intent
+Clear value proposition and preview of solutions
+Primary keyword naturally integrated
+
+Main Content Sections (4-6 H2 sections):
+
+Descriptive, keyword-rich headers
+300-500 words per section
+Supporting data, examples, and visuals
+Internal links to related content
+CTA placement every 800-1000 words
+
+Actionable Content Elements:
+
+Numbered lists for step-by-step processes
+Bullet points for feature lists or quick tips
+Comparison tables for tool/method analysis
+Screenshots and annotated images
+Quote boxes for key insights
+
+III. Conversion Optimization Elements
+CTA Placement Strategy:
+
+Early CTA: Soft engagement after problem identification
+Mid-Content CTA: Solution-focused after providing value
+Final CTA: Strong conversion call with urgency/benefit
+
+Lead Magnet Integration:
+
+Content-specific downloadables (checklists, templates)
+Email course sign-ups related to topic
+Free tool access or calculators
+Exclusive content upgrades
+
+IV. Technical SEO Requirements
+Core Web Vitals Optimization:
+
+Target LCP under 2.5 seconds
+Minimize CLS with proper image sizing
+Optimize FID with efficient JavaScript
+
+Mobile-First Considerations:
+
+Responsive design with thumb-friendly navigation
+Fast loading on 3G connections
+Readable fonts (16px minimum)
+Collapsible content sections for long posts
+
+Featured Snippet Optimization:
+
+Direct question answering in opening paragraphs
+FAQ sections with clear Q&A structure
+Numbered lists for process explanations
+Table format for comparison content
+
+V. Content Distribution Amplification
+Multi-Channel Promotion:
+
+Social media adaptation for each platform
+Email newsletter inclusion with custom introduction
+LinkedIn article republishing with platform-specific optimization
+Community sharing in relevant forums and groups
+
+Repurposing Strategy:
+
+Video summary creation for YouTube/social
+Podcast episode development from written content
+Social media quote graphics and carousels
+Email course modules from pillar content
+
