@@ -79,7 +79,7 @@ export default function Landing() {
               </Button>
             </div>
             
-            <div className="flex items-center justify-center space-x-8 text-blue-200 text-sm">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-blue-200 text-sm">
               <div className="flex items-center space-x-2" data-testid="final-cta-benefit-1">
                 <CheckCircle className="h-4 w-4" />
                 <span>Early access</span>

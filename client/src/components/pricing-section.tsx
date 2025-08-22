@@ -72,13 +72,13 @@ export default function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              className={`rounded-2xl p-8 relative ${
+              className={`rounded-2xl p-6 sm:p-8 relative ${
                 plan.popular 
-                  ? "gradient-hero text-white transform scale-105" 
+                  ? "gradient-hero text-white md:transform md:scale-105" 
                   : "bg-slate-50"
               }`}
               initial={{ opacity: 0, y: 30 }}

@@ -56,11 +56,11 @@ export default function FeaturesSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-20">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="bg-slate-50 p-8 rounded-2xl hover:shadow-lg transition-shadow"
+              className="bg-slate-50 p-6 sm:p-8 rounded-2xl hover:shadow-lg transition-shadow"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -88,7 +88,7 @@ export default function FeaturesSection() {
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}

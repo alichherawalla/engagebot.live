@@ -109,12 +109,12 @@ export default function AnimatedHeroDemo() {
   const Icon = currentDemo.icon;
 
   return (
-    <div className="relative w-full h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-2xl">
+    <div className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-2xl">
       {/* Animated Background */}
       <div className={`absolute inset-0 bg-gradient-to-br ${currentDemo.color} opacity-20 transition-all duration-1000`} />
       
       {/* Progress Indicators */}
-      <div className="absolute top-6 left-6 flex space-x-2">
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex space-x-2">
         {demoSteps.map((_, index) => (
           <div
             key={index}
@@ -126,9 +126,9 @@ export default function AnimatedHeroDemo() {
       </div>
 
       {/* Main Content */}
-      <div className="flex h-full">
+      <div className="flex flex-col lg:flex-row h-full">
         {/* Left Side - Description */}
-        <div className="flex-1 p-8 flex flex-col justify-center">
+        <div className="flex-1 p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -138,16 +138,16 @@ export default function AnimatedHeroDemo() {
               transition={{ duration: 0.6 }}
               className="text-white"
             >
-              <div className="flex items-center mb-4">
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${currentDemo.color} mr-4`}>
-                  <Icon className="h-6 w-6 text-white" />
+              <div className="flex items-center mb-3 sm:mb-4">
+                <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${currentDemo.color} mr-3 sm:mr-4`}>
+                  <Icon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">{currentDemo.title}</h3>
-                  <p className="text-blue-200 text-sm">{currentDemo.subtitle}</p>
+                  <h3 className="text-lg sm:text-xl font-bold">{currentDemo.title}</h3>
+                  <p className="text-blue-200 text-xs sm:text-sm">{currentDemo.subtitle}</p>
                 </div>
               </div>
-              <p className="text-blue-100 text-lg leading-relaxed">
+              <p className="text-blue-100 text-sm sm:text-base lg:text-lg leading-relaxed">
                 {currentDemo.description}
               </p>
             </motion.div>
@@ -155,7 +155,7 @@ export default function AnimatedHeroDemo() {
         </div>
 
         {/* Right Side - Mockup */}
-        <div className="flex-1 p-6 pb-20 flex items-center">
+        <div className="flex-1 p-3 sm:p-4 lg:p-6 pb-16 sm:pb-20 flex items-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -181,7 +181,7 @@ export default function AnimatedHeroDemo() {
                 </div>
 
                 {/* Content */}
-                <div className="p-4 pb-20 max-h-[380px] overflow-y-auto">
+                <div className="p-2 sm:p-3 lg:p-4 pb-16 sm:pb-20 max-h-[280px] sm:max-h-[320px] lg:max-h-[380px] overflow-y-auto">
                   {currentStep === 0 && (
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">

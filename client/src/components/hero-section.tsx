@@ -11,7 +11,7 @@ export default function HeroSection() {
   return (
     <section className="gradient-hero py-20 lg:py-32" data-testid="hero-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div 
             className="text-white"
             initial={{ opacity: 0, y: 50 }}
@@ -69,7 +69,7 @@ export default function HeroSection() {
           </motion.div>
           
           <motion.div 
-            className="lg:pl-8"
+            className="mt-8 lg:mt-0 lg:pl-8"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
