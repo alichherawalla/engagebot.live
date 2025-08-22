@@ -89,7 +89,7 @@ export default function AnimatedHeroDemo() {
         </div>
 
         {/* Right Side - Simple Visual */}
-        <div className="flex-1 px-4 py-4 sm:p-6 lg:p-12 flex items-center justify-center">
+        <div className="flex-1 px-4 py-4 pb-12 sm:p-6 sm:pb-12 lg:p-12 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -144,8 +144,8 @@ export default function AnimatedHeroDemo() {
       </div>
 
       {/* Bottom Tagline */}
-      <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2">
-        <div className="text-white/80 text-xs sm:text-sm text-center px-4">
+      <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="text-white/80 text-xs sm:text-sm text-center px-4 bg-slate-800/50 rounded-lg py-1">
           <span className="font-medium">Real engagement.</span> Real growth. Real results.
         </div>
       </div>
