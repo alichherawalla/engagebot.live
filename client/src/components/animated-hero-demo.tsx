@@ -155,7 +155,7 @@ export default function AnimatedHeroDemo() {
         </div>
 
         {/* Right Side - Mockup */}
-        <div className="flex-1 p-6 pb-16 flex items-center">
+        <div className="flex-1 p-6 pb-20 flex items-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -181,7 +181,7 @@ export default function AnimatedHeroDemo() {
                 </div>
 
                 {/* Content */}
-                <div className="p-4 pb-16">
+                <div className="p-4 pb-20 max-h-[380px] overflow-y-auto">
                   {currentStep === 0 && (
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
