@@ -44,7 +44,7 @@ export default function AnimatedHeroDemo() {
   const Icon = currentDemo.icon;
 
   return (
-    <div className="relative w-full h-[500px] sm:h-[450px] lg:h-[500px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-2xl">
+    <div className="relative w-full h-[400px] sm:h-[420px] lg:h-[480px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-2xl">
       {/* Animated Background */}
       <div className={`absolute inset-0 bg-gradient-to-br ${currentDemo.color} opacity-20 transition-all duration-1000`} />
       
@@ -63,7 +63,7 @@ export default function AnimatedHeroDemo() {
       {/* Main Content */}
       <div className="flex flex-col lg:flex-row h-full">
         {/* Left Side - Description */}
-        <div className="flex-none lg:flex-1 px-4 pt-12 pb-2 sm:p-6 lg:p-8 flex flex-col justify-center">
+        <div className="flex-1 px-4 py-8 sm:p-6 lg:p-8 flex flex-col justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -89,7 +89,7 @@ export default function AnimatedHeroDemo() {
         </div>
 
         {/* Right Side - Simple Visual */}
-        <div className="flex-none lg:flex-1 px-4 pb-16 pt-2 sm:p-6 lg:p-12 flex items-center justify-center">
+        <div className="flex-1 px-4 py-4 sm:p-6 lg:p-12 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
