@@ -29,7 +29,7 @@ export default function BlogSection() {
             <img 
               src={logoPath} 
               alt="EngageBot Logo" 
-              className="h-10 w-10 rounded-full object-cover"
+              className="h-20 w-20 rounded-full object-cover"
             />
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
               Blog

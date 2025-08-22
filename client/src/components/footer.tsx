@@ -18,7 +18,7 @@ export default function Footer() {
             <img 
               src={logoPath} 
               alt="EngageBot Logo" 
-              className="h-10 w-10 rounded-full object-cover mb-4"
+              className="h-20 w-20 rounded-full object-cover mb-4"
             />
             <p className="text-slate-400 mb-4">
               Transform your expertise into automated Twitter engagement with AI-powered authenticity.

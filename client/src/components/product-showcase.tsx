@@ -143,7 +143,7 @@ export default function ProductShowcase() {
             <img 
               src={logoPath} 
               alt="EngageBot Logo" 
-              className="h-12 w-12 rounded-full object-cover"
+              className="h-20 w-20 rounded-full object-cover"
             />
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
               in Action
