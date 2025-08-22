@@ -2,7 +2,10 @@ import express, { type Request, Response, NextFunction } from "express";
 import path from "path";
 import fs from "fs";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { log } from "./vite";
+import { setupViteWithMeta, serveStaticWithMeta } from "./vite-meta";
+import { generateMetaTags, injectMetaTags } from "./meta-tags";
+import { storage } from "./storage";
 
 const app = express();
 app.use(express.json());
@@ -55,13 +58,42 @@ app.use((req, res, next) => {
     app.use(express.static(publicPath));
   }
 
+  // Add meta tag injection middleware for HTML routes
+  app.use("*", async (req, res, next) => {
+    // Only process HTML requests (not API routes, static files, etc.)
+    if (req.path.startsWith('/api/') || req.path.includes('.')) {
+      return next();
+    }
+
+    // Check if this is a request that should get meta tag injection
+    const isHtmlRequest = req.headers.accept?.includes('text/html') || 
+                         req.headers.accept?.includes('*/*') ||
+                         !req.headers.accept;
+
+    if (!isHtmlRequest) {
+      return next();
+    }
+
+    try {
+      // Generate meta tags for this route
+      const metaData = await generateMetaTags(req.originalUrl, storage);
+      
+      // Store meta data for later injection
+      (req as any).metaData = metaData;
+    } catch (error) {
+      console.error('Error generating meta tags:', error);
+    }
+
+    next();
+  });
+
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
-    await setupVite(app, server);
+    await setupViteWithMeta(app, server);
   } else {
-    serveStatic(app);
+    serveStaticWithMeta(app);
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
