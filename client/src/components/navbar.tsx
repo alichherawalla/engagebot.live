@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 import TrialRequestModal from "@/components/trial-request-modal";
 import logoPath from "@assets/engagebot-logo-circular.png";
 
@@ -9,6 +9,9 @@ export default function Navbar() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [isComparisonsOpen, setIsComparisonsOpen] = useState(false);
+  const [isMobileComparisonsOpen, setIsMobileComparisonsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => {
     if (path === "/" && location === "/") return true;
@@ -28,6 +31,20 @@ export default function Navbar() {
     }
     setIsMenuOpen(false);
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsComparisonsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50" data-testid="navbar">
@@ -57,6 +74,58 @@ export default function Navbar() {
                 >
                   Pricing
                 </button>
+                
+                {/* Comparisons Dropdown */}
+                <div className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setIsComparisonsOpen(!isComparisonsOpen)}
+                    className={`flex items-center space-x-1 transition-colors ${
+                      location.startsWith('/vs-') ? 'text-brand-blue' : 'text-slate-600 hover:text-brand-blue'
+                    }`}
+                    data-testid="nav-comparisons"
+                  >
+                    <span>Comparisons</span>
+                    <ChevronDown className={`h-4 w-4 transition-transform ${isComparisonsOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {isComparisonsOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50" data-testid="nav-comparisons-dropdown">
+                      <Link
+                        href="/vs-buffer"
+                        className="block px-4 py-2 text-slate-600 hover:text-brand-blue hover:bg-slate-50 transition-colors"
+                        onClick={() => setIsComparisonsOpen(false)}
+                        data-testid="nav-vs-buffer"
+                      >
+                        vs Buffer
+                      </Link>
+                      <Link
+                        href="/vs-plannable"
+                        className="block px-4 py-2 text-slate-600 hover:text-brand-blue hover:bg-slate-50 transition-colors"
+                        onClick={() => setIsComparisonsOpen(false)}
+                        data-testid="nav-vs-plannable"
+                      >
+                        vs Plannable
+                      </Link>
+                      <Link
+                        href="/vs-sproutsocial"
+                        className="block px-4 py-2 text-slate-600 hover:text-brand-blue hover:bg-slate-50 transition-colors"
+                        onClick={() => setIsComparisonsOpen(false)}
+                        data-testid="nav-vs-sproutsocial"
+                      >
+                        vs Sprout Social
+                      </Link>
+                      <Link
+                        href="/vs-hypefury"
+                        className="block px-4 py-2 text-slate-600 hover:text-brand-blue hover:bg-slate-50 transition-colors"
+                        onClick={() => setIsComparisonsOpen(false)}
+                        data-testid="nav-vs-hypefury"
+                      >
+                        vs Hypefury
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                
                 <Link
                   href="/blog"
                   className={`transition-colors ${
@@ -118,6 +187,55 @@ export default function Navbar() {
               >
                 Pricing
               </button>
+              
+              {/* Mobile Comparisons */}
+              <div>
+                <button
+                  onClick={() => setIsMobileComparisonsOpen(!isMobileComparisonsOpen)}
+                  className="flex items-center justify-between w-full text-slate-600 hover:text-brand-blue transition-colors text-left"
+                  data-testid="mobile-nav-comparisons"
+                >
+                  <span>Comparisons</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isMobileComparisonsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isMobileComparisonsOpen && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link
+                      href="/vs-buffer"
+                      className="block text-slate-500 hover:text-brand-blue transition-colors"
+                      onClick={() => {setIsMenuOpen(false); setIsMobileComparisonsOpen(false);}}
+                      data-testid="mobile-nav-vs-buffer"
+                    >
+                      vs Buffer
+                    </Link>
+                    <Link
+                      href="/vs-plannable"
+                      className="block text-slate-500 hover:text-brand-blue transition-colors"
+                      onClick={() => {setIsMenuOpen(false); setIsMobileComparisonsOpen(false);}}
+                      data-testid="mobile-nav-vs-plannable"
+                    >
+                      vs Plannable
+                    </Link>
+                    <Link
+                      href="/vs-sproutsocial"
+                      className="block text-slate-500 hover:text-brand-blue transition-colors"
+                      onClick={() => {setIsMenuOpen(false); setIsMobileComparisonsOpen(false);}}
+                      data-testid="mobile-nav-vs-sproutsocial"
+                    >
+                      vs Sprout Social
+                    </Link>
+                    <Link
+                      href="/vs-hypefury"
+                      className="block text-slate-500 hover:text-brand-blue transition-colors"
+                      onClick={() => {setIsMenuOpen(false); setIsMobileComparisonsOpen(false);}}
+                      data-testid="mobile-nav-vs-hypefury"
+                    >
+                      vs Hypefury
+                    </Link>
+                  </div>
+                )}
+              </div>
+              
               <Link
                 href="/blog"
                 className="text-slate-600 hover:text-brand-blue transition-colors"
