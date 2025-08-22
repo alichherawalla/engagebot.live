@@ -216,58 +216,130 @@ export default function AnimatedHeroDemo() {
                   )}
 
                   {currentStep === 1 && (
-                    <div className="space-y-3">
-                      <div className="text-sm text-slate-600 mb-3">
-                        {currentDemo.mockup.conversations?.length} high-value opportunities
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="text-sm font-semibold text-slate-700">
+                            {currentDemo.mockup.conversations?.length} Live Opportunities
+                          </span>
+                        </div>
+                        <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full font-medium">
+                          Real-time
+                        </span>
                       </div>
-                      {currentDemo.mockup.conversations?.map((conv, i) => (
+                      
+                      {currentDemo.mockup.conversations?.slice(0, 2).map((conv, i) => (
                         <motion.div
                           key={i}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: i * 0.2 }}
-                          className="border border-slate-200 rounded-lg p-3 space-y-2"
+                          transition={{ delay: i * 0.3 }}
+                          className="bg-gradient-to-r from-slate-50 to-emerald-50 border border-emerald-200 rounded-xl p-4 space-y-3 hover:shadow-md transition-shadow"
                         >
-                          <div className="flex items-center justify-between">
-                            <span className="font-medium text-sm">@{conv.user}</span>
+                          <div className="flex items-start justify-between">
                             <div className="flex items-center space-x-2">
-                              <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
+                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                                <span className="text-white text-xs font-bold">
+                                  {conv.user.charAt(0).toUpperCase()}
+                                </span>
+                              </div>
+                              <div>
+                                <span className="font-semibold text-sm text-slate-800">@{conv.user}</span>
+                                <div className="text-xs text-slate-500">{conv.audience}</div>
+                              </div>
+                            </div>
+                            <div className="flex flex-col items-end space-y-1">
+                              <span className="text-xs bg-gradient-to-r from-green-500 to-emerald-600 text-white px-2 py-1 rounded-full font-medium">
                                 {conv.relevance}% match
                               </span>
-                              <span className="text-xs text-slate-500">{conv.audience}</span>
+                              <div className="flex items-center space-x-1">
+                                <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                                <span className="text-xs text-slate-500">Hot</span>
+                              </div>
                             </div>
                           </div>
-                          <p className="text-sm text-slate-700">{conv.snippet}</p>
+                          <div className="bg-white rounded-lg p-3 border-l-4 border-emerald-400">
+                            <p className="text-sm text-slate-700 leading-relaxed">{conv.snippet}</p>
+                          </div>
                         </motion.div>
                       ))}
+                      
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.8 }}
+                        className="text-center"
+                      >
+                        <span className="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                          +{(currentDemo.mockup.conversations?.length || 3) - 2} more opportunities
+                        </span>
+                      </motion.div>
                     </div>
                   )}
 
                   {currentStep === 2 && (
                     <div className="space-y-4">
-                      <div className="bg-slate-50 p-3 rounded-lg">
-                        <div className="text-xs text-slate-600 mb-2">Original Post:</div>
-                        <p className="text-sm">{currentDemo.mockup.originalPost}</p>
+                      <div className="flex items-center space-x-2 mb-3">
+                        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-semibold text-slate-700">AI Response Generator</span>
+                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Live</span>
                       </div>
-                      <div className="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
-                        <div className="text-xs text-blue-600 mb-2">AI-Generated Response:</div>
-                        <motion.p 
-                          className="text-sm text-slate-800"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 0.5 }}
-                        >
-                          {currentDemo.mockup.aiResponse}
-                        </motion.p>
+                      
+                      <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-4 rounded-xl border border-slate-200">
+                        <div className="flex items-center space-x-2 mb-3">
+                          <div className="w-6 h-6 bg-slate-400 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs">S</span>
+                          </div>
+                          <span className="text-xs font-medium text-slate-600">@StartupFounder2024</span>
+                        </div>
+                        <p className="text-sm text-slate-700 leading-relaxed bg-white p-3 rounded-lg border-l-4 border-slate-300">
+                          {currentDemo.mockup.originalPost}
+                        </p>
                       </div>
-                      <div className="grid grid-cols-3 gap-2 text-center">
+                      
+                      <div className="relative">
+                        <div className="absolute left-4 top-0 w-0.5 h-4 bg-gradient-to-b from-slate-300 to-blue-500"></div>
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-200 ml-8">
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                                <span className="text-white text-xs font-bold">You</span>
+                              </div>
+                              <span className="text-xs font-medium text-blue-700">AI-Generated Response</span>
+                            </div>
+                            <div className="flex items-center space-x-1">
+                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                              <span className="text-xs text-green-600 font-medium">Optimized</span>
+                            </div>
+                          </div>
+                          <motion.div 
+                            className="bg-white p-3 rounded-lg border-l-4 border-blue-500"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.5 }}
+                          >
+                            <p className="text-sm text-slate-800 leading-relaxed">
+                              {currentDemo.mockup.aiResponse}
+                            </p>
+                          </motion.div>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-3 gap-2">
                         {Object.entries(currentDemo.mockup.metrics || {}).map(([key, value]) => (
-                          <div key={key} className="bg-slate-50 p-2 rounded">
-                            <div className="text-xs text-slate-600 capitalize">
+                          <motion.div 
+                            key={key} 
+                            className="bg-gradient-to-br from-green-50 to-emerald-50 p-3 rounded-lg border border-green-200 text-center"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.7 }}
+                          >
+                            <div className="text-xs text-slate-600 font-medium capitalize mb-1">
                               {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
                             </div>
-                            <div className="font-semibold text-green-600">{value}%</div>
-                          </div>
+                            <div className="text-lg font-bold text-green-600">{value}%</div>
+                          </motion.div>
                         ))}
                       </div>
                     </div>
