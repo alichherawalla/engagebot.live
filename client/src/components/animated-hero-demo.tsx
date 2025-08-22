@@ -91,7 +91,7 @@ export default function AnimatedHeroDemo() {
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold truncate">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
                     {currentDemo.title}
                   </h3>
                 </div>
