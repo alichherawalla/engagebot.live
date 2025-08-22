@@ -155,7 +155,7 @@ export default function AnimatedHeroDemo() {
         </div>
 
         {/* Right Side - Mockup */}
-        <div className="flex-1 p-[21rem] flex items-center">
+        <div className="flex-1 p-3 sm:p-6 lg:p-12 xl:p-16 pb-16 sm:pb-20 flex items-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
