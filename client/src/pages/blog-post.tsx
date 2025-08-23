@@ -86,7 +86,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       
       <Navbar />
       
-      <main className="py-20" data-testid="blog-post-page">
+  <main className="pt-14 md:pt-20 pb-12 md:pb-20" data-testid="blog-post-page">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -95,7 +95,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           >
             <Link
               href="/blog"
-              className="inline-flex items-center text-brand-blue hover:text-brand-blue-light mb-8 transition-colors"
+              className="inline-flex items-center text-brand-blue hover:text-brand-blue-light mb-4 sm:mb-6 md:mb-8 transition-colors"
               data-testid="blog-post-back-link"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -107,13 +107,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <img
                   src={post.imageUrl}
                   alt={post.title}
-                  className="w-full h-64 md:h-80 object-cover"
+                  className="w-full h-48 sm:h-56 md:h-80 object-cover"
                   data-testid="blog-post-hero-image"
                 />
               )}
               
-              <div className="p-8 md:p-12">
-                <div className="flex items-center space-x-4 text-sm text-slate-500 mb-6">
+              <div className="p-6 sm:p-8 md:p-12">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-slate-500 mb-6">
                   <div className="flex items-center" data-testid="blog-post-category">
                     <Tag className="h-4 w-4 mr-2" />
                     <Badge 
@@ -139,12 +139,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   </div>
                 </div>
 
-                <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight" data-testid="blog-post-title">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight" data-testid="blog-post-title">
                   {post.title}
                 </h1>
 
                 <div 
-                  className="prose prose-lg max-w-none text-slate-700 leading-relaxed prose-headings:text-slate-900 prose-a:text-brand-blue prose-strong:text-slate-900"
+                  className="prose md:prose-lg max-w-none text-slate-700 leading-relaxed prose-headings:text-slate-900 prose-a:text-brand-blue prose-strong:text-slate-900 prose-img:rounded-xl prose-img:shadow"
                   dangerouslySetInnerHTML={{ __html: marked(post.content) }}
                   data-testid="blog-post-content"
                 />
