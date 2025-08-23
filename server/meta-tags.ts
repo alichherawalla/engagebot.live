@@ -61,6 +61,73 @@ export async function generateMetaTags(url: string, storage: IStorage): Promise<
     };
   }
 
+  // Handle case studies page
+  if (url.includes('/case-studies')) {
+    return {
+      title: "Customer Success Stories & Case Studies | EngageBot",
+      description: "Discover how businesses across industries use EngageBot to build authority, generate leads, and grow their Twitter presence. Real results from real companies using AI-powered engagement automation.",
+      ogTitle: "EngageBot Customer Success Stories & Case Studies",
+      ogDescription: "See real results from companies using EngageBot AI Twitter automation. Case studies showing increased followers, engagement rates, and lead generation across multiple industries.",
+      ogImage: defaultMeta.ogImage,
+      ogUrl: "https://engagebot.live/case-studies",
+      twitterCard: "summary_large_image",
+      keywords: "EngageBot case studies, Twitter automation success stories, social media ROI, B2B lead generation, customer testimonials, AI engagement results"
+    };
+  }
+
+  // Handle comparison pages
+  if (url.includes('/vs-buffer')) {
+    return {
+      title: "EngageBot vs Buffer: AI Engagement vs Content Scheduling | 2025 Comparison",
+      description: "Compare EngageBot's AI-powered Twitter engagement with Buffer's content scheduling. See why authentic conversation automation outperforms basic posting tools for building authority and generating leads.",
+      ogTitle: "EngageBot vs Buffer - AI Engagement vs Content Scheduling",
+      ogDescription: "Detailed comparison: EngageBot's intelligent Twitter engagement automation vs Buffer's content scheduling. Discover which tool drives better ROI for B2B growth and thought leadership.",
+      ogImage: defaultMeta.ogImage,
+      ogUrl: "https://engagebot.live/vs-buffer",
+      twitterCard: "summary_large_image",
+      keywords: "EngageBot vs Buffer, Twitter automation comparison, AI engagement vs scheduling, social media tools comparison, Buffer alternative"
+    };
+  }
+
+  if (url.includes('/vs-plannable')) {
+    return {
+      title: "EngageBot vs Plannable: AI Engagement vs Social Media Planning | 2025",
+      description: "Compare EngageBot's AI-powered engagement automation with Plannable's social media planning tools. See how intelligent conversation participation beats content planning for Twitter growth.",
+      ogTitle: "EngageBot vs Plannable - AI Engagement vs Social Planning",
+      ogDescription: "EngageBot's intelligent Twitter engagement vs Plannable's social media planning. Learn which approach delivers better results for building authority and generating qualified leads.",
+      ogImage: defaultMeta.ogImage,
+      ogUrl: "https://engagebot.live/vs-plannable",
+      twitterCard: "summary_large_image",
+      keywords: "EngageBot vs Plannable, social media automation comparison, AI engagement vs planning, Twitter growth tools, Plannable alternative"
+    };
+  }
+
+  if (url.includes('/vs-sproutsocial')) {
+    return {
+      title: "EngageBot vs Sprout Social: AI Engagement vs Enterprise Social Tools | 2025",
+      description: "Compare EngageBot's AI-powered Twitter engagement with Sprout Social's enterprise social media management. Discover why intelligent engagement outperforms traditional social tools for B2B growth.",
+      ogTitle: "EngageBot vs Sprout Social - AI Engagement vs Enterprise Tools",
+      ogDescription: "Detailed comparison: EngageBot's intelligent Twitter automation vs Sprout Social's enterprise features. See which platform delivers better ROI for B2B companies and startups.",
+      ogImage: defaultMeta.ogImage,
+      ogUrl: "https://engagebot.live/vs-sproutsocial",
+      twitterCard: "summary_large_image",
+      keywords: "EngageBot vs Sprout Social, enterprise social media tools, AI engagement vs traditional tools, B2B social media automation, Sprout Social alternative"
+    };
+  }
+
+  if (url.includes('/vs-hypefury')) {
+    return {
+      title: "EngageBot vs Hypefury: AI Engagement vs Growth Automation | 2025",
+      description: "Compare EngageBot's intelligent Twitter engagement with Hypefury's growth automation. Learn why authentic AI-powered conversations beat mechanical growth hacks for sustainable authority building.",
+      ogTitle: "EngageBot vs Hypefury - AI Engagement vs Growth Automation", 
+      ogDescription: "EngageBot's intelligent engagement automation vs Hypefury's growth hacks. Discover which approach builds real authority and generates quality leads for long-term Twitter success.",
+      ogImage: defaultMeta.ogImage,
+      ogUrl: "https://engagebot.live/vs-hypefury",
+      twitterCard: "summary_large_image",
+      keywords: "EngageBot vs Hypefury, Twitter growth automation, AI engagement vs growth hacks, authentic automation vs mechanical tools, Hypefury alternative"
+    };
+  }
+
   // Handle specific pages
   if (url.includes('/pricing')) {
     return {
@@ -82,7 +149,7 @@ export async function generateMetaTags(url: string, storage: IStorage): Promise<
       ogTitle: "EngageBot Features - AI Twitter Automation Platform",
       ogDescription: "Explore EngageBot's powerful AI features: smart conversation discovery, authentic response generation, analytics, and more. Scale your Twitter engagement effortlessly.",
       ogImage: defaultMeta.ogImage,
-      ogUrl: "https://engagebot.replit.app/features",
+      ogUrl: "https://engagebot.live/features",
       twitterCard: "summary_large_image",
       keywords: "Twitter automation features, AI engagement tools, social media automation, Twitter bot features, engagement automation"
     };
