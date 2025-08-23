@@ -104,12 +104,27 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
             <article className="bg-white rounded-2xl shadow-lg overflow-hidden" data-testid="blog-post-article">
               {post.imageUrl && (
-                <img
-                  src={post.imageUrl}
-                  alt={post.title}
-                  className="w-full h-48 sm:h-56 md:h-80 object-contain"
-                  data-testid="blog-post-hero-image"
-                />
+                <div className="relative w-full h-48 sm:h-56 md:h-80 bg-slate-100">
+                  {/* Blurred backdrop using the same image */}
+                  <img
+                    src={post.imageUrl}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-40 transform-gpu"
+                    data-testid="blog-post-hero-image-bg"
+                    loading="lazy"
+                  />
+                  {/* Subtle vignette to improve contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/40" />
+                  {/* Foreground image */}
+                  <img
+                    src={post.imageUrl}
+                    alt={post.title}
+                    className="relative z-10 w-full h-full object-contain"
+                    data-testid="blog-post-hero-image"
+                    loading="eager"
+                  />
+                </div>
               )}
               
               <div className="p-6 sm:p-8 md:p-12">
