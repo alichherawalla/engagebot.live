@@ -13,6 +13,7 @@ import VsBuffer from "@/pages/vs-buffer";
 import VsPlannable from "@/pages/vs-plannable";
 import VsSproutSocial from "@/pages/vs-sproutsocial";
 import VsHypefury from "@/pages/vs-hypefury";
+import CaseStudies from "@/pages/case-studies";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/" component={Landing} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/case-studies" component={CaseStudies} />
       <Route path="/vs-buffer" component={VsBuffer} />
       <Route path="/vs-plannable" component={VsPlannable} />
       <Route path="/vs-sproutsocial" component={VsSproutSocial} />

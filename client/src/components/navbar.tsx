@@ -74,6 +74,13 @@ export default function Navbar() {
                 >
                   Pricing
                 </button>
+                <Link
+                  href="/case-studies"
+                  className={`transition-colors ${isActive('/case-studies') ? 'text-brand-blue border-b-2 border-brand-blue' : 'text-slate-600 hover:text-brand-blue'}`}
+                  data-testid="nav-case-studies"
+                >
+                  Case Studies
+                </Link>
                 
                 {/* Comparisons Dropdown */}
                 <div className="relative" ref={dropdownRef}>
@@ -187,6 +194,14 @@ export default function Navbar() {
               >
                 Pricing
               </button>
+              <Link
+                href="/case-studies"
+                className={`transition-colors text-left ${isActive('/case-studies') ? 'text-brand-blue' : 'text-slate-600 hover:text-brand-blue'}`}
+                onClick={() => setIsMenuOpen(false)}
+                data-testid="mobile-nav-case-studies"
+              >
+                Case Studies
+              </Link>
               
               {/* Mobile Comparisons */}
               <div>
