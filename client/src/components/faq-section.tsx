@@ -8,7 +8,7 @@ export default function FAQSection() {
   const faqs = [
     {
       question: "How does EngageBot ensure my responses sound authentic?",
-      answer: "EngageBot uses advanced AI to analyze your existing content, communication style, and brand voice. Our Claude 4.0 integration learns your unique tone, vocabulary, and expertise patterns to generate responses that consistently match your authentic voice with 95% accuracy."
+      answer: "EngageBot uses advanced AI to analyze your existing content, communication style, and brand voice. Our integrations with frontier models learns your unique tone, vocabulary, and expertise patterns to generate responses that consistently match your authentic voice with 95% accuracy."
     },
     {
       question: "Can Twitter detect that my responses are AI-generated?",
