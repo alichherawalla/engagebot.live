@@ -311,7 +311,9 @@ Based on meaningful metrics:
     let posts = Array.from(this.blogPosts.values()).filter(post => post.published);
 
     if (category) {
-      posts = posts.filter(post => post.category.toLowerCase() === category.toLowerCase());
+  const norm = (s: string) => s.trim().replace(/\s+/g, " ").toLowerCase();
+  const want = norm(category);
+  posts = posts.filter(post => norm(post.category) === want);
     }
 
     if (query) {
@@ -328,13 +330,16 @@ Based on meaningful metrics:
   }
 
   async getBlogPostCategories(): Promise<string[]> {
-    const categories = new Set<string>();
+    const seen = new Map<string, string>();
     Array.from(this.blogPosts.values()).forEach(post => {
       if (post.published) {
-        categories.add(post.category);
+        const normalized = (post.category || "").trim().replace(/\s+/g, " ");
+        if (!normalized) return;
+        const key = normalized.toLowerCase();
+        if (!seen.has(key)) seen.set(key, normalized);
       }
     });
-    return Array.from(categories).sort();
+    return Array.from(seen.values()).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
   }
 
   async getBlogPost(id: string): Promise<BlogPost | undefined> {
@@ -451,7 +456,8 @@ export class DatabaseStorage implements IStorage {
     const conditions = [eq(blogPosts.published, true)];
 
     if (category) {
-      conditions.push(eq(blogPosts.category, category));
+  // Case-insensitive exact match on category to avoid mismatches due to casing/spacing
+  conditions.push(ilike(blogPosts.category, category));
     }
 
     if (query) {
@@ -483,10 +489,18 @@ export class DatabaseStorage implements IStorage {
     const result = await db
       .selectDistinct({ category: blogPosts.category })
       .from(blogPosts)
-      .where(eq(blogPosts.published, true))
-      .orderBy(blogPosts.category);
-    
-    return result.map(row => row.category);
+      .where(eq(blogPosts.published, true));
+
+    // Normalize: trim and collapse spaces; dedupe case-insensitively while preserving first-seen casing
+    const seen = new Map<string, string>();
+    for (const row of result) {
+      const original = (row.category || "").trim().replace(/\s+/g, " ");
+      if (!original) continue;
+      const key = original.toLowerCase();
+      if (!seen.has(key)) seen.set(key, original);
+    }
+
+    return Array.from(seen.values()).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
   }
 
   async getBlogPost(id: string): Promise<BlogPost | undefined> {
