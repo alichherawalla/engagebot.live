@@ -23,8 +23,8 @@ export default function Landing() {
     <div className="min-h-screen bg-slate-50">
       <SEOHead
         title="EngageBot - AI-Powered Twitter Engagement Automation | Turn Your Expertise Into Automated Twitter Growth"
-        description="Transform Twitter engagement with AI automation. EngageBot uses Claude 4.0 to discover conversations, generate authentic responses, and build meaningful relationships at scale. Save 15+ hours weekly."
-        keywords="Twitter automation, AI engagement, social media marketing, Twitter growth, automated responses, Claude AI, social media tools"
+        description="Transform Twitter engagement with AI automation. EngageBot uses frontier models to discover conversations, generate authentic responses, and build meaningful relationships at scale. Save 15+ hours weekly."
+        keywords="Twitter automation, AI engagement, social media marketing, Twitter growth, automated responses, frontier models, social media tools"
         ogTitle="EngageBot - AI-Powered Twitter Engagement Automation"
         ogDescription="Turn your expertise into automated Twitter engagement. Save 15+ hours weekly while building authentic relationships."
         ogType="website"

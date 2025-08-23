@@ -99,7 +99,7 @@ export default function FeaturesSection() {
               Intelligent Comment Generation
             </h3>
             <p className="text-lg text-slate-600 mb-6" data-testid="feature-highlight-1-description">
-              Every response references your expertise and maintains your brand voice. Claude 4.0 ensures authentic, contextual engagement that builds meaningful professional relationships.
+              Every response references your expertise and maintains your brand voice. Frontier AI model integration ensures authentic, contextual engagement that builds meaningful professional relationships.
             </p>
             <div className="space-y-4">
               {[

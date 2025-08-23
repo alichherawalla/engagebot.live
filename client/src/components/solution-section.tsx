@@ -23,7 +23,7 @@ export default function SolutionSection() {
     {
       number: "4",
       title: "Generate Authentic Responses",
-      description: "Claude 4.0 creates personalized, expert-level responses that sound like you while building meaningful relationships.",
+      description: "EngageBot creates personalized, expert-level responses that sound like you while building meaningful relationships.",
       colorClass: "bg-blue-500"
     }
   ];
