@@ -6,9 +6,6 @@ import { log } from "./vite";
 import { setupViteWithMeta, serveStaticWithMeta } from "./vite-meta";
 import { generateMetaTags, injectMetaTags } from "./meta-tags";
 import { storage } from "./storage";
-import {config } from 'dotenv'
-
-config();
 
 const app = express();
 app.use(express.json());
