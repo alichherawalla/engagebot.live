@@ -10,8 +10,9 @@ import TrialRequestModal from "@/components/trial-request-modal";
 
 const caseStudies = [
   {
-    id: 1,
-    company: "TechFlow Solutions",
+  id: 1,
+  slug: "b2b-saas",
+  company: "TechFlow Solutions",
     industry: "B2B SaaS",
     challenge: "Struggling to build authority in competitive martech space with limited social media presence",
     solution: "Used EngageBot to consistently engage in industry discussions and share technical insights",
@@ -22,13 +23,14 @@ const caseStudies = [
       timeframe: "6 months"
     },
     quote: "EngageBot helped us go from being invisible in our industry to being recognized as thought leaders. The AI-powered responses feel authentic and have generated real business conversations.",
-    author: "Sarah Chen",
-    role: "VP Marketing",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face"
+  author: "Sarah Chen",
+  role: "VP Marketing",
+  avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face"
   },
   {
-    id: 2,
-    company: "Verde Consulting",
+  id: 2,
+  slug: "sustainability-consulting",
+  company: "Verde Consulting",
     industry: "Sustainability Consulting",
     challenge: "Needed to establish credibility and connect with eco-conscious business leaders",
     solution: "Leveraged EngageBot to participate in sustainability conversations and climate tech discussions",
@@ -39,13 +41,14 @@ const caseStudies = [
       timeframe: "8 months"
     },
     quote: "The platform helped us find and engage with the right conversations about sustainable business practices. We've connected with several Fortune 500 sustainability directors through Twitter engagement.",
-    author: "Marcus Rivera",
-    role: "Founder",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face"
+  author: "Marcus Rivera",
+  role: "Founder",
+  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face"
   },
   {
-    id: 3,
-    company: "DataCraft Analytics",
+  id: 3,
+  slug: "data-science",
+  company: "DataCraft Analytics",
     industry: "Data Science",
     challenge: "Difficulty showcasing expertise and attracting enterprise clients in data analytics market",
     solution: "Used EngageBot to engage with data science communities and share industry insights consistently",
@@ -56,13 +59,14 @@ const caseStudies = [
       timeframe: "5 months"
     },
     quote: "EngageBot's AI understood our technical expertise and helped us engage meaningfully in data science discussions. We've landed three major enterprise contracts directly from Twitter connections.",
-    author: "Dr. Emily Watson",
-    role: "Chief Data Scientist",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
+  author: "Dr. Emily Watson",
+  role: "Chief Data Scientist",
+  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
   },
   {
-    id: 4,
-    company: "Startup Legal Partners",
+  id: 4,
+  slug: "legal-services",
+  company: "Startup Legal Partners",
     industry: "Legal Services",
     challenge: "Needed to build trust and demonstrate expertise to attract startup founders as clients",
     solution: "Engaged in startup ecosystem conversations and provided valuable legal insights through automated responses",
@@ -73,13 +77,14 @@ const caseStudies = [
       timeframe: "7 months"
     },
     quote: "The quality of conversations improved dramatically. Founders started reaching out directly because they saw our consistent, helpful presence in startup discussions.",
-    author: "James Park",
-    role: "Managing Partner",
-    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=64&h=64&fit=crop&crop=face"
+  author: "James Park",
+  role: "Managing Partner",
+  avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=64&h=64&fit=crop&crop=face"
   },
   {
-    id: 5,
-    company: "CloudSecure",
+  id: 5,
+  slug: "cybersecurity",
+  company: "CloudSecure",
     industry: "Cybersecurity",
     challenge: "Competing with established players in cybersecurity space, needed to build brand recognition",
     solution: "Participated in cybersecurity discussions and shared threat intelligence insights using EngageBot",
@@ -90,9 +95,9 @@ const caseStudies = [
       timeframe: "6 months"
     },
     quote: "EngageBot helped us establish credibility in cybersecurity conversations. The automated engagement feels natural and has led to speaking opportunities at major conferences.",
-    author: "Alex Thompson",
-    role: "CEO",
-    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=64&h=64&fit=crop&crop=face"
+  author: "Alex Thompson",
+  role: "CEO",
+  avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=64&h=64&fit=crop&crop=face"
   }
 ];
 
@@ -155,8 +160,8 @@ export default function CaseStudies() {
                             <Users className="h-6 w-6 text-brand-purple" />
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold text-slate-900">{study.company}</h3>
-                            <p className="text-slate-600">{study.industry}</p>
+                            <h3 className="text-2xl font-bold text-slate-900">{`A ${study.industry} company`}</h3>
+                            <p className="text-slate-600">Case Study</p>
                           </div>
                         </div>
                         
@@ -175,17 +180,7 @@ export default function CaseStudies() {
                           <blockquote className="text-slate-700 italic mb-4">
                             "{study.quote}"
                           </blockquote>
-                          <div className="flex items-center">
-                            <img
-                              src={study.avatar}
-                              alt={study.author}
-                              className="w-12 h-12 rounded-full mr-4"
-                            />
-                            <div>
-                              <p className="font-semibold text-slate-900">{study.author}</p>
-                              <p className="text-slate-600 text-sm">{study.role}</p>
-                            </div>
-                          </div>
+                          <p className="text-slate-600 text-sm">{study.role}</p>
                         </div>
                       </div>
 
@@ -237,6 +232,15 @@ export default function CaseStudies() {
                             </div>
                             <p className="text-lg font-bold text-slate-900">{study.results.timeframe}</p>
                           </div>
+                        </div>
+
+                        <div className="mt-6">
+                          <a href={`/case-studies/${study.slug}`}>
+                            <Button variant="secondary" className="bg-white text-brand-purple border border-brand-purple hover:bg-slate-100">
+                              Read full case study
+                              <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </a>
                         </div>
                       </div>
                     </div>

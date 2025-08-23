@@ -335,11 +335,17 @@ export default function VsBuffer() {
                 Join successful entrepreneurs who've discovered the power of AI-driven engagement over traditional social media scheduling.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" variant="secondary" className="bg-white text-brand-purple hover:bg-slate-100" data-testid="get-started">
-                  Get Started with EngageBot
+                <Button 
+                  size="lg" 
+                  variant="secondary" 
+                  className="bg-white text-brand-purple hover:bg-slate-100" 
+                  data-testid="get-started"
+                  onClick={() => setIsTrialModalOpen(true)}
+                >
+                  Get Early Access
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Link href="/blog">
+                <Link href="/case-studies">
                   <Button 
                     size="lg" 
                     variant="secondary" 

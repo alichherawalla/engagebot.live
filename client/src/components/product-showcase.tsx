@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import TrialRequestModal from "@/components/trial-request-modal";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoPath from "@assets/engagebot-logo-circular.png";
 
 export default function ProductShowcase() {
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
 
   const features = [
@@ -127,6 +129,7 @@ export default function ProductShowcase() {
   ];
 
   return (
+    <>
     <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50" data-testid="product-showcase">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -405,11 +408,19 @@ export default function ProductShowcase() {
           <p className="text-slate-600 mb-6">
             Ready to experience the full power of AI-driven Twitter engagement?
           </p>
-          <Button className="bg-brand-green hover:bg-brand-green-light text-white px-8 py-3 text-lg font-semibold">
+          <Button 
+            className="bg-brand-green hover:bg-brand-green-light text-white px-8 py-3 text-lg font-semibold"
+            onClick={() => setIsTrialModalOpen(true)}
+          >
             Get Early Access
           </Button>
         </motion.div>
       </div>
-    </section>
+  </section>
+  <TrialRequestModal 
+      isOpen={isTrialModalOpen} 
+      onClose={() => setIsTrialModalOpen(false)} 
+    />
+  </>
   );
 }

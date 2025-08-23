@@ -112,8 +112,13 @@ export default function VsHypefury() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" className="bg-brand-purple hover:bg-brand-purple-dark" data-testid="start-free-trial">
-                  Start Free Trial
+                <Button 
+                  size="lg" 
+                  className="bg-brand-purple hover:bg-brand-purple-dark" 
+                  data-testid="start-free-trial"
+                  onClick={() => setIsTrialModalOpen(true)}
+                >
+                  Get Early Access
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Link href="/blog">

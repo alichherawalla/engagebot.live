@@ -344,18 +344,24 @@ export default function VsSproutSocial() {
                 Join successful entrepreneurs who've discovered that strategic engagement beats comprehensive monitoring when it comes to building authority and generating leads.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" variant="secondary" className="bg-white text-brand-purple hover:bg-slate-100" data-testid="get-started">
-                  Get Started with EngageBot
+                <Button 
+                  size="lg" 
+                  variant="secondary" 
+                  className="bg-white text-brand-purple hover:bg-slate-100" 
+                  data-testid="get-started"
+                  onClick={() => setIsTrialModalOpen(true)}
+                >
+                  Get Early Access
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Link href="/blog">
+                <Link href="/case-studies">
                   <Button 
                     size="lg" 
                     variant="secondary" 
                     className="bg-white text-brand-purple hover:bg-slate-100" 
                     data-testid="read-case-studies"
                   >
-                    Read Success Stories
+                    Read Case Studies
                   </Button>
                 </Link>
               </div>

@@ -120,12 +120,8 @@ export default function PricingSection() {
               
               <Button
                 onClick={() => {
-                  if (plan.cta === "Contact Sales") {
-                    // For enterprise, could open a different modal or redirect
-                    window.location.href = "mailto:sales@engagebot.com";
-                  } else {
-                    setIsTrialModalOpen(true);
-                  }
+                  // Open the same Early Access modal for all CTAs, including Contact Sales
+                  setIsTrialModalOpen(true);
                 }}
                 className={`w-full py-3 font-semibold transition-colors ${
                   plan.popular
