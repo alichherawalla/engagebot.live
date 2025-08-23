@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, XCircle, ArrowRight, Users, Brain, MessageSquare, Target, Zap, Calendar } from "lucide-react";
 import SEOHead from "@/components/seo-head";
@@ -6,6 +7,7 @@ import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import TrialRequestModal from "@/components/trial-request-modal";
 
 const comparisonFeatures = [
   {
@@ -70,6 +72,7 @@ const benefits = [
 ];
 
 export default function VsPlannable() {
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   return (
     <div className="min-h-screen bg-slate-50">
       <SEOHead
@@ -109,8 +112,13 @@ export default function VsPlannable() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" className="bg-brand-purple hover:bg-brand-purple-dark" data-testid="start-free-trial">
-                  Start Free Trial
+                <Button 
+                  size="lg" 
+                  className="bg-brand-purple hover:bg-brand-purple-dark" 
+                  data-testid="start-free-trial"
+                  onClick={() => setIsTrialModalOpen(true)}
+                >
+                  Get Early Access
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Link href="/blog">
@@ -332,7 +340,12 @@ export default function VsPlannable() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Link href="/blog">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-purple" data-testid="read-case-studies">
+                  <Button 
+                    size="lg" 
+                    variant="secondary" 
+                    className="bg-white text-brand-purple hover:bg-slate-100" 
+                    data-testid="read-case-studies"
+                  >
                     Read Success Stories
                   </Button>
                 </Link>
@@ -341,6 +354,11 @@ export default function VsPlannable() {
           </div>
         </section>
       </main>
+      
+      <TrialRequestModal 
+        isOpen={isTrialModalOpen} 
+        onClose={() => setIsTrialModalOpen(false)} 
+      />
       
       <Footer />
     </div>
