@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, XCircle, ArrowRight, Users, Brain, MessageSquare, Target, Zap, TrendingUp } from "lucide-react";
 import SEOHead from "@/components/seo-head";
@@ -6,6 +7,7 @@ import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import TrialRequestModal from "@/components/trial-request-modal";
 
 const comparisonFeatures = [
   {
@@ -70,6 +72,7 @@ const benefits = [
 ];
 
 export default function VsHypefury() {
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   return (
     <div className="min-h-screen bg-slate-50">
       <SEOHead
@@ -326,16 +329,15 @@ export default function VsHypefury() {
               <p className="text-xl mb-8 text-brand-purple-light">
                 Join entrepreneurs who've discovered that authentic engagement and authority building create more sustainable growth than mechanical automation.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button size="lg" variant="secondary" className="bg-white text-brand-purple hover:bg-slate-100" data-testid="get-started">
-                  Get Started with EngageBot
-                  <ArrowRight className="ml-2 h-5 w-5" />
+              <div className="flex items-center justify-center">
+                <Button 
+                  size="lg" 
+                  onClick={() => setIsTrialModalOpen(true)}
+                  className="bg-brand-green hover:bg-brand-green-light text-white px-8 py-4 text-lg font-semibold shadow-lg" 
+                  data-testid="get-early-access"
+                >
+                  Get Early Access
                 </Button>
-                <Link href="/blog">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-purple" data-testid="read-case-studies">
-                    Read Success Stories
-                  </Button>
-                </Link>
               </div>
             </motion.div>
           </div>
@@ -343,6 +345,11 @@ export default function VsHypefury() {
       </main>
       
       <Footer />
+      
+      <TrialRequestModal 
+        isOpen={isTrialModalOpen} 
+        onClose={() => setIsTrialModalOpen(false)} 
+      />
     </div>
   );
 }
