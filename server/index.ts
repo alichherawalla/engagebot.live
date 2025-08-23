@@ -6,6 +6,9 @@ import { log } from "./vite";
 import { setupViteWithMeta, serveStaticWithMeta } from "./vite-meta";
 import { generateMetaTags, injectMetaTags } from "./meta-tags";
 import { storage } from "./storage";
+import {config } from 'dotenv'
+
+config();
 
 const app = express();
 app.use(express.json());
@@ -104,7 +107,6 @@ app.use((req, res, next) => {
   server.listen({
     port,
     host: "0.0.0.0",
-    reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
   });
