@@ -8,6 +8,8 @@ Allow: /vs-buffer
 Allow: /vs-plannable
 Allow: /vs-sproutsocial
 Allow: /vs-hypefury
+Allow: /case-studies
+Allow: /case-studies/*
 
 # Restrict admin and internal pages
 Disallow: /admin

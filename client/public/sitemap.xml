@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://engagebot.live/</loc>
-    <lastmod>2025-08-22</lastmod>
+    <lastmod>2025-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>https://engagebot.live/blog</loc>
-    <lastmod>2025-08-22</lastmod>
+    <lastmod>2025-08-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -107,28 +107,65 @@
   
   <url>
     <loc>https://engagebot.live/vs-buffer</loc>
-    <lastmod>2025-08-22</lastmod>
+    <lastmod>2025-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://engagebot.live/vs-plannable</loc>
-    <lastmod>2025-08-22</lastmod>
+    <lastmod>2025-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://engagebot.live/vs-sproutsocial</loc>
-    <lastmod>2025-08-22</lastmod>
+    <lastmod>2025-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://engagebot.live/vs-hypefury</loc>
-    <lastmod>2025-08-22</lastmod>
+    <lastmod>2025-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://engagebot.live/case-studies</loc>
+    <lastmod>2025-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/case-studies/b2b-saas</loc>
+    <lastmod>2025-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/case-studies/sustainability-consulting</loc>
+    <lastmod>2025-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/case-studies/data-science</loc>
+    <lastmod>2025-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/case-studies/legal-services</loc>
+    <lastmod>2025-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/case-studies/cybersecurity</loc>
+    <lastmod>2025-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
