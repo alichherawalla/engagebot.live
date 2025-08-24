@@ -24,7 +24,7 @@ export default function FAQSection() {
     },
     {
       question: "Is my data secure and private?",
-      answer: "Yes, we use enterprise-grade security with end-to-end encryption for all data. Your knowledge base content, brand voice data, and engagement patterns are stored securely and never shared with third parties. We're SOC 2 compliant and follow strict data privacy protocols."
+      answer: "Yes, we use enterprise-grade security with end-to-end encryption for all data. Your knowledge base content, brand voice data, and engagement patterns are stored securely and never shared with third parties. "
     },
     {
       question: "Can I review responses before they're posted?",
