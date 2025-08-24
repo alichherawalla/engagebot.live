@@ -282,19 +282,19 @@ export default function ProductShowcase() {
                     <div className="grid grid-cols-4 gap-4 text-center">
                       <div className="bg-blue-50 p-3 rounded-lg">
                         <div className="text-2xl font-bold text-brand-blue">{features[activeTab].mockup.scheduled}</div>
-                        <div className="text-sm text-slate-600">Total Scheduled</div>
+                        <div className="text-xs text-slate-600">Total Scheduled</div>
                       </div>
                       <div className="bg-purple-50 p-3 rounded-lg">
                         <div className="text-2xl font-bold text-brand-purple">{features[activeTab].mockup.thisWeek}</div>
-                        <div className="text-sm text-slate-600">This Week</div>
+                        <div className="text-xs text-slate-600">This Week</div>
                       </div>
                       <div className="bg-green-50 p-3 rounded-lg">
                         <div className="text-2xl font-bold text-brand-green">{features[activeTab].mockup.published}</div>
-                        <div className="text-sm text-slate-600">Published</div>
+                        <div className="text-xs text-slate-600">Published</div>
                       </div>
                       <div className="bg-yellow-50 p-3 rounded-lg">
                         <div className="text-2xl font-bold text-yellow-600">{features[activeTab].mockup.pending}</div>
-                        <div className="text-sm text-slate-600">Pending</div>
+                        <div className="text-xs text-slate-600">Pending</div>
                       </div>
                     </div>
                     <div className="space-y-3">

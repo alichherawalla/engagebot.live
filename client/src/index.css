@@ -108,6 +108,18 @@
 }
 
 @layer base {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overscroll-behavior-x: none; /* Avoid sideways overscroll on mobile */
+  }
+
+  /* Ensure the root container doesn't create accidental overflow */
+  #root {
+    overflow-x: clip;
+  }
+
   * {
     @apply border-border;
   }
@@ -115,6 +127,13 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: var(--font-sans);
+    /* Prevent accidental zoom on double-tap for iOS Safari */
+    touch-action: manipulation;
+  }
+  
+  /* Avoid input focus zoom on iOS by keeping at least 16px font-size */
+  input, select, textarea, button {
+    font-size: 16px;
   }
 }
 
