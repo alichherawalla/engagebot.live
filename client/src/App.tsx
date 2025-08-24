@@ -39,8 +39,8 @@ function Router() {
       <Route path="/vs-plannable" component={VsPlannable} />
       <Route path="/vs-sproutsocial" component={VsSproutSocial} />
       <Route path="/vs-hypefury" component={VsHypefury} />
-      <Route path="/admin" component={Admin} />
-      <Route path="/trial-requests" component={TrialRequests} />
+      {/* <Route path="/admin" component={Admin} /> */}
+      {/* <Route path="/trial-requests" component={TrialRequests} /> */}
       <Route component={NotFound} />
     </Switch>
   );

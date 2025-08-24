@@ -76,53 +76,53 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/blog/posts", async (req, res) => {
-    try {
-      const validatedData = insertBlogPostSchema.parse(req.body);
-      const post = await storage.createBlogPost(validatedData);
-      res.status(201).json(post);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        return res.status(400).json({ message: "Invalid blog post data", errors: error.errors });
-      }
-      res.status(500).json({ message: "Failed to create blog post" });
-    }
-  });
+  // app.post("/api/blog/posts", async (req, res) => {
+  //   try {
+  //     const validatedData = insertBlogPostSchema.parse(req.body);
+  //     const post = await storage.createBlogPost(validatedData);
+  //     res.status(201).json(post);
+  //   } catch (error) {
+  //     if (error instanceof z.ZodError) {
+  //       return res.status(400).json({ message: "Invalid blog post data", errors: error.errors });
+  //     }
+  //     res.status(500).json({ message: "Failed to create blog post" });
+  //   }
+  // });
 
-  app.put("/api/blog/posts/:id", async (req, res) => {
-    try {
-      const { id } = req.params;
-      const validatedData = updateBlogPostSchema.parse(req.body);
+  // app.put("/api/blog/posts/:id", async (req, res) => {
+  //   try {
+  //     const { id } = req.params;
+  //     const validatedData = updateBlogPostSchema.parse(req.body);
       
-      const post = await storage.updateBlogPost(id, validatedData);
+  //     const post = await storage.updateBlogPost(id, validatedData);
       
-      if (!post) {
-        return res.status(404).json({ message: "Blog post not found" });
-      }
+  //     if (!post) {
+  //       return res.status(404).json({ message: "Blog post not found" });
+  //     }
       
-      res.json(post);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        return res.status(400).json({ message: "Invalid blog post data", errors: error.errors });
-      }
-      res.status(500).json({ message: "Failed to update blog post" });
-    }
-  });
+  //     res.json(post);
+  //   } catch (error) {
+  //     if (error instanceof z.ZodError) {
+  //       return res.status(400).json({ message: "Invalid blog post data", errors: error.errors });
+  //     }
+  //     res.status(500).json({ message: "Failed to update blog post" });
+  //   }
+  // });
 
-  app.delete("/api/blog/posts/:id", async (req, res) => {
-    try {
-      const { id } = req.params;
-      const success = await storage.deleteBlogPost(id);
+  // app.delete("/api/blog/posts/:id", async (req, res) => {
+  //   try {
+  //     const { id } = req.params;
+  //     const success = await storage.deleteBlogPost(id);
       
-      if (!success) {
-        return res.status(404).json({ message: "Blog post not found" });
-      }
+  //     if (!success) {
+  //       return res.status(404).json({ message: "Blog post not found" });
+  //     }
       
-      res.status(204).send();
-    } catch (error) {
-      res.status(500).json({ message: "Failed to delete blog post" });
-    }
-  });
+  //     res.status(204).send();
+  //   } catch (error) {
+  //     res.status(500).json({ message: "Failed to delete blog post" });
+  //   }
+  // });
 
   // Trial request routes
   app.post("/api/trial-requests", async (req, res) => {
@@ -138,14 +138,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/trial-requests", async (req, res) => {
-    try {
-      const requests = await storage.getAllTrialRequests();
-      res.json(requests);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch trial requests" });
-    }
-  });
+  // app.get("/api/trial-requests", async (req, res) => {
+  //   try {
+  //     const requests = await storage.getAllTrialRequests();
+  //     res.json(requests);
+  //   } catch (error) {
+  //     res.status(500).json({ message: "Failed to fetch trial requests" });
+  //   }
+  // });
 
   const httpServer = createServer(app);
   return httpServer;
