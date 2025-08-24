@@ -24,7 +24,7 @@ EngageBot is an AI-powered Twitter automation tool that helps users:
 
 ## Site Structure
 - Homepage: Product overview, features, pricing, social proof
-- Blog: 13+ articles about Twitter automation, engagement strategies, growth tips
+- Blog: 70+ articles about AI + social, Twitter/X strategy, personal branding, and tool comparisons
 - Comparison Pages: Detailed comparisons vs Buffer, Plannable, Sprout Social, Hypefury
 - Case Studies: Anonymized success stories list at /case-studies with per-case pages at /case-studies/:slug (e.g., b2b-saas, sustainability-consulting, data-science, legal-services, cybersecurity)
 - Admin: Content management system for blog posts (not indexed)
@@ -72,3 +72,88 @@ CTAs & Navigation:
 
 ## Contact & Business Info
 This is a SaaS product focused on Twitter engagement automation using advanced AI technology. The platform is designed for serious entrepreneurs and marketers who want to build authentic relationships on Twitter at scale.
+
+## Blog Index (for LLM crawling and grounding)
+- Base: https://engagebot.live/blog
+- Updated: 2025-08-24
+- Count: 70+
+
+Slugs:
+- the-creator-economy-shift-from-followers-to-engagement
+- social-media-algorithm-changes-how-ai-adapts-automatically
+- the-future-of-social-media-ais-role-in-2025-and-beyond
+- social-media-tool-migration-guide-switching-without-losing-data
+- native-social-media-tools-vs-third-party-pros-and-cons
+- smb-vs-enterprise-social-media-tools-finding-the-right-fit
+- claude-ai-vs-chatgpt-for-social-media-the-ultimate-comparison
+- all-in-one-vs-specialized-tools-social-media-tool-strategy
+- free-vs-paid-social-media-tools-when-to-upgrade
+- sprout-social-vs-ai-tools-enterprise-features-vs-innovation
+- later-vs-engagebot-visual-planning-vs-ai-engagement
+- socialbee-vs-ai-native-tools-traditional-scheduling-vs-intelligence
+- hootsuite-vs-modern-ai-tools-why-businesses-are-switching
+- best-twitter-automation-tools-2025-complete-comparison
+- engagebot-vs-buffer-ai-powered-vs-traditional-social-media-tools
+- personal-brand-analytics-measuring-your-online-impact
+- building-authority-through-content-thought-leadership-tactics
+- professional-social-media-etiquette-dos-and-donts
+- personal-brand-storytelling-your-journey-as-content
+- industry-expert-positioning-niche-down-for-maximum-impact
+- personal-branding-for-introverts-quiet-confidence-online
+- authenticity-in-personal-branding-being-real-in-a-digital-world
+- personal-brand-crisis-management-protecting-your-reputation
+- executive-personal-branding-c-suite-social-media-strategy
+- content-creator-economy-monetize-your-personal-brand
+- personal-brand-photography-visual-identity-for-professionals
+- professional-networking-on-social-media-build-meaningful-connections
+- personal-brand-voice-develop-your-unique-online-personality
+- thought-leadership-content-how-to-become-an-industry-expert
+- linkedin-vs-twitter-for-personal-branding-platform-comparison
+- personal-branding-on-social-media-the-complete-2025-guide
+- social-media-content-planning-90-day-content-strategy
+- social-media-competitive-analysis-spy-on-your-competitors
+- global-social-media-marketing-cultural-considerations
+- social-media-team-structure-building-your-dream-team
+- user-generated-content-strategy-leverage-your-community
+- social-commerce-revolution-selling-directly-through-social
+- social-media-analytics-20-metrics-that-matter-in-2025
+- social-media-influencer-partnerships-beyond-sponsored-posts
+- social-media-trends-2025-what-marketers-need-to-know
+- employee-advocacy-programs-turn-staff-into-brand-ambassadors
+- social-media-advertising-vs-organic-the-complete-comparison
+- social-media-crisis-communication-emergency-response-playbook
+- social-media-content-types-25-formats-that-drive-engagement
+- b2b-social-media-marketing-linkedin-twitter-and-beyond
+- social-media-roi-calculator-prove-your-marketing-value
+- cross-platform-social-media-management-tools-and-strategies
+- social-media-marketing-strategy-2025-what-actually-works
+- the-psychology-of-ai-why-humans-trust-automated-content
+- ai-powered-ab-testing-for-social-media-content
+- voice-ai-and-social-media-the-next-frontier
+- ai-automation-mistakes-what-not-to-do-in-2025
+- natural-language-processing-in-social-media-marketing
+- ai-generated-images-for-social-media-tools-and-best-practices
+- automated-content-curation-ai-finds-your-best-content
+- ai-writing-tools-for-marketers-2025-complete-comparison
+- ai-vs-human-the-future-of-social-media-management
+- machine-learning-for-social-media-predicting-viral-content
+- ai-content-personalization-custom-content-for-every-follower
+- conversational-ai-for-social-media-chatbots-that-actually-help
+- ai-powered-social-listening-beyond-basic-keyword-monitoring
+- roi-of-ai-automation-measuring-social-media-success
+- brand-voice-ai-train-your-ai-to-sound-like-your-brand
+- ai-content-creation-for-social-media-50-prompt-templates
+- chatgpt-vs-claude-for-social-media-which-ai-writes-better
+- ai-social-media-automation-the-complete-2025-guide
+- twitter-compliance-for-businesses-legal-and-ethical-guidelines
+- twitter-for-e-commerce-drive-sales-through-social-engagement
+- twitter-content-repurposing-1-idea-10-different-posts
+- twitter-timing-when-to-post-for-maximum-engagement
+- twitter-lists-the-overlooked-feature-for-better-engagement
+- twitter-crisis-management-how-to-handle-pr-disasters
+- twitter-advertising-vs-organic-whats-worth-your-investment
+- twitter-spaces-marketing-audio-content-strategy-for-brands
+- twitter-influencer-marketing-how-to-find-and-partner-with-creators
+- twitter-customer-service-turn-complaints-into-opportunities
+- twitter-hashtag-strategy-ai-research-guide
+- safe-twitter-automation-avoid-suspension

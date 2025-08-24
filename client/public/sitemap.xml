@@ -1,171 +1,618 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core pages -->
   <url>
     <loc>https://engagebot.live/</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <url>
     <loc>https://engagebot.live/blog</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-video-strategy-stand-out-2025</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-polls-ultimate-guide-boosting-engagement</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-vs-linkedin-b2b-businesses-focus</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-analytics-metrics-track-growth</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-lead-generation-convert-followers-customers</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-content-calendar-30-days-post-ideas</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-hashtag-strategy-ai-research-guide</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/safe-twitter-automation-avoid-suspension</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-thread-mastery-15-templates-engagement</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-growth-startups-0-to-10k-followers-90-days</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-engagement-rate-benchmarks-2025</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/twitter-algorithm-secrets-ai-optimization-2025</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://engagebot.live/blog/how-to-grow-twitter-following-organically-2025</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
+
+  <!-- Comparison pages -->
   <url>
     <loc>https://engagebot.live/vs-buffer</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>https://engagebot.live/vs-plannable</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>https://engagebot.live/vs-sproutsocial</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>https://engagebot.live/vs-hypefury</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
+  <!-- Case studies -->
   <url>
     <loc>https://engagebot.live/case-studies</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://engagebot.live/case-studies/b2b-saas</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://engagebot.live/case-studies/sustainability-consulting</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://engagebot.live/case-studies/data-science</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://engagebot.live/case-studies/legal-services</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://engagebot.live/case-studies/cybersecurity</loc>
-    <lastmod>2025-08-23</lastmod>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog posts (updated) -->
+  <url>
+    <loc>https://engagebot.live/blog/the-creator-economy-shift-from-followers-to-engagement</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-algorithm-changes-how-ai-adapts-automatically</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/the-future-of-social-media-ais-role-in-2025-and-beyond</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-tool-migration-guide-switching-without-losing-data</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/native-social-media-tools-vs-third-party-pros-and-cons</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/smb-vs-enterprise-social-media-tools-finding-the-right-fit</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/claude-ai-vs-chatgpt-for-social-media-the-ultimate-comparison</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/all-in-one-vs-specialized-tools-social-media-tool-strategy</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/free-vs-paid-social-media-tools-when-to-upgrade</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/sprout-social-vs-ai-tools-enterprise-features-vs-innovation</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/later-vs-engagebot-visual-planning-vs-ai-engagement</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/socialbee-vs-ai-native-tools-traditional-scheduling-vs-intelligence</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/hootsuite-vs-modern-ai-tools-why-businesses-are-switching</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/best-twitter-automation-tools-2025-complete-comparison</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/engagebot-vs-buffer-ai-powered-vs-traditional-social-media-tools</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/personal-brand-analytics-measuring-your-online-impact</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/building-authority-through-content-thought-leadership-tactics</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/professional-social-media-etiquette-dos-and-donts</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/personal-brand-storytelling-your-journey-as-content</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/industry-expert-positioning-niche-down-for-maximum-impact</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/personal-branding-for-introverts-quiet-confidence-online</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/authenticity-in-personal-branding-being-real-in-a-digital-world</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/personal-brand-crisis-management-protecting-your-reputation</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/executive-personal-branding-c-suite-social-media-strategy</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/content-creator-economy-monetize-your-personal-brand</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/personal-brand-photography-visual-identity-for-professionals</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/professional-networking-on-social-media-build-meaningful-connections</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/personal-brand-voice-develop-your-unique-online-personality</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/thought-leadership-content-how-to-become-an-industry-expert</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/linkedin-vs-twitter-for-personal-branding-platform-comparison</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/personal-branding-on-social-media-the-complete-2025-guide</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-content-planning-90-day-content-strategy</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-competitive-analysis-spy-on-your-competitors</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/global-social-media-marketing-cultural-considerations</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-team-structure-building-your-dream-team</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/user-generated-content-strategy-leverage-your-community</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-commerce-revolution-selling-directly-through-social</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-analytics-20-metrics-that-matter-in-2025</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-influencer-partnerships-beyond-sponsored-posts</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-trends-2025-what-marketers-need-to-know</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/employee-advocacy-programs-turn-staff-into-brand-ambassadors</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-advertising-vs-organic-the-complete-comparison</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-crisis-communication-emergency-response-playbook</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-content-types-25-formats-that-drive-engagement</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/b2b-social-media-marketing-linkedin-twitter-and-beyond</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-roi-calculator-prove-your-marketing-value</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/cross-platform-social-media-management-tools-and-strategies</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/social-media-marketing-strategy-2025-what-actually-works</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/the-psychology-of-ai-why-humans-trust-automated-content</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-powered-ab-testing-for-social-media-content</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/voice-ai-and-social-media-the-next-frontier</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-automation-mistakes-what-not-to-do-in-2025</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/natural-language-processing-in-social-media-marketing</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-generated-images-for-social-media-tools-and-best-practices</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/automated-content-curation-ai-finds-your-best-content</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-writing-tools-for-marketers-2025-complete-comparison</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-vs-human-the-future-of-social-media-management</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/machine-learning-for-social-media-predicting-viral-content</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-content-personalization-custom-content-for-every-follower</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/conversational-ai-for-social-media-chatbots-that-actually-help</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-powered-social-listening-beyond-basic-keyword-monitoring</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/roi-of-ai-automation-measuring-social-media-success</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/brand-voice-ai-train-your-ai-to-sound-like-your-brand</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-content-creation-for-social-media-50-prompt-templates</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/chatgpt-vs-claude-for-social-media-which-ai-writes-better</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/ai-social-media-automation-the-complete-2025-guide</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-compliance-for-businesses-legal-and-ethical-guidelines</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-for-e-commerce-drive-sales-through-social-engagement</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-content-repurposing-1-idea-10-different-posts</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-timing-when-to-post-for-maximum-engagement</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-lists-the-overlooked-feature-for-better-engagement</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-crisis-management-how-to-handle-pr-disasters</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-advertising-vs-organic-whats-worth-your-investment</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-spaces-marketing-audio-content-strategy-for-brands</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-influencer-marketing-how-to-find-and-partner-with-creators</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-customer-service-turn-complaints-into-opportunities</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-hashtag-strategy-ai-research-guide</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/safe-twitter-automation-avoid-suspension</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legacy blog posts kept -->
+  <url>
+    <loc>https://engagebot.live/blog/twitter-video-strategy-stand-out-2025</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-polls-ultimate-guide-boosting-engagement</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-vs-linkedin-b2b-businesses-focus</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-analytics-metrics-track-growth</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-lead-generation-convert-followers-customers</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-content-calendar-30-days-post-ideas</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-thread-mastery-15-templates-engagement</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-growth-startups-0-to-10k-followers-90-days</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-engagement-rate-benchmarks-2025</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/twitter-algorithm-secrets-ai-optimization-2025</loc>
+    <lastmod>2025-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://engagebot.live/blog/how-to-grow-twitter-following-organically-2025</loc>
+    <lastmod>2025-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

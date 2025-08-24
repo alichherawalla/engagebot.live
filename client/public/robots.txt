@@ -1,4 +1,5 @@
 # Robots.txt for EngageBot
+# Last updated: 2025-08-24 — Sitemap and blog URLs refreshed (~70+ posts)
 
 User-agent: *
 Allow: /
