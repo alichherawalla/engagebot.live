@@ -27,8 +27,8 @@ export default function FAQSection() {
       answer: "Yes, we use enterprise-grade security with end-to-end encryption for all data. Your knowledge base content, brand voice data, and engagement patterns are stored securely and never shared with third parties. "
     },
     {
-      question: "Can I review responses before they're posted?",
-      answer: "Absolutely. EngageBot can operate in manual approval mode where all responses are queued for your review before posting. You can also set up automatic posting with confidence filters, or use a hybrid approach where only high-confidence responses post automatically."
+      question: "Can I review responses before posting?",
+      answer: "Yes. EngageBot finds relevant tweets and drafts high-quality, on-brand replies for your review and approval."
     }
   ];
 

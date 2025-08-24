@@ -165,7 +165,7 @@ export default function AnimatedHeroDemo() {
                     Revenue Acceleration
                   </h3>
                   <p className="text-blue-200 text-sm sm:text-base">
-                    Scales your business through automated engagement
+                    Scales your business with AI-drafted engagement
                   </p>
                 </>
               )}

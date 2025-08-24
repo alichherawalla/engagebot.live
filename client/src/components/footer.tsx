@@ -119,7 +119,7 @@ export default function Footer() {
               <h3 className="text-2xl font-bold text-white">EngageBot</h3>
             </div>
             <p className="text-slate-400 mb-6 max-w-md leading-relaxed">
-              Transform your Twitter presence with AI-powered engagement that builds authentic relationships and drives business growth. Join successful entrepreneurs who trust EngageBot to scale their authority.
+              Transform your Twitter presence with AI-powered engagement that builds authentic relationships and drives business growth. EngageBot discovers conversations and drafts on-brand replies that scale your authority.
             </p>
           </div>
           

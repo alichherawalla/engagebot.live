@@ -24,8 +24,7 @@ export default function HeroSection() {
               Engagement
             </h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed" data-testid="hero-description">
-              Transform Twitter engagement from manual, time-consuming work into intelligent automation. 
-              Build meaningful professional relationships at scale without losing authenticity.
+              EngageBot discovers the right conversations and drafts authentic, on-brand replies that build real relationships.
             </p>
             
             <div className="space-y-4 mb-8">

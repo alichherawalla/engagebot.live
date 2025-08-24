@@ -22,8 +22,8 @@ export default function SolutionSection() {
     },
     {
       number: "4",
-      title: "Generate Authentic Responses",
-      description: "EngageBot creates personalized, expert-level responses that sound like you while building meaningful relationships.",
+  title: "Review & Approve Drafts",
+  description: "EngageBot drafts personalized, expert-level responses in your voice for your approval.",
       colorClass: "bg-blue-500"
     }
   ];
@@ -42,7 +42,7 @@ export default function SolutionSection() {
             How <span className="text-brand-green">EngageBot</span> Works
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto" data-testid="solution-description">
-            Four simple steps to transform your Twitter engagement from manual work to intelligent automation.
+            Four simple steps: teach your voice, discover conversations, and get AI-drafted replies ready for your approval.
           </p>
         </motion.div>
 

@@ -59,8 +59,8 @@ export default function Blog() {
     <div className="min-h-screen bg-slate-50">
       <SEOHead
         title="EngageBot Blog - Twitter Automation Tips & AI Engagement Strategies"
-        description="Discover expert tips, strategies, and insights for mastering Twitter engagement with AI automation. Learn how successful entrepreneurs scale their social media presence."
-        keywords="Twitter automation blog, AI engagement tips, social media strategy, Twitter growth guide, automated responses best practices"
+  description="Discover expert tips, strategies, and insights for mastering Twitter engagement with AI-drafted replies you post manually. Learn how successful entrepreneurs scale their presence without losing authenticity."
+  keywords="Twitter automation blog, AI engagement tips, Twitter reply drafts, social media strategy, Twitter growth guide"
         canonical="/blog"
       />
       

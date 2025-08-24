@@ -65,8 +65,8 @@ export default function ProductShowcase() {
     },
     {
       id: "calendar",
-      title: "Content Calendar",
-      description: "AI-powered content scheduling and management with performance tracking.",
+  title: "Content Calendar",
+  description: "Organize drafted replies and content ideas with performance insights.",
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       mockup: {
         title: "Content Calendar",
@@ -282,7 +282,7 @@ export default function ProductShowcase() {
                     <div className="grid grid-cols-4 gap-4 text-center">
                       <div className="bg-blue-50 p-3 rounded-lg">
                         <div className="text-2xl font-bold text-brand-blue">{features[activeTab].mockup.scheduled}</div>
-                        <div className="text-xs text-slate-600">Total Scheduled</div>
+                        <div className="text-xs text-slate-600">Total Drafts</div>
                       </div>
                       <div className="bg-purple-50 p-3 rounded-lg">
                         <div className="text-2xl font-bold text-brand-purple">{features[activeTab].mockup.thisWeek}</div>
@@ -298,7 +298,7 @@ export default function ProductShowcase() {
                       </div>
                     </div>
                     <div className="space-y-3">
-                      <h4 className="font-medium text-slate-700">Upcoming Posts</h4>
+                      <h4 className="font-medium text-slate-700">Upcoming Drafts</h4>
                       {features[activeTab].mockup.posts?.map((post, i) => (
                         <div key={i} className="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg">
                           <div className="flex-1">

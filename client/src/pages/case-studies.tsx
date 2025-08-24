@@ -69,7 +69,7 @@ const caseStudies = [
   company: "Startup Legal Partners",
     industry: "Legal Services",
     challenge: "Needed to build trust and demonstrate expertise to attract startup founders as clients",
-    solution: "Engaged in startup ecosystem conversations and provided valuable legal insights through automated responses",
+  solution: "Engaged in startup ecosystem conversations and provided valuable legal insights using AI-drafted replies",
     results: {
       followers: { before: 1800, after: 5600 },
       engagement: { before: "2.1%", after: "6.4%" },
@@ -94,7 +94,7 @@ const caseStudies = [
       leads: "91 security assessments booked",
       timeframe: "6 months"
     },
-    quote: "EngageBot helped us establish credibility in cybersecurity conversations. The automated engagement feels natural and has led to speaking opportunities at major conferences.",
+  quote: "EngageBot helped us establish credibility in cybersecurity conversations. The AI-drafted engagement felt natural and still saved time.",
   author: "Alex Thompson",
   role: "CEO",
   avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=64&h=64&fit=crop&crop=face"

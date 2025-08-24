@@ -87,7 +87,7 @@ export default function VsSproutSocial() {
       <SEOHead
         title="EngageBot vs Sprout Social: AI Engagement vs Social Media Management | EngageBot"
         description="Compare EngageBot's AI-powered Twitter engagement with Sprout Social's comprehensive social media management. Discover how targeted engagement outperforms broad monitoring for business growth."
-        keywords="EngageBot vs Sprout Social, AI social media automation, Twitter engagement vs social listening, social media management comparison, automated Twitter responses"
+  keywords="EngageBot vs Sprout Social, AI social media automation, Twitter engagement vs social listening, social media management comparison, AI-drafted replies"
         canonical="/vs-sproutsocial"
       />
       
@@ -215,7 +215,7 @@ export default function VsSproutSocial() {
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-brand-purple rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    Generate contextual, expert responses automatically
+                    Generate contextual, expert response drafts for your approval
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-brand-purple rounded-full mt-2 mr-3 flex-shrink-0"></div>

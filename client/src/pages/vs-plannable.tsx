@@ -206,7 +206,7 @@ export default function VsPlannable() {
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-brand-purple rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    Generate contextual, expert responses automatically
+                    Generate contextual, expert response drafts for your approval
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-brand-purple rounded-full mt-2 mr-3 flex-shrink-0"></div>

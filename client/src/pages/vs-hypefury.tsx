@@ -23,7 +23,7 @@ const comparisonFeatures = [
     category: "Content Automation",
     features: [
       { name: "Auto-retweet top tweets", engagebot: false, competitor: true },
-      { name: "Auto-reply to comments", engagebot: true, competitor: true },
+  { name: "Draft replies to comments", engagebot: true, competitor: true },
       { name: "Thread scheduling", engagebot: true, competitor: true },
       { name: "Content recycling", engagebot: false, competitor: true },
     ]
@@ -206,7 +206,7 @@ export default function VsHypefury() {
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-brand-purple rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    Generate expert responses that showcase knowledge
+                    Generate expert response drafts that showcase knowledge
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-brand-purple rounded-full mt-2 mr-3 flex-shrink-0"></div>

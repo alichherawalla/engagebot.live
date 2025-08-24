@@ -22,11 +22,11 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-slate-50">
       <SEOHead
-        title="EngageBot - AI-Powered Twitter Engagement Automation | Turn Your Expertise Into Automated Twitter Growth"
-        description="Transform Twitter engagement with AI automation. EngageBot uses frontier models to discover conversations, generate authentic responses, and build meaningful relationships at scale. Save 15+ hours weekly."
-        keywords="Twitter automation, AI engagement, social media marketing, Twitter growth, automated responses, frontier models, social media tools"
-        ogTitle="EngageBot - AI-Powered Twitter Engagement Automation"
-        ogDescription="Turn your expertise into automated Twitter engagement. Save 15+ hours weekly while building authentic relationships."
+        title="EngageBot - AI-Drafted Twitter Replies | Discover Conversations and Respond Authentically"
+        description="EngageBot finds relevant conversations and drafts authentic replies in your voice. Save 15+ hours weekly while building real relationships and authority."
+        keywords="Twitter automation, AI engagement, Twitter reply drafts, brand voice, frontier models, social media tools"
+        ogTitle="EngageBot - AI-Drafted Twitter Replies"
+        ogDescription="Discover conversations and get on-brand reply drafts that build real relationships."
         ogType="website"
         canonical="/"
       />

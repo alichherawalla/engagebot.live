@@ -77,8 +77,8 @@ export default function VsBuffer() {
     <div className="min-h-screen bg-slate-50">
       <SEOHead
         title="EngageBot vs Buffer: AI-Powered Engagement vs Content Scheduling | EngageBot"
-        description="Compare EngageBot's AI-powered Twitter engagement automation with Buffer's content scheduling. Discover why authentic conversation beats scheduled posts for building business relationships."
-        keywords="EngageBot vs Buffer, AI social media automation, Twitter engagement vs scheduling, social media management comparison, automated Twitter responses"
+  description="Compare EngageBot's AI-drafted Twitter replies with Buffer's content scheduling. EngageBot finds conversations and drafts authentic responses that build relationships."
+  keywords="EngageBot vs Buffer, AI social media automation, Twitter engagement vs scheduling, social media management comparison, AI-drafted replies"
         canonical="/vs-buffer"
       />
       
@@ -275,7 +275,7 @@ export default function VsBuffer() {
                 Feature Comparison
               </h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                See how EngageBot's AI-powered engagement compares to Buffer's content scheduling features.
+                See how EngageBot's AI-drafted engagement compares to Buffer's content scheduling features.
               </p>
             </motion.div>
 
