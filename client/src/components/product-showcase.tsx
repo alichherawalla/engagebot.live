@@ -14,7 +14,7 @@ export default function ProductShowcase() {
       id: "dashboard",
       title: "Smart Dashboard",
       description: "Monitor your Twitter engagement and performance in real-time with comprehensive analytics.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=225",
       mockup: {
         title: "Dashboard Overview",
         stats: [
@@ -29,7 +29,7 @@ export default function ProductShowcase() {
       id: "knowledge",
       title: "Knowledge Base",
       description: "Upload your expertise documents and let AI learn from your knowledge to create authentic responses.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=225",
       mockup: {
         title: "Knowledge Base Ingestion",
         documents: [
@@ -44,7 +44,7 @@ export default function ProductShowcase() {
       id: "engagement",
       title: "Engagement Hub",
       description: "Discover relevant conversations and generate AI-powered responses that showcase your expertise.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=225",
       mockup: {
         title: "Fresh Engagement Opportunities",
         conversations: [
@@ -67,7 +67,7 @@ export default function ProductShowcase() {
       id: "calendar",
   title: "Content Calendar",
   description: "Organize drafted replies and content ideas with performance insights.",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=225",
       mockup: {
         title: "Content Calendar",
         scheduled: 35,
@@ -94,7 +94,7 @@ export default function ProductShowcase() {
       id: "analytics",
       title: "Profile Analysis",
       description: "Deep insights into your Twitter performance and audience engagement patterns.",
-      image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=225",
       mockup: {
         title: "Profile Analysis",
         profile: {
@@ -115,7 +115,7 @@ export default function ProductShowcase() {
       id: "settings",
       title: "Brand Voice Training",
       description: "Configure your AI to match your unique communication style and expertise areas.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=225",
       mockup: {
         title: "Brand Voice Configuration",
         settings: {

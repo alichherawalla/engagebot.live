@@ -121,7 +121,7 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+              src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=225"
               alt="Social media engagement analytics and metrics dashboard"
               className="rounded-2xl shadow-lg w-full h-auto"
               data-testid="feature-highlight-1-image"
@@ -164,7 +164,7 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=225"
               alt="Tech entrepreneurs analyzing business analytics and growth metrics"
               className="rounded-2xl shadow-lg w-full h-auto"
               data-testid="feature-highlight-2-image"
