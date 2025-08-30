@@ -84,7 +84,22 @@ export function serveStaticWithMeta(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  // Cache policy: hashed assets are immutable for 1 year; HTML not cached
+  app.use(
+    express.static(distPath, {
+      setHeaders: (res, filePath) => {
+        const ext = path.extname(filePath);
+        const base = path.basename(filePath);
+        if (base.includes("-") && /\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff2?)$/.test(ext)) {
+          res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+        } else if (ext === ".html") {
+          res.setHeader("Cache-Control", "no-cache");
+        } else {
+          res.setHeader("Cache-Control", "public, max-age=3600");
+        }
+      },
+    })
+  );
 
   // fall through to index.html if the file doesn't exist and inject meta tags
   app.use("*", async (req, res) => {

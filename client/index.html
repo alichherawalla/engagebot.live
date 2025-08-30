@@ -11,38 +11,44 @@
       name="description"
       content="Transform Twitter engagement with AI automation. EngageBot uses AI to discover conversations, generate authentic responses, and build meaningful relationships at scale."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-
-    <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "sz5ntm7p12");
-    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script
-      type="text/javascript"
-      src="https://replit.com/public/js/replit-dev-banner.js"
-    ></script>
+    <!-- Defer non-critical third-party scripts to avoid impacting LCP -->
+    <script type="text/javascript">
+      (function () {
+        var schedule = window.requestIdleCallback || function (cb) { setTimeout(cb, 0); };
+        // Defer Microsoft Clarity until idle to keep it off the critical path
+        schedule(function () {
+          (function (c, l, a, r, i, t, y) {
+            c[a] =
+              c[a] ||
+              function () {
+                (c[a].q = c[a].q || []).push(arguments);
+              };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+          })(window, document, "clarity", "script", "sz5ntm7p12");
+        });
+
+        // Only load Replit dev banner when running on Replit domains
+        var isReplit = /repl\.co$|replit\.dev$/.test(location.hostname);
+        if (isReplit) {
+          schedule(function () {
+            var s = document.createElement('script');
+            s.src = 'https://replit.com/public/js/replit-dev-banner.js';
+            s.async = true;
+            document.body.appendChild(s);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

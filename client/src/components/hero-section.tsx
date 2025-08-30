@@ -19,22 +19,20 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6" data-testid="hero-title">
-              Turn Your Expertise Into{" "}
-              <span className="text-brand-green-light">Automated Twitter</span>{" "}
-              Engagement
+              Grow your Twitter with safe, human‑like automation
             </h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed" data-testid="hero-description">
-              EngageBot discovers the right conversations and drafts authentic, on-brand replies that build real relationships.
+              Queue smart replies, triage your inbox, and turn conversations into followers—without risking your account.
             </p>
             
             <div className="space-y-4 mb-8">
               <div className="flex items-center space-x-3" data-testid="hero-benefit-1">
                 <CheckCircle className="h-6 w-6 text-brand-green-light" />
-                <span className="text-blue-100">Save 15+ hours weekly on Twitter engagement</span>
+                <span className="text-blue-100">Safe throttling controls</span>
               </div>
               <div className="flex items-center space-x-3" data-testid="hero-benefit-2">
                 <CheckCircle className="h-6 w-6 text-brand-green-light" />
-                <span className="text-blue-100">95% brand voice consistency across all responses</span>
+                <span className="text-blue-100">Replies drafted in your voice</span>
               </div>
               <div className="flex items-center space-x-3" data-testid="hero-benefit-3">
                 <CheckCircle className="h-6 w-6 text-brand-green-light" />
@@ -42,7 +40,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="flex justify-center sm:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
               <Button
                 size="lg"
                 onClick={() => setIsTrialModalOpen(true)}
@@ -51,10 +49,22 @@ export default function HeroSection() {
               >
                 Get Early Access
               </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => {
+                  const el = document.getElementById("demo");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-white/10 border-white/30 text-white hover:bg-white/20 px-8 py-4 text-lg font-semibold"
+                data-testid="hero-cta-secondary"
+              >
+                <Play className="h-5 w-5 mr-2" /> Watch 60‑sec demo
+              </Button>
             </div>
             
             <p className="text-blue-200 text-sm mt-4" data-testid="hero-disclaimer">
-              No credit card required • Cancel anytime
+              Throttle‑controlled • No password needed
             </p>
           </motion.div>
           

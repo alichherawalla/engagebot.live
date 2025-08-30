@@ -1,20 +1,21 @@
 import SEOHead from "@/components/seo-head";
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
-import ProblemSection from "@/components/problem-section";
-import SolutionSection from "@/components/solution-section";
-import FeaturesSection from "@/components/features-section";
-import CaseStudiesPreview from "@/components/case-studies-preview";
-import PricingSection from "@/components/pricing-section";
-import ProductShowcase from "@/components/product-showcase";
-import BlogSection from "@/components/blog-section";
-import FAQSection from "@/components/faq-section";
-import Footer from "@/components/footer";
-import { useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { Play, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
-import TrialRequestModal from "@/components/trial-request-modal";
+import { CheckCircle } from "lucide-react";
+
+// Lazy-load below-the-fold sections to reduce initial bundle size
+const ProblemSection = lazy(() => import("@/components/problem-section"));
+const SolutionSection = lazy(() => import("@/components/solution-section"));
+const FeaturesSection = lazy(() => import("@/components/features-section"));
+const ProductShowcase = lazy(() => import("@/components/product-showcase"));
+const CaseStudiesPreview = lazy(() => import("@/components/case-studies-preview"));
+const PricingSection = lazy(() => import("@/components/pricing-section"));
+const BlogSection = lazy(() => import("@/components/blog-section"));
+const FAQSection = lazy(() => import("@/components/faq-section"));
+const Footer = lazy(() => import("@/components/footer"));
+const TrialRequestModal = lazy(() => import("@/components/trial-request-modal"));
 
 export default function Landing() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
@@ -33,24 +34,20 @@ export default function Landing() {
       
       <Navbar />
       <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <FeaturesSection />
-  <ProductShowcase />
-  <CaseStudiesPreview />
-      <PricingSection />
-      <BlogSection />
-      <FAQSection />
+      <Suspense fallback={null}>
+        <ProblemSection />
+        <SolutionSection />
+        <FeaturesSection />
+        <ProductShowcase />
+        <CaseStudiesPreview />
+        <PricingSection />
+        <BlogSection />
+        <FAQSection />
+      </Suspense>
       
       {/* Final CTA Section */}
       <section className="py-20 gradient-hero" data-testid="final-cta-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6" data-testid="final-cta-title">
               Ready to Transform Your Twitter Engagement?
             </h2>
@@ -84,16 +81,17 @@ export default function Landing() {
                 <span>Cancel anytime</span>
               </div>
             </div>
-          </motion.div>
+          
         </div>
       </section>
       
-      <Footer />
-      
-      <TrialRequestModal 
-        isOpen={isTrialModalOpen} 
-        onClose={() => setIsTrialModalOpen(false)} 
-      />
+      <Suspense fallback={null}>
+        <Footer />
+        <TrialRequestModal 
+          isOpen={isTrialModalOpen} 
+          onClose={() => setIsTrialModalOpen(false)} 
+        />
+      </Suspense>
     </div>
   );
 }

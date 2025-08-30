@@ -55,7 +55,21 @@ app.use((req, res, next) => {
   // Serve static files (images, etc.) in both development and production
   const publicPath = path.resolve(import.meta.dirname, "public");
   if (fs.existsSync(publicPath)) {
-    app.use(express.static(publicPath));
+    app.use(
+      express.static(publicPath, {
+        setHeaders: (res, filePath) => {
+          const ext = path.extname(filePath);
+          const base = path.basename(filePath);
+          if (base.includes("-") && /\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff2?)$/.test(ext)) {
+            res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+          } else if (ext === ".html") {
+            res.setHeader("Cache-Control", "no-cache");
+          } else {
+            res.setHeader("Cache-Control", "public, max-age=3600");
+          }
+        },
+      })
+    );
   }
 
   // Add meta tag injection middleware for HTML routes
