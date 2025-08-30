@@ -149,13 +149,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('trial')}
-                  className="hover:text-white transition-colors hover:translate-x-1 transform duration-200"
-                  data-testid="footer-trial"
-                >
-                  Free Trial
-                </button>
               </li>
             </ul>
           </div>
