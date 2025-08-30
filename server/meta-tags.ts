@@ -18,7 +18,7 @@ export async function generateMetaTags(url: string, storage: IStorage): Promise<
     description: "Transform Twitter engagement with AI automation. EngageBot uses Claude 4.0 to discover conversations, generate authentic responses, and build meaningful relationships at scale.",
     ogTitle: "EngageBot - AI-Powered Twitter Engagement Automation",
     ogDescription: "Transform Twitter engagement with AI automation. EngageBot uses Claude 4.0 to discover conversations, generate authentic responses, and build meaningful relationships at scale.",
-    ogImage: "https://engagebot.live/favicon.png",
+    ogImage: "https://engagebot.live/favicon.webp",
     ogUrl: "https://engagebot.live",
     twitterCard: "summary_large_image",
     keywords: "Twitter automation, AI engagement, social media automation, Twitter bot, engagement automation, social media marketing"
