@@ -2,10 +2,28 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Play } from "lucide-react";
 import TrialRequestModal from "@/components/trial-request-modal";
-import AnimatedHeroDemo from "@/components/animated-hero-demo";
+import { useEffect, useRef, useState as useReactState } from "react";
 
 export default function HeroSection() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [showDemo, setShowDemo] = useReactState(false);
+  const demoRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!demoRef.current || typeof window === "undefined") return;
+    const el = demoRef.current;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShowDemo(true);
+          obs.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <section className="gradient-hero py-20 lg:py-32" data-testid="hero-section">
@@ -62,8 +80,12 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="mt-8 lg:mt-0 lg:pl-8">
-            <AnimatedHeroDemo />
+          <div className="mt-8 lg:mt-0 lg:pl-8" ref={demoRef}>
+            {showDemo ? (
+              <LazyAnimatedHeroDemo />
+            ) : (
+              <div className="relative w-full h-[300px] sm:h-[360px] lg:h-[420px] rounded-2xl bg-slate-800/40" />
+            )}
           </div>
         </div>
       </div>
@@ -74,4 +96,18 @@ export default function HeroSection() {
       />
     </section>
   );
+}
+
+function LazyAnimatedHeroDemo() {
+  const [Comp, setComp] = useReactState<null | React.ComponentType>(null);
+  useEffect(() => {
+    let mounted = true;
+    import("@/components/animated-hero-demo").then((m) => {
+      if (mounted) setComp(() => m.default);
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+  return Comp ? <Comp /> : null;
 }

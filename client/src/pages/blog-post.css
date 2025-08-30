@@ -1,0 +1,10 @@
+.blogContent :where(p, li){
+  color: rgb(51 65 85);
+}
+.blogContent h1, .blogContent h2, .blogContent h3{
+  color: rgb(15 23 42);
+}
+.blogContent img{
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+}

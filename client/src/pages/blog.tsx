@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+// Removed framer-motion to keep blog chunk lighter
 import { useState, useEffect, useMemo } from "react";
 import SEOHead from "@/components/seo-head";
 import Navbar from "@/components/navbar";
@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { Search, Filter, X } from "lucide-react";
 import type { BlogPost } from "@shared/schema";
+import "./blog.css";
 
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -66,14 +67,9 @@ export default function Blog() {
       
       <Navbar />
       
-      <main className="py-20" data-testid="blog-page">
+  <main className="py-20 blogList" data-testid="blog-page">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6" data-testid="blog-page-title">
               EngageBot <span className="text-brand-purple">Blog</span>
             </h1>
@@ -82,12 +78,7 @@ export default function Blog() {
             </p>
 
             {/* Search and Filter Section */}
-            <motion.div
-              className="max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <div className="max-w-2xl mx-auto">
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <div className="relative flex-1">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
@@ -132,8 +123,8 @@ export default function Blog() {
                   </Button>
                 </div>
               )}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {isLoading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-testid="blog-loading">
@@ -160,12 +151,9 @@ export default function Blog() {
           ) : posts && posts.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-testid="blog-posts">
               {posts.map((post, index) => (
-                <motion.article
+                <article
                   key={post.id}
                   className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   data-testid={`blog-post-card-${index}`}
                 >
                   {post.imageUrl && (
@@ -193,10 +181,10 @@ export default function Blog() {
                         }) : 'No date'}
                       </span>
                     </div>
-                    <h2 className="text-lg font-semibold text-slate-900 mb-3 line-clamp-2" data-testid={`blog-post-card-title-${index}`}>
+                    <h2 className="text-lg font-semibold card-title mb-3 line-clamp-2" data-testid={`blog-post-card-title-${index}`}>
                       {post.title}
                     </h2>
-                    <p className="text-slate-600 text-sm mb-4 line-clamp-3" data-testid={`blog-post-card-excerpt-${index}`}>
+                    <p className="text-sm card-excerpt mb-4 line-clamp-3" data-testid={`blog-post-card-excerpt-${index}`}>
                       {post.excerpt}
                     </p>
                     <div className="flex items-center justify-between">
@@ -212,7 +200,7 @@ export default function Blog() {
                       </Link>
                     </div>
                   </div>
-                </motion.article>
+                </article>
               ))}
             </div>
           ) : (

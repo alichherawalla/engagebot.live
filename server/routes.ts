@@ -5,6 +5,11 @@ import { insertBlogPostSchema, updateBlogPostSchema, insertTrialRequestSchema } 
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Map legacy or alternate slugs to canonical ones
+  const SLUG_ALIASES: Record<string, string> = {
+    "twitter-advertising-vs-organic-worth-investment":
+      "twitter-advertising-vs-organic-whats-worth-your-investment",
+  };
   // Blog routes
   app.get("/api/blog/posts", async (req, res) => {
     try {
@@ -63,8 +68,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.get("/api/blog/posts/slug/:slug", async (req, res) => {
     try {
-      const { slug } = req.params;
-      const post = await storage.getBlogPostBySlug(slug);
+  const { slug } = req.params;
+  const canonical = SLUG_ALIASES[slug] || slug;
+  const post = await storage.getBlogPostBySlug(canonical);
       
       if (!post) {
         return res.status(404).json({ message: "Blog post not found" });

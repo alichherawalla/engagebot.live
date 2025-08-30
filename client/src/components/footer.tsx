@@ -1,13 +1,13 @@
 import { Link } from "wouter";
 import { Mail, ArrowRight, Zap } from "lucide-react";
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import logoPath from "@assets/engagebot-logo-circular.png";
 import type { InsertTrialRequest } from "@shared/schema";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   
   const scrollToSection = (sectionId: string) => {
@@ -16,40 +16,6 @@ export default function Footer() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  const newsletterSubscription = useMutation({
-    mutationFn: async (email: string) => {
-      const response = await fetch("/api/trial-requests", {
-        method: "POST",
-        body: JSON.stringify({
-          name: "Newsletter Subscriber",
-          email: email,
-          company: null,
-          twitterHandle: null,
-          message: "Subscribed to newsletter"
-        } as InsertTrialRequest),
-        headers: { "Content-Type": "application/json" },
-      });
-      if (!response.ok) {
-        throw new Error("Failed to subscribe to newsletter");
-      }
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Successfully Subscribed!",
-        description: "You'll receive the latest insights on AI-powered Twitter automation.",
-      });
-      setEmail("");
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Failed to subscribe to newsletter. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +27,39 @@ export default function Footer() {
       });
       return;
     }
-    newsletterSubscription.mutate(email.trim());
+    const payload: InsertTrialRequest = {
+      name: "Newsletter Subscriber",
+      email: email.trim(),
+      company: null,
+      twitterHandle: null,
+      message: "Subscribed to newsletter",
+    };
+    setIsSubmitting(true);
+    fetch("/api/trial-requests", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Network response was not ok");
+        return res.json();
+      })
+      .then(() => {
+        toast({
+          title: "Successfully Subscribed!",
+          description:
+            "You'll receive the latest insights on AI-powered Twitter automation.",
+        });
+        setEmail("");
+      })
+      .catch(() => {
+        toast({
+          title: "Error",
+          description: "Failed to subscribe to newsletter. Please try again.",
+          variant: "destructive",
+        });
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
@@ -92,11 +90,11 @@ export default function Footer() {
               </div>
               <button 
                 type="submit"
-                disabled={newsletterSubscription.isPending}
+                disabled={isSubmitting}
                 className="px-6 py-3 bg-brand-purple hover:bg-brand-purple-dark disabled:opacity-50 text-white font-semibold rounded-lg transition-colors flex items-center justify-center" 
                 data-testid="newsletter-subscribe"
               >
-                {newsletterSubscription.isPending ? "Subscribing..." : "Subscribe"}
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             </form>

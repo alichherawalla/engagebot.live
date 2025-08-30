@@ -1,13 +1,10 @@
 import { Switch, Route, useLocation } from "wouter";
 import { useEffect, lazy, Suspense } from "react";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 const NotFound = lazy(() => import("@/pages/not-found"));
 const Landing = lazy(() => import("@/pages/landing"));
-const Blog = lazy(() => import("@/pages/blog"));
-const BlogPost = lazy(() => import("@/pages/blog-post"));
+const BlogApp = lazy(() => import("@/routes/blog-app"));
 const VsBuffer = lazy(() => import("@/pages/vs-buffer"));
 const VsPlannable = lazy(() => import("@/pages/vs-plannable"));
 const VsSproutSocial = lazy(() => import("@/pages/vs-sproutsocial"));
@@ -29,9 +26,9 @@ function Router() {
   return (
     <Suspense fallback={null}>
       <Switch>
-        <Route path="/" component={Landing} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/blog/:slug" component={BlogPost} />
+  <Route path="/" component={Landing} />
+  <Route path="/blog" component={BlogApp} />
+  <Route path="/blog/:slug" component={BlogApp} />
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/case-studies/:slug" component={CaseStudy} />
         <Route path="/vs-buffer" component={VsBuffer} />
@@ -46,13 +43,11 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-  <ScrollToTop />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <TooltipProvider>
+      <Toaster />
+      <ScrollToTop />
+      <Router />
+    </TooltipProvider>
   );
 }
 

@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { insertTrialRequestSchema, type InsertTrialRequest } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
+// Local lightweight form type to avoid bundling server schemas/zod
+type TrialForm = {
+  name: string;
+  email: string;
+  company?: string;
+  twitterHandle?: string;
+  message?: string;
+};
 import { useToast } from "@/hooks/use-toast";
 
 interface TrialRequestModalProps {
@@ -19,9 +23,9 @@ interface TrialRequestModalProps {
 export default function TrialRequestModal({ isOpen, onClose }: TrialRequestModalProps) {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<InsertTrialRequest>({
-    resolver: zodResolver(insertTrialRequestSchema),
+  const form = useForm<TrialForm>({
     defaultValues: {
       name: "",
       email: "",
@@ -31,36 +35,36 @@ export default function TrialRequestModal({ isOpen, onClose }: TrialRequestModal
     },
   });
 
-  const createTrialRequestMutation = useMutation({
-    mutationFn: async (data: InsertTrialRequest) => {
+  const onSubmit = async (data: TrialForm) => {
+    if (isSubmitting) return;
+    // Minimal client-side validation
+    if (!data.name || !data.email) {
+      toast({ title: "Missing fields", description: "Name and email are required.", variant: "destructive" });
+      return;
+    }
+    setIsSubmitting(true);
+    try {
       const response = await fetch("/api/trial-requests", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },
       });
-      if (!response.ok) {
-        throw new Error("Failed to send trial request");
-      }
-      return response.json();
-    },
-    onSuccess: () => {
+      if (!response.ok) throw new Error("Failed to send trial request");
+      await response.json().catch(() => undefined);
       setIsSubmitted(true);
       toast({
         title: "Trial Request Sent!",
         description: "We'll get back to you within 24 hours to set up your early access.",
       });
-    },
-    onError: () => {
+    } catch (e) {
       toast({
         title: "Error",
         description: "Failed to send trial request. Please try again.",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = (data: InsertTrialRequest) => {
-    createTrialRequestMutation.mutate(data);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
@@ -176,11 +180,11 @@ export default function TrialRequestModal({ isOpen, onClose }: TrialRequestModal
                 </Button>
                 <Button
                   type="submit"
-                  disabled={createTrialRequestMutation.isPending}
+                  disabled={isSubmitting}
                   className="flex-1 bg-brand-green hover:bg-brand-green-light text-white"
                   data-testid="button-submit"
                 >
-                  {createTrialRequestMutation.isPending ? "Sending..." : "Send Request"}
+                  {isSubmitting ? "Sending..." : "Send Request"}
                 </Button>
               </div>
 

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+// Removed framer-motion to reduce bundle size
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { marked } from "marked";
@@ -9,6 +9,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import type { BlogPost } from "@shared/schema";
+import "./blog-post.css";
 
 interface BlogPostPageProps {
   params: {
@@ -88,11 +89,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       
   <main className="pt-14 md:pt-20 pb-12 md:pb-20" data-testid="blog-post-page">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <Link
               href="/blog"
               className="inline-flex items-center text-brand-blue hover:text-brand-blue-light mb-4 sm:mb-6 md:mb-8 transition-colors"
@@ -159,22 +156,16 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 </h1>
 
                 <div 
-                  className="prose md:prose-lg max-w-none text-slate-700 leading-relaxed prose-headings:text-slate-900 prose-a:text-brand-blue prose-strong:text-slate-900 prose-img:rounded-xl prose-img:shadow"
+                  className="blogContent max-w-none leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: marked(post.content) }}
                   data-testid="blog-post-content"
                 />
               </div>
             </article>
-          </motion.div>
+          </div>
 
           {related.length > 0 && (
-            <motion.section
-              className="mt-16"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              data-testid="blog-post-related"
-            >
+            <section className="mt-16" data-testid="blog-post-related">
               <h2 className="text-2xl font-bold text-slate-900 mb-8">Related Articles</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {related.map((relatedPost, index) => (
@@ -213,7 +204,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   </article>
                 ))}
               </div>
-            </motion.section>
+            </section>
           )}
         </div>
       </main>

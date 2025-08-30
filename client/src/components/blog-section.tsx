@@ -1,27 +1,44 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
-import type { BlogPost } from "@shared/schema";
+import { useEffect, useState } from "react";
 import logoPath from "@assets/engagebot-logo-circular.png";
 
-export default function BlogSection() {
-  const { data: posts, isLoading } = useQuery<BlogPost[]>({
-    queryKey: ['/api/blog/posts'],
-  });
+type BlogPost = {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  category: string;
+  imageUrl?: string | null;
+  author?: string | null;
+  createdAt?: string | null;
+};
 
-  const displayPosts = posts?.slice(0, 3) || [];
+export default function BlogSection() {
+  const [posts, setPosts] = useState<BlogPost[] | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const ac = new AbortController();
+    (async () => {
+      try {
+        const res = await fetch('/api/blog/posts', { signal: ac.signal });
+        if (!res.ok) throw new Error('Failed to fetch posts');
+        const all = (await res.json()) as BlogPost[];
+        setPosts(all.slice(0, 3));
+      } catch (_e) {
+        // keep posts null on error
+      } finally {
+        setLoading(false);
+      }
+    })();
+    return () => ac.abort();
+  }, []);
 
   return (
     <section id="blog" className="py-20 bg-slate-50" data-testid="blog-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900" data-testid="blog-title">
               Latest from the
@@ -38,9 +55,9 @@ export default function BlogSection() {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto" data-testid="blog-description">
             Tips, strategies, and insights for mastering Twitter engagement and AI automation.
           </p>
-        </motion.div>
+  </div>
 
-        {isLoading ? (
+  {loading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {[1, 2, 3].map((i) => (
               <div key={i} className="bg-white rounded-xl shadow-md overflow-hidden animate-pulse" data-testid={`blog-skeleton-${i}`}>
@@ -59,14 +76,10 @@ export default function BlogSection() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {displayPosts.map((post, index) => (
-              <motion.article
+            {(posts || []).map((post: BlogPost, index: number) => (
+              <article
                 key={post.id}
                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 data-testid={`blog-post-${index}`}
               >
                 {post.imageUrl && (
@@ -104,24 +117,18 @@ export default function BlogSection() {
                     </Link>
                   </div>
                 </div>
-              </motion.article>
+      </article>
             ))}
           </div>
         )}
 
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
+    <div className="text-center">
           <Link href="/blog">
             <Button className="bg-brand-blue hover:bg-brand-blue-light text-white px-8 py-3 font-semibold" data-testid="blog-view-all">
               View All Posts
             </Button>
           </Link>
-        </motion.div>
+    </div>
       </div>
     </section>
   );

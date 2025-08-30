@@ -33,6 +33,22 @@ app.use((req, res, next) => {
       if (logLine.length > 80) {
         logLine = logLine.slice(0, 79) + "…";
       }
+    // Redirect legacy blog slugs to canonical ones (before meta generation)
+    const BLOG_SLUG_REDIRECTS: Record<string, string> = {
+      "/blog/twitter-advertising-vs-organic-worth-investment":
+        "/blog/twitter-advertising-vs-organic-whats-worth-your-investment",
+    };
+
+    app.use((req, res, next) => {
+      // only handle HTML route paths (no extension, not API)
+      if (req.path.startsWith("/api/") || req.path.includes(".")) return next();
+      const target = BLOG_SLUG_REDIRECTS[req.path];
+      if (target) {
+        return res.redirect(301, target);
+      }
+      next();
+    });
+
 
       log(logLine);
     }
